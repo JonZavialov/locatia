@@ -1,14 +1,14 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from './initApp';
-const authenticator = getAuth(app);
+import signedIn from "../utils/signedIn";
+const auth = getAuth(app);
 
-function auth(email, password){
-  signInWithEmailAndPassword(authenticator, email, password)
+function authorizeClient(email, password){
+  signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      console.log(user)
-      // ...
+      signedIn(user);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -17,4 +17,4 @@ function auth(email, password){
     });
 }
 
-export default auth;
+export default authorizeClient;

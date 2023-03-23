@@ -1,4 +1,4 @@
-#TODO
+# TODO
 
 - Get a favicon
 - Get a name
@@ -6,3 +6,5 @@
 - Add a meta description tag
 - Add an apple icon and theme color
 - Update manifest
+- Email verification
+- Password complexity requirements
