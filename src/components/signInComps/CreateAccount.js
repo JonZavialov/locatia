@@ -1,10 +1,11 @@
-import authorizeClient from '../firebase-utils/authorizeClient.js';
 import React from 'react';
+import createAccount from '../../firebase-utils/createAccount';
 
-export default class Login extends React.Component{
+export default class CreateAccount extends React.Component{
     handleSubmit(e){
         e.preventDefault();
-        authorizeClient(e.target.email.value, e.target.password.value)
+        createAccount(e.target.email.value, e.target.password.value)
+        // TODO: add username to user profile
     }
 
     render(){
@@ -14,6 +15,12 @@ export default class Login extends React.Component{
                     type="text"
                     name="email"
                     placeholder="Email"
+                    required
+                />
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
                     required
                 />
                 <input

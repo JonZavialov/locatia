@@ -1,11 +1,11 @@
-import Login from './components/Login.js';
-import CreateAccount from './components/CreateAccount.js';
+import Main from "./components/Main";
 
 function App() {
   return (
     <>
-      <Login />
-      <CreateAccount />
+      {/* nav bar */}
+      <Main />
+      {/* footer */}
     </>
   );
 }
