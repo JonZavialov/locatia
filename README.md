@@ -8,3 +8,5 @@
 - Update manifest
 - Email verification
 - Password complexity requirements
+- Create navbar and footer
+- Remember me feature
