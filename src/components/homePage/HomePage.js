@@ -1,5 +1,6 @@
 import getProfiles from "../../firebase-utils/getProfiles"
 import { useEffect, useState } from "react"
+import ProfileCardsContainer from "./ProfileCardsContainer";
 
 function HomePage(){
     const [data, updateData] = useState();
@@ -11,15 +12,7 @@ function HomePage(){
         getData();
     }, []);
 
-    return data && <Child data={data} />
+    return data && <ProfileCardsContainer data={data} />
 }
-
-const Child = ({data}) => (
-    <div>
-        {data.map((x) => (
-            <p>{JSON.stringify(x)}</p>
-        ))}
-    </div>
-);
 
 export default HomePage

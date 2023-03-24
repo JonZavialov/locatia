@@ -1,0 +1,26 @@
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+  width: 250px;
+}
+
+.profile-card p {
+  color: #8f8f8f;
+  margin: 3px 0;
+}
+
+.profile-card h3 {
+  margin: 10px 0;
+}
+
+#profile-cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
