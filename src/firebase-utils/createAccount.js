@@ -12,6 +12,7 @@ function createAccount(email,password){
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        // TODO: handle error
     });
 }
 
