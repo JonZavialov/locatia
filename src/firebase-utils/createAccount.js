@@ -1,7 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import signedIn from "../utils/signedIn";
-import app from './initApp';
-const auth = getAuth(app);
+import { auth } from './initApp';
 
 function createAccount(email,password){
     createUserWithEmailAndPassword(auth, email, password)

@@ -1,5 +1,5 @@
 function signedIn(){
-    window.location.href = "/createAccount";
+    window.location.href = "/editBio";
 }
 
 export default signedIn;

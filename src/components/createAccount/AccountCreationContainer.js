@@ -2,7 +2,9 @@ import getCurrentUser from "../../utils/getCurrentUser"
 
 function AccountCreationContainer(){
     return(
-        <p>Welcome {getCurrentUser()}!</p>
+        <>
+            <p>Welcome {getCurrentUser()}!</p>
+        </>
     )
 }
 

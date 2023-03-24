@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <Routes>
       <Route exact path='/' element={< SignInContainer />}></Route>
-      <Route exact path='/createAccount' element={< AccountCreationContainer />}></Route>
+      <Route exact path='/editBio' element={< AccountCreationContainer />}></Route>
     </Routes>
   );
 }

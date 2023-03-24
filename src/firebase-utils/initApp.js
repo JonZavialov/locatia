@@ -25,4 +25,4 @@ getAuth(app).onAuthStateChanged(function(user) {
   document.cookie = `loggedIn=${user ? user.email : false}`;
 });
 
-export default app;
+export const auth = getAuth(app);
