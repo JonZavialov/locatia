@@ -3,10 +3,12 @@
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 10px 20px;
   margin: 20px;
   cursor: pointer;
   width: 250px;
+  height: min-content;
+  background-color: white;
 }
 
 .profile-card p {
@@ -23,4 +25,33 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.socials-box {
+  display: flex;
+  height: 30px;
+  width: min-content;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+.socials-box:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.socials-box:active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.socials-box img {
+  height: 100%;
+  margin-right: 5px;
+}
+
+.socials-container {
+  margin-top: 10px;
 }

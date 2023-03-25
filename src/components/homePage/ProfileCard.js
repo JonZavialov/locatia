@@ -1,5 +1,6 @@
 import './profile-cards.css'
 import getAge from '../../utils/getAge'
+import SocialsContainer from './SocialsContainer'
 
 function ProfileCard({profileInfo}){
     return (
@@ -8,6 +9,7 @@ function ProfileCard({profileInfo}){
             <h3>{profileInfo.name}</h3>
             <p>{profileInfo.school}</p>
             <p>{getAge(profileInfo.birthday)} years old</p>
+            <SocialsContainer socials={profileInfo.socials}/>
         </div>
     )
 }
