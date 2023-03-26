@@ -17,7 +17,11 @@
 }
 
 .profile-card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(2);
+  z-index: 100;
+
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
 }
 
 .profile-card p {
