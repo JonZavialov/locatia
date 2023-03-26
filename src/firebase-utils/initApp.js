@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import { getStorage } from "firebase/storage";
 //import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -12,11 +13,11 @@ const firebaseConfig = {
   apiKey: "AIzaSyA5glQJDWP7N7Ea6YIKKS2W1exqPmWT63U",
   authDomain: "startup-849d7.firebaseapp.com",
   projectId: "startup-849d7",
-  storageBucket: "startup-849d7.appspot.com",
   messagingSenderId: "938619740190",
   appId: "1:938619740190:web:bc686bd6689823ca77ce0f",
   measurementId: "G-HBME3NRSQS",
-  databaseURL: "https://startup-849d7-default-rtdb.firebaseio.com/"
+  databaseURL: "https://startup-849d7-default-rtdb.firebaseio.com/",
+  storageBucket: 'gs://startup-849d7.appspot.com'
 };
 
 // Initialize Firebase
@@ -29,3 +30,4 @@ getAuth(app).onAuthStateChanged(function(user) {
 
 export const auth = getAuth(app);
 export const db = getDatabase(app);
+export const storage = getStorage(app);

@@ -1,7 +1,7 @@
 import { ref, child, get } from "firebase/database";
 import { db } from './initApp';
 
-async function getProfiles(){
+function getProfiles(){
     return new Promise((resolve, reject) => {
         const dbRef = ref(db);
 
