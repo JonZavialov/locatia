@@ -3,6 +3,7 @@ import getAge from '../../utils/getAge'
 import SocialsContainer from './SocialsContainer'
 import getImageFromUUID from '../../firebase-utils/getImageFromUUID'
 import React from 'react'
+import redirectFromCard from '../../utils/redirectFromCard'
 
 function ProfileCard({ profileInfo }){
     const [uri, setUri] = React.useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
@@ -17,7 +18,7 @@ function ProfileCard({ profileInfo }){
     }, [profileInfo])
     
     return (
-        <div className="profile-card">
+        <div className="profile-card" onClick={(e) => redirectFromCard(e, profileInfo.username) }>
             <img src={uri} alt={profileInfo.name} id="profile-image"></img>
             <h3>{profileInfo.name}</h3>
             <p>{profileInfo.school}</p>
