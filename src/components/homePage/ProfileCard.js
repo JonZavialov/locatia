@@ -3,12 +3,10 @@ import getAge from '../../utils/getAge'
 import SocialsContainer from './SocialsContainer'
 import getImageFromUUID from '../../firebase-utils/getImageFromUUID'
 import React from 'react'
-import $ from 'jquery'
 
-function ProfileCard({profileInfo}){
-    const [uri, setUri] = React.useState('')
-    const [isHovered, setIsHovered] = React.useState(false);
-
+function ProfileCard({ profileInfo }){
+    const [uri, setUri] = React.useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
+    // TODO: host this image on firebase
 
     React.useEffect(() => {
         const asd = async () => {
@@ -17,21 +15,9 @@ function ProfileCard({profileInfo}){
         };
         asd()
     }, [profileInfo])
-
-    React.useEffect(() => {
-        if(isHovered){
-            $('#profile-cards-container').find('.profile-card:not(.hovered)').fadeTo(500, 0.2)
-        }else{
-            $('#profile-cards-container').find('.profile-card').fadeTo(200, 1)
-        }
-    }, [isHovered])
     
     return (
-        <div 
-            className={`profile-card${isHovered ? ' hovered' : ''}`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
+        <div className="profile-card">
             <img src={uri} alt={profileInfo.name} id="profile-image"></img>
             <h3>{profileInfo.name}</h3>
             <p>{profileInfo.school}</p>

@@ -3,12 +3,15 @@
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 15px 20px 10px;
+  padding: 15px 15px 10px;
   margin: 20px;
   cursor: pointer;
   width: 250px;
   height: min-content;
   background-color: white;
+
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .profile-card #profile-image {
@@ -17,11 +20,11 @@
 }
 
 .profile-card:hover {
-  transform: scale(2);
-  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.025);
 
-  transition-duration: 0.5s;
-  transition-timing-function: linear;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .profile-card p {
