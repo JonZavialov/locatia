@@ -15,7 +15,8 @@ function ImageGrid({ images }){
     // TODO: make the gallery lazy load with a preview image
     return (
         <div id="image-grid">
-            <Gallery images={imageData} enableImageSelection={false} backdropClosesModal={true} />
+            {(imageData.length !== 0) && <Gallery images={imageData} enableImageSelection={false} backdropClosesModal={true} />}
+            {(imageData.length === 0) && <p>Loading...</p>}
         </div>
     )
 }
