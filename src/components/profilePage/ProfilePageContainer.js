@@ -20,15 +20,15 @@ function ProfilePageContainer(){
     }, [username]);
 
     return (
-        <>
-            <div id="profile-page-container">
+        <div id="profile-page-container">
+            <div id="profile-page">
                 {
                     !data && <p>Loading...</p>}
                 {
                     data && <ProfilePage data={data} />
                 }
             </div>
-        </>
+        </div>
     )
 }
 

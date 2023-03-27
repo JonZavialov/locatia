@@ -6,7 +6,9 @@ function ProfileBanner({ data }){
     return(
         <div id="profile-banner">
             <p>@{data.username}</p>
+            <p>•</p>
             <p>{data.school}</p>
+            <p>•</p>
             <p>{getAge(data.birthday)} years old</p>
         </div>
     )

@@ -30,22 +30,31 @@ body {
   background-color: gainsboro;
 }
 
-#root {
+#profile-page-container {
   display: flex;
   flex-direction: column;
 }
 
-#profile-page-container {
+#profile-page {
   width: min-content;
   margin: auto;
 }
 
-#profile-page-container h1 {
+#profile-page h1 {
   margin-bottom: 0;
 }
 
+#profile-page hr {
+  margin: 16px 0;
+}
+
+#profile-page #bio {
+  width: 75%;
+  margin: 0;
+}
+
 #profile-banner p {
-  margin: 0 30px 16px 0;
+  margin: 0 16px 16px 0;
   color: #8f8f8f;
 }
 

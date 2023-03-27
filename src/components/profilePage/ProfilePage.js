@@ -24,6 +24,9 @@ function ProfilePage({ data }){
                 <img src={uri} alt={data.name} id="main-image" ></img>
                 <ImageGrid images={data.images} />
             </div>
+            <hr />
+            <h2>About</h2>
+            <p id="bio">{data.bio}</p>
         </>
     )
 }
