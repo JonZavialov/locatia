@@ -13,6 +13,7 @@ function ImageGrid({ images }){
     }, [images])
 
     // TODO: make the gallery lazy load with a preview image
+    // TODO:  use a hash table to store every image in the database with its width and height in metadata
     return (
         <div id="image-grid">
             {(imageData.length !== 0) && <Gallery images={imageData} enableImageSelection={false} backdropClosesModal={true} />}
@@ -23,6 +24,7 @@ function ImageGrid({ images }){
 
 function getImageProps(images){
     // TODO: make this grab width and height data from database instead of loading the images
+    // this function should be deleted
     
     var imageData = [];
 

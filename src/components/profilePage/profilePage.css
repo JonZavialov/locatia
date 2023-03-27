@@ -1,3 +1,30 @@
 #image-grid {
-  width: 500px;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+#profile-images {
+  height: 368px;
+  aspect-ratio: 2 / 1;
+  align-items: center;
+  display: flex;
+}
+
+#profile-images #main-image {
+  height: 99%;
+  border-radius: 10px;
+  margin-right: 2px;
+}
+
+#profile-images .ReactGridGallery_tile-viewport {
+  border-radius: 10px;
+}
+
+.ReactGridGallery_tile {
+  background: gainsboro !important;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: gainsboro;
 }
