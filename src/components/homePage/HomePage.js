@@ -1,4 +1,4 @@
-import getProfiles from "../../firebase-utils/getProfiles"
+import getProfiles from "../../firebase-utils/query/getProfiles"
 import { useEffect, useState } from "react"
 import ProfileCardsContainer from "./ProfileCardsContainer";
 

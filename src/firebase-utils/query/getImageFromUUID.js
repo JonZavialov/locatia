@@ -1,5 +1,5 @@
 import { ref, getDownloadURL } from "firebase/storage";
-import { storage } from '../firebase-utils/initApp';
+import { storage } from '../initApp';
 
 function getImageFromUUID(uuid){
     return new Promise((resolve, reject) => {

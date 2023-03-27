@@ -1,5 +1,5 @@
 import React from 'react';
-import createAccount from '../../firebase-utils/createAccount';
+import createAccount from '../../firebase-utils/auth/createAccount';
 
 export default class CreateAccount extends React.Component{
     handleSubmit(e){

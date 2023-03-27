@@ -1,4 +1,4 @@
-import signOutClient from "../../firebase-utils/signOutClient"
+import signOutClient from "../../firebase-utils/auth/signOutClient"
 
 function SignOut(){
     return (

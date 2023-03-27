@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from './initApp';
-import signedIn from "../utils/signedIn";
+import { auth } from '../initApp';
+import signedIn from "../../utils/signedIn";
 
 function authorizeClient(email, password){
   signInWithEmailAndPassword(auth, email, password)

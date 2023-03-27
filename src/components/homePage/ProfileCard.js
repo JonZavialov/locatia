@@ -1,7 +1,7 @@
 import './profile-cards.css'
 import getAge from '../../utils/getAge'
 import SocialsContainer from './SocialsContainer'
-import getImageFromUUID from '../../firebase-utils/getImageFromUUID'
+import getImageFromUUID from '../../firebase-utils/query/getImageFromUUID'
 import React from 'react'
 import redirectFromCard from '../../utils/redirectFromCard'
 

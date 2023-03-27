@@ -1,4 +1,4 @@
-import authorizeClient from '../../firebase-utils/authorizeClient.js';
+import authorizeClient from '../../firebase-utils/auth/authorizeClient.js';
 import React from 'react';
 
 export default class Login extends React.Component{

@@ -1,5 +1,5 @@
 import { ref, child, get } from "firebase/database";
-import { db } from './initApp';
+import { db } from '../initApp';
 
 function getProfiles(){
     return new Promise((resolve, reject) => {
