@@ -1,6 +1,7 @@
 import ImageGrid from "./ImageGrid";
 import getImageFromUUID from "../../firebase-utils/query/getImageFromUUID";
 import React from "react";
+import ProfileBanner from "./ProfileBanner";
 import "./profilePage.css";
 
 function ProfilePage({ data }){    
@@ -16,10 +17,14 @@ function ProfilePage({ data }){
     }, [data])
     
     return (
-        <div id="profile-images">
-            <img src={uri} alt={data.name} id="main-image" ></img>
-            <ImageGrid images={data.images} />
-        </div>
+        <>
+            <h1>{data.name}</h1>
+            <ProfileBanner data={data} />
+            <div id="profile-images">
+                <img src={uri} alt={data.name} id="main-image" ></img>
+                <ImageGrid images={data.images} />
+            </div>
+        </>
     )
 }
 

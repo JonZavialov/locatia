@@ -8,6 +8,7 @@
   aspect-ratio: 2 / 1;
   align-items: center;
   display: flex;
+  margin: auto;
 }
 
 #profile-images #main-image {
@@ -27,4 +28,27 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: gainsboro;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-page-container {
+  width: min-content;
+  margin: auto;
+}
+
+#profile-page-container h1 {
+  margin-bottom: 0;
+}
+
+#profile-banner p {
+  margin: 0 30px 16px 0;
+  color: #8f8f8f;
+}
+
+#profile-banner {
+  display: flex;
 }

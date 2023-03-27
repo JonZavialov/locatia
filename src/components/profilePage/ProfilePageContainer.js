@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import getProfileFromUser from "../../firebase-utils/query/getProfileFromUser";
 import { useEffect, useState } from "react";
 import ProfilePage from "./ProfilePage";
+import "./profilePage.css";
 
 function ProfilePageContainer(){
     const { username } = useParams();
@@ -20,11 +21,13 @@ function ProfilePageContainer(){
 
     return (
         <>
-            {
-                !data && <p>Loading...</p>}
-            {
-                data && <ProfilePage data={data} />
-            }
+            <div id="profile-page-container">
+                {
+                    !data && <p>Loading...</p>}
+                {
+                    data && <ProfilePage data={data} />
+                }
+            </div>
         </>
     )
 }

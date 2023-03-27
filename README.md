@@ -10,3 +10,4 @@
 - Password complexity requirements
 - Create navbar and footer
 - Remember me feature
+- Organize imports in each file
