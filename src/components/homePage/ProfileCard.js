@@ -17,6 +17,7 @@ function ProfileCard({ profileInfo }){
         asd()
     }, [profileInfo])
     
+    // TODO: make images scroll when mouse is hovering
     return (
         <div className="profile-card" onClick={(e) => redirectFromCard(e, profileInfo.username) }>
             <img src={uri} alt={profileInfo.name} id="profile-image"></img>
