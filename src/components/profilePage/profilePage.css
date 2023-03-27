@@ -40,7 +40,7 @@ body {
   margin: auto;
 }
 
-#bio-container h1 {
+#profile-page h1 {
   margin-bottom: 0;
 }
 
@@ -65,19 +65,34 @@ body {
 #bio-container button {
   all: unset;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: white;
   height: min-content;
   padding: 15px 10px;
-  width: 15%;
   text-align: center;
-  margin: 20px auto;
+  margin: 20px 0;
+  width: 110px;
+}
+
+#bio-container button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #bio-container button:active {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 #bio-container {
   display: flex;
+}
+
+#buttons-column .socials-box {
+  background-color: white;
+}
+
+#buttons-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
 }

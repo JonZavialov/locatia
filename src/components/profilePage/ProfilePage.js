@@ -3,6 +3,7 @@ import getImageFromUUID from "../../firebase-utils/query/getImageFromUUID";
 import React from "react";
 import ProfileBanner from "./ProfileBanner";
 import "./profilePage.css";
+import SocialsContainer from "../homePage/SocialsContainer";
 
 function ProfilePage({ data }){    
     const [uri, setUri] = React.useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
@@ -30,7 +31,10 @@ function ProfilePage({ data }){
                     <h2>About</h2>
                     <p>{data.bio}</p>
                 </div>
-                <button>Contact</button>
+                <div id="buttons-column">
+                    <button>Contact</button>
+                    <SocialsContainer socials={data.socials} />
+                </div>
             </div>
         </>
     )
