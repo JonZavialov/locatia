@@ -25,8 +25,13 @@ function ProfilePage({ data }){
                 <ImageGrid images={data.images} />
             </div>
             <hr />
-            <h2>About</h2>
-            <p id="bio">{data.bio}</p>
+            <div id="bio-container">
+                <div id="bio">
+                    <h2>About</h2>
+                    <p>{data.bio}</p>
+                </div>
+                <button>Contact</button>
+            </div>
         </>
     )
 }
