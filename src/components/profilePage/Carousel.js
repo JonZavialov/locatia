@@ -9,13 +9,27 @@ import "./profilePage.css";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper";
+import React from "react";
 
 function Carousel({ images, name }) {
+    const swiperRef = React.useRef();
+    const onInit = (Swiper) => {
+        swiperRef.current = Swiper;
+        swiperRef.current.autoplay.stop();
+    };
+    const handleMouseEnter = () => {
+        swiperRef.current.slideNext()
+        if (swiperRef.current) swiperRef.current.autoplay.start();
+    };
+    const handleMouseLeave = () => {
+        if (swiperRef.current) swiperRef.current.autoplay.stop();
+    };
+
     return (
-        <div id="image-swiper-container">
-            <Swiper pagination={true} modules={[ Pagination, Autoplay ]} autoplay={{delay: 3000}} className="mySwiper">
+        <div id="image-swiper-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <Swiper pagination={true} modules={[ Pagination, Autoplay ]} autoplay={{delay: 1500}} className="mySwiper" onInit={onInit}>
                 {images.map((image, i) => (
-                    // TODO: replace i with unique image id
+                    // TODO: replace key with unique image id
                     <SwiperSlide key={i}>
                         <img src={image} alt={name} />
                     </SwiperSlide>
