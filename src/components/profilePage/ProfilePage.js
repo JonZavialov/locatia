@@ -1,9 +1,9 @@
-import ImageGrid from "./ImageGrid";
 import getImageFromUUID from "../../firebase-utils/query/getImageFromUUID";
 import React from "react";
 import ProfileBanner from "./ProfileBanner";
 import "./profilePage.css";
 import SocialsContainer from "../homePage/SocialsContainer";
+import Carousel from "./Carousel";
 
 function ProfilePage({ data }){    
     const [uri, setUri] = React.useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
@@ -21,10 +21,8 @@ function ProfilePage({ data }){
         <>
             <h1>{data.name}</h1>
             <ProfileBanner data={data} />
-            <div id="profile-images">
-                <img src={uri} alt={data.name} id="main-image" ></img>
-                <ImageGrid images={data.images} />
-            </div>
+            {!uri && 'Loading...'}
+            {uri && <Carousel images={[uri].concat(data.images)} name={data.name}/>}
             <hr />
             <div id="bio-container">
                 <div id="bio">
