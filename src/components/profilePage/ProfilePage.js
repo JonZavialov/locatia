@@ -1,15 +1,15 @@
 import getImageFromUUID from "../../firebase-utils/query/getImageFromUUID";
-import React from "react";
 import ProfileBanner from "./ProfileBanner";
 import "./profilePage.css";
 import SocialsContainer from "../homePage/SocialsContainer";
 import Carousel from "./Carousel";
+import { useState, useEffect } from "react";
 
 function ProfilePage({ data }){    
-    const [uri, setUri] = React.useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
+    const [uri, setUri] = useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
     // TODO: host this image on firebase
 
-    React.useEffect(() => {
+    useEffect(() => {
         const asd = async () => {
             const response = await getImageFromUUID(data.uuid)
             setUri(response);

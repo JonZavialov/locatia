@@ -9,10 +9,10 @@ import "./profilePage.css";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper";
-import React from "react";
+import { useRef } from "react";
 
 function Carousel({ images, name }) {
-    const swiperRef = React.useRef();
+    const swiperRef = useRef();
     const onInit = (Swiper) => {
         swiperRef.current = Swiper;
         swiperRef.current.autoplay.stop();
