@@ -1,9 +1,10 @@
 import Main from "./components/Main";
+import NavBar from "./components/navBar/NavBar";
 
 function App() {
   return (
     <>
-      {/* nav bar */}
+      <NavBar />
       <Main />
       {/* footer */}
     </>
