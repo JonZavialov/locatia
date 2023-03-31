@@ -21,57 +21,33 @@ body {
   margin: 16px 0 0;
 }
 
-#bio-container #bio {
-  width: 75%;
-  margin: 0;
-}
-
 #profile-banner p {
-  margin: 0 16px 16px 0;
+  margin: 0 16px 0 0;
   color: #8f8f8f;
 }
 
 #profile-banner {
   display: flex;
+  margin-bottom: 8px;
 }
 
-#bio-container button {
-  all: unset;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+#profile-socials .socials-box {
   background-color: white;
-  height: min-content;
-  padding: 15px 10px;
-  text-align: center;
-  margin: 20px 0;
-  width: 110px;
+  margin-right: 10px;
 }
 
-#bio-container button:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-#bio-container button:active {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-}
-
-#bio-container {
-  display: flex;
-}
-
-#buttons-column .socials-box {
+#contact-area .socials-box {
   background-color: white;
 }
 
-#buttons-column {
+#profile-socials .socials-container {
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
+  margin-bottom: 8px;
 }
 
 .swiper {
-  width: 500px;
+  width: 600px;
   height: 500px;
 }
 
@@ -96,4 +72,39 @@ body {
 #image-swiper-container {
   border-radius: 10px;
   overflow: hidden;
+
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+#image-swiper-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.025);
+
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+#gallery-contacts {
+  display: flex;
+}
+
+#contact-area {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 15px 10px;
+  margin: 20px;
+  width: 250px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-area .socials-box {
+  padding: 15px 50px;
+  background-color: #1da1f2;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
 }

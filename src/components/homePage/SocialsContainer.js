@@ -5,7 +5,7 @@ function SocialsContainer({socials}){
     return (
         <div className="socials-container">
             {Object.keys(socials).map((x, i) => (
-                <SocialsBox key={i} platform={x} handle={socials[x]}/>
+                <SocialsBox key={i} platform={x} handle={socials[x]} display={'@' + socials[x]} />
             ))}
         </div>
     )

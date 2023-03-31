@@ -10,13 +10,20 @@ const socialsLogos = {
 }
 // TODO: host images on firebase
 
-function SocialsBox({platform, handle}){
-    if(handle) return (
+function SocialsBox({ platform, handle, display, clickFunc }){    
+    if(socialsLogos[platform]) return (
         <div className="socials-box" onClick={() => window.open(socialsLogos[platform].link + handle, '_blank')}>
             <img src={socialsLogos[platform].logo} alt={platform}></img>
-            <p>@{handle}</p>
+            <p>{display}</p>
         </div>
     )
+    
+    else if (clickFunc) return (
+        <div className="socials-box" onClick={clickFunc} >
+            <p>{display}</p>
+        </div>
+    )
+
     else return null
 }
 
