@@ -47,6 +47,9 @@
     0 4px 24px rgba(0, 0, 0, 0.02);
   margin-top: 10px;
 }
+#hero-text button:active {
+  background: #727272;
+}
 .sketch-button.start svg {
   -webkit-animation: stroke 1s linear;
   animation: stroke 1s linear;
