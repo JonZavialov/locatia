@@ -11,7 +11,7 @@ const socialsLogos = {
 // TODO: host images on firebase
 
 function SocialsBox({ platform, handle, display, clickFunc }){    
-    if(socialsLogos[platform]) return (
+    if(socialsLogos[platform] && handle) return (
         <div className="socials-box" onClick={() => window.open(socialsLogos[platform].link + handle, '_blank')}>
             <img src={socialsLogos[platform].logo} alt={platform}></img>
             <p>{display}</p>
