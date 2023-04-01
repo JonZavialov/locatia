@@ -3,6 +3,7 @@ import getProfileFromUser from "../../firebase-utils/query/getProfileFromUser";
 import { useEffect, useState } from "react";
 import ProfilePage from "./ProfilePage";
 import "./profilePage.css";
+import NavBar from "../navBar/NavBar";
 
 function ProfilePageContainer(){
     const { username } = useParams();
@@ -20,15 +21,18 @@ function ProfilePageContainer(){
     }, [username]);
 
     return (
-        <div id="profile-page-container">
-            <div id="profile-page">
-                {
-                    !data && <p>Loading...</p>}
-                {
-                    data && <ProfilePage data={data} />
-                }
+        <>
+            <NavBar />
+            <div id="profile-page-container">
+                <div id="profile-page">
+                    {
+                        !data && <p>Loading...</p>}
+                    {
+                        data && <ProfilePage data={data} />
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

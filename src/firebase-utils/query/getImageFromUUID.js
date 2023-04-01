@@ -1,17 +1,7 @@
-import { ref, getDownloadURL } from "firebase/storage";
-import { storage } from '../initApp';
+import getImageFromStorage from "./getImageFromStorage";
 
 function getImageFromUUID(uuid){
-    return new Promise((resolve, reject) => {
-        getDownloadURL(ref(storage, uuid + '.png'))
-        .then((url) => {
-            resolve(url);
-        })
-        .catch((error) => {
-            reject(error);
-            // TODO: handle error
-        });
-    })
+    return getImageFromStorage(`user/${uuid}.png`)
 }
 
 export default getImageFromUUID;

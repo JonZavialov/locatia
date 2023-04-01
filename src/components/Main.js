@@ -1,16 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import SignInContainer from './signIn/SignInContainer';
 import AccountCreationContainer from './createAccount/AccountCreationContainer';
 import HomePage from './homePage/HomePage';
 import ProfilePageContainer from './profilePage/ProfilePageContainer';
 import NotFound from './homePage/NotFound';
+import LandingPage from './landingPage/LandingPage';
 
 const Main = () => {
   return (
     <Routes>
-      <Route exact path='/' element={< SignInContainer />}></Route>
+      <Route exact path='/' element={< LandingPage />}></Route>
       <Route exact path='/editBio' element={< AccountCreationContainer />}></Route>
       <Route exact path='/home' element={< HomePage />}></Route>
       <Route path="/profile/:username" element={< ProfilePageContainer />} />

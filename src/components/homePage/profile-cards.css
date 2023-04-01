@@ -28,7 +28,8 @@
   transition-timing-function: ease-in-out;
 }
 
-.profile-card:hover p {
+.profile-card:hover p,
+.profile-card:hover h3 {
   color: white;
 }
 
