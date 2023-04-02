@@ -1,0 +1,90 @@
+#welcome {
+  position: absolute;
+  right: 20px;
+}
+
+#info-container {
+  margin-top: 20px;
+}
+
+#create-account {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: min-content;
+  margin: auto;
+  white-space: nowrap;
+}
+
+#create-account h1 {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#create-account #info-container {
+  display: flex;
+}
+
+#create-account #photo-insert {
+  width: 300px;
+  background-color: gray;
+  justify-content: center;
+  display: flex;
+}
+
+#info-container form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+#info-container input {
+  all: unset;
+  padding: 15px;
+  outline: 1px solid black;
+  border-radius: 5px;
+  width: 300px;
+  margin-bottom: 28px;
+}
+
+#info-container input[type="text"]:focus {
+  outline: 2px solid purple;
+}
+
+#info-container input[type="text"] {
+  background-color: #f0f2f4;
+}
+
+#info-container label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+#bday-input input {
+  width: 40px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+#bday-input #byear {
+  width: 50px;
+}
+
+#socials-select {
+  display: flex;
+  margin-bottom: 28px;
+}
+
+#socials-select p {
+  margin: 0 10px 0 0;
+  padding: 15px;
+  background-color: #f0f2f4;
+  border-radius: 5px;
+  outline: 1px solid black;
+}
+
+#socials-select .selected {
+  outline: 2px solid purple;
+  color: purple;
+}

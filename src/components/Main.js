@@ -13,7 +13,7 @@ const Main = () => {
     <Routes>
       <Route exact path='/' element={< LandingPage />}></Route>
       <Route exact path='/login' element={< LoginContainer />}></Route>
-      <Route exact path='/editBio' element={< AccountCreationContainer />}></Route>
+      <Route exact path='/create-account' element={< AccountCreationContainer />}></Route>
       <Route exact path='/home' element={< HomePage />}></Route>
       <Route path="/profile/:username" element={< ProfilePageContainer />} />
       <Route path="/404" element={< NotFound />} />
