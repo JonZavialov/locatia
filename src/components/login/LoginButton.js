@@ -8,7 +8,7 @@ const providers = {
 
 function LoginButton({ provider, onClick, style }){
     return (
-        <button onClick={() => onClick(provider)} style={style}>
+        <button onClick={() => onClick(provider)} style={style} id="signin-button">
             {providers[provider] && <img src={providers[provider]} alt={provider} />}
             <p>Sign in with {provider}</p>
         </button>

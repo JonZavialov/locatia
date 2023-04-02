@@ -25,7 +25,7 @@
   margin-bottom: 40px;
 }
 
-#actions-container button {
+#actions-container #signin-button {
   all: unset;
   cursor: pointer;
   font-size: 20px;
@@ -40,7 +40,7 @@
   margin-top: 15px;
 }
 
-#actions-container button img {
+#actions-container #signin-button img {
   width: 35px;
   height: 35px;
   margin-right: 10px;
@@ -48,8 +48,8 @@
 
 #actions-container p {
   font-weight: 600;
-  margin: 0;
   font-size: 18px;
+  margin: 0;
 }
 
 #actions-container #signin-container {
@@ -60,9 +60,81 @@
   margin-top: 20px;
 }
 
-#signin-container #signin-button {
+#signin-container #signin-p {
   color: rgb(25, 137, 207);
   font-weight: 500;
   margin-left: 10px;
   cursor: pointer;
+}
+
+#create-email-account {
+  display: flex;
+  flex-direction: column;
+}
+
+#create-email-account #names {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#create-email-account input {
+  all: unset;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#create-email-account input[type="submit"] {
+  width: min-content;
+  margin: 30px auto 0;
+  padding: 10px 40px;
+}
+
+#create-email-account input[type="submit"]:hover {
+  background-color: #1da1f2;
+  color: white;
+}
+
+#create-email-account input[type="submit"]:active {
+  background-color: #1576b3;
+  color: white;
+}
+
+#create-email-account input[type="text"]:focus,
+#create-email-account input[type="password"]:focus {
+  border: 1px solid purple;
+}
+
+#create-email-account input[type="text"],
+#create-email-account input[type="password"] {
+  background-color: #f0f2f4;
+}
+
+#create-email-account label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+#back-button {
+  cursor: pointer;
+  margin-bottom: 20px !important;
+  width: min-content;
+  white-space: nowrap;
+}
+
+.input-container {
+  width: min-content;
+}
+
+#email-header {
+  margin-bottom: 20px !important;
+}
+
+#passwords {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
