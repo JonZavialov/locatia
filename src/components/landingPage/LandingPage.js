@@ -19,7 +19,7 @@ function LandingPage(){
             <div id="hero-text">
                 <h1>Empowering college athletes to showcase their game, one brand partnership at a time</h1>
                 <h2>Bridge the gap between college athletes and top brands, creating meaningful partnerships that elevate both parties and celebrate the spirit of competition.</h2>
-                <button className="sketch-button">Get Started &rarr;</button>
+                <button className="sketch-button" onClick={() => document.location.href = "/login"}>Get Started &rarr;</button>
             </div>
             <img src={uri} alt="hero" id="hero-image"></img>
         </div>
