@@ -11,7 +11,7 @@ function NoProvider({ onClick }){
             <LoginButton provider="email" style={{backgroundColor: "#1989CF", color: "white"}} onClick={onClick} />
             <div id="signin-container">
                 <p>Already have an account?</p>
-                <p id="signin-p">Sign in</p>
+                <p id="signin-p" onClick={() => onClick('signin')}>Sign in</p>
             </div>
         </>
     )

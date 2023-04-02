@@ -67,51 +67,51 @@
   cursor: pointer;
 }
 
-#create-email-account {
+#actions-container form {
   display: flex;
   flex-direction: column;
 }
 
-#create-email-account #names {
+#actions-container form #names {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-#create-email-account input {
+#actions-container input {
   all: unset;
   padding: 10px;
   outline: 1px solid black;
   border-radius: 5px;
 }
 
-#create-email-account input[type="submit"] {
+#actions-container input[type="submit"] {
   width: min-content;
   margin: 30px auto 0;
   padding: 10px 40px;
 }
 
-#create-email-account input[type="submit"]:hover {
+#actions-container input[type="submit"]:hover {
   background-color: #1da1f2;
   color: white;
 }
 
-#create-email-account input[type="submit"]:active {
+#actions-container input[type="submit"]:active {
   background-color: #1576b3;
   color: white;
 }
 
-#create-email-account input[type="text"]:focus,
-#create-email-account input[type="password"]:focus {
+#actions-container input[type="text"]:focus,
+#actions-container input[type="password"]:focus {
   outline: 2px solid purple;
 }
 
-#create-email-account input[type="text"],
-#create-email-account input[type="password"] {
+#actions-container input[type="text"],
+#actions-container input[type="password"] {
   background-color: #f0f2f4;
 }
 
-#create-email-account label {
+#actions-container label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: 500;
@@ -137,4 +137,16 @@
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+}
+
+#signin-actionsbox {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#signin-actionsbox .input-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
 }

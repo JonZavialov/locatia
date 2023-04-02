@@ -11,7 +11,7 @@ function CreateAccount({ onClick }){
         <>
             <p id="back-button" onClick={() => onClick(false)}>← Back</p>
             <h1 id="email-header">Sign Up with Email</h1>
-            <form onSubmit={handleSubmit} id="create-email-account">
+            <form onSubmit={handleSubmit}>
                 <div id="names">
                     <div className='input-container'>
                         <label>Email</label>
