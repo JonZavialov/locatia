@@ -27,7 +27,7 @@ function CreateAccount({ onClick }){
                         <input
                             type="text"
                             name="username"
-                            placeholder="Enter your username"
+                            placeholder="Create a username"
                             required
                         />
                     </div>

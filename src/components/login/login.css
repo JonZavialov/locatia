@@ -81,7 +81,7 @@
 #create-email-account input {
   all: unset;
   padding: 10px;
-  border: 1px solid black;
+  outline: 1px solid black;
   border-radius: 5px;
 }
 
@@ -103,7 +103,7 @@
 
 #create-email-account input[type="text"]:focus,
 #create-email-account input[type="password"]:focus {
-  border: 1px solid purple;
+  outline: 2px solid purple;
 }
 
 #create-email-account input[type="text"],
