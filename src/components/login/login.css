@@ -5,12 +5,14 @@
 }
 
 #actions-container {
-  margin: 15% auto;
+  margin: 100px auto;
   background-color: white;
   padding: 24px;
   border-radius: 10px;
   height: min-content;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 340px;
+  width: 570px;
 }
 
 #actions-container h1 {

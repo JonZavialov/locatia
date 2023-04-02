@@ -1,19 +1,19 @@
-import LoginButton from './LoginButton'
 import './login.css'
+import NoProvider from './actionsBoxStates/NoProvider'
+import { useState } from 'react'
 
 function LoginContainer(){
+    const [provider, setProvider] = useState(false);
+    
+    const handleProviderChange = (provider) => {
+        setProvider(provider)
+    }
+    
     return (
         <div id="login-container">
             <div id="actions-container">
-                <h1>Create your account</h1>
-                <p id="subtext">Start spending more time training and less time looking for brands.</p>
-                <LoginButton provider="Google" />
-                <LoginButton provider="Facebook" />
-                <LoginButton provider="email" style={{backgroundColor: "#1989CF", color: "white"}}/>
-                <div id="signin-container">
-                    <p>Already have an account?</p>
-                    <p id="signin-button">Sign in</p>
-                </div>
+                {!provider && < NoProvider onClick={handleProviderChange} />}
+                {provider && <p>{provider}</p>}
             </div>
         </div>
     )

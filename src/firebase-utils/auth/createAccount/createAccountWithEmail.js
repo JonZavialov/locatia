@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import signedIn from "../../utils/signedIn";
-import { auth } from '../initApp';
+import signedIn from "../../../utils/signedIn";
+import { auth } from '../../initApp';
 
-function createAccount(email,password){
+function createAccountWithEmail(email,password){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
@@ -16,4 +16,4 @@ function createAccount(email,password){
     });
 }
 
-export default createAccount;
+export default createAccountWithEmail;

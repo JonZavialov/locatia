@@ -1,10 +1,10 @@
 import React from 'react';
-import createAccount from '../../firebase-utils/auth/createAccount';
+import createAccountWithEmail from '../../firebase-utils/auth/createAccount/createAccountWithEmail';
 
 export default class CreateAccount extends React.Component{
     handleSubmit(e){
         e.preventDefault();
-        createAccount(e.target.email.value, e.target.password.value)
+        createAccountWithEmail(e.target.email.value, e.target.password.value)
         // TODO: add username to user profile
     }
 
