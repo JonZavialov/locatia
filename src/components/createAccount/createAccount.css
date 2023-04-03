@@ -92,10 +92,10 @@
 }
 
 .photo-insert-grid-item {
-  width: 120px;
-  height: 170px;
-  line-height: 170px;
-  margin: 4px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  margin: 4px !important;
   background-color: #e9ebee;
   border-radius: 8px;
   border: 3px dashed gray;
@@ -107,10 +107,35 @@
 }
 
 .photo-insert-grid-item:hover {
-  transform: scale(1.075);
+  transform: scale(1.05);
   transition-duration: 0.2s;
 }
 
 .photo-insert-grid-item input[type="file"] {
   display: none !important;
+}
+
+.photo-insert-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#photo-edit-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-edit-modal h1 {
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+
+#photo-edit-modal .ReactCrop {
+  width: 500px;
+  height: 500px;
+  border: 2px solid gray;
+  border-radius: 10px;
 }
