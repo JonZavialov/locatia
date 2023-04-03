@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
-import ReactCrop from 'react-image-crop'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import 'react-image-crop/dist/ReactCrop.css'
+import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css'
 
 Modal.setAppElement('#root');
@@ -21,7 +22,7 @@ const modalStyles = {
   },
 };
 
-function PhotoEditModal({ src, modalIsOpen, modalIsClosed }){
+function PhotoEditModal({ src, fileObj, modalIsOpen, modalIsClosed }){
     const [crop, setCrop] = useState({
         unit: '%',
         x: 25,
@@ -30,23 +31,18 @@ function PhotoEditModal({ src, modalIsOpen, modalIsClosed }){
         height: 50,
     })
 
-    useEffect(() => {
-        console.log(crop)
-    }, [crop])
-    
     return (
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={modalIsClosed}
             style={modalStyles}
-            contentLabel="Example Modal"
             id="photo-edit-modal"
         >
             <h1>Adjust your photo</h1>
-            <ReactCrop crop={crop} onChange={(c) => setCrop(c)} aspect={1}>
-                <img src={src} alt='crop' />
+            <ReactCrop crop={crop} onChange={c => setCrop(c)} aspect={1}>
+              <img src={src} alt="crop" />
             </ReactCrop>
-            <button onClick={modalIsClosed}>close</button>
+            <button>Crop</button>
         </Modal>
     )
 }

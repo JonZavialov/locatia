@@ -21,7 +21,7 @@ function LandingPage(){
                 <h2>Bridge the gap between college athletes and top brands, creating meaningful partnerships that elevate both parties and celebrate the spirit of competition.</h2>
                 <SketchButton onClick={() => document.location.href = "/login"} text={"Get Started →"} />
             </div>
-            <img src={uri} alt="hero" id="hero-image"></img>
+            {uri && <img src={uri} alt="hero" id="hero-image"></img>}
         </div>
     )
 }
