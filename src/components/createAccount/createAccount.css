@@ -129,13 +129,17 @@
 }
 
 #photo-edit-modal h1 {
-  margin: 0 0 20px;
+  margin: 0;
   font-weight: 500;
 }
 
+#photo-edit-modal p {
+  margin: 5px 0 20px;
+}
+
 #photo-edit-modal .ReactCrop {
-  width: 500px;
-  height: 500px;
+  max-width: 400px;
+  max-height: 400px;
   border: 2px solid gray;
   border-radius: 10px;
 }
