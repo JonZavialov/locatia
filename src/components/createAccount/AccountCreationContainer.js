@@ -1,4 +1,5 @@
 import getCurrentUser from "../../utils/getCurrentUser"
+import SelectPhotos from "./SelectPhotos";
 import SocialsSelectorBox from "./SocialsSelectorBox";
 import './createAccount.css'
 import { useState } from "react";
@@ -99,9 +100,7 @@ function AccountCreationContainer(){
                             </>
                         }
                     </form>
-                    <div id="photo-insert">
-                        <p>Profile Picture</p>
-                    </div>
+                    < SelectPhotos />
                 </div>
             </div>
         </>

@@ -25,13 +25,6 @@
   display: flex;
 }
 
-#create-account #photo-insert {
-  width: 300px;
-  background-color: gray;
-  justify-content: center;
-  display: flex;
-}
-
 #info-container form {
   display: flex;
   flex-direction: column;
@@ -87,4 +80,37 @@
 #socials-select .selected {
   outline: 2px solid purple;
   color: purple;
+}
+
+#photo-insert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#photo-selector-container {
+  height: min-content;
+}
+
+.photo-insert-grid-item {
+  width: 120px;
+  height: 170px;
+  line-height: 170px;
+  margin: 4px;
+  background-color: #e9ebee;
+  border-radius: 8px;
+  border: 3px dashed gray;
+  color: gray;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+
+.photo-insert-grid-item:hover {
+  transform: scale(1.075);
+  transition-duration: 0.2s;
+}
+
+.photo-insert-grid-item input[type="file"] {
+  display: none !important;
 }
