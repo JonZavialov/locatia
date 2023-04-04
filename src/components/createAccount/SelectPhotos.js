@@ -13,6 +13,7 @@ function SelectPhotos(){
                     })
                 }
             </div>
+            <p>Add at least one photo to continue</p>
         </div>
     )
 }

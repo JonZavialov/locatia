@@ -5,6 +5,7 @@ function ImageInputBox(){
     const [image, setImage] = useState(null);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [fileObj, setFileObj] = useState(null);
+    const [previewSrc, setPreviewSrc] = useState(null);
 
     useEffect(() => {
         if(image){
@@ -18,8 +19,21 @@ function ImageInputBox(){
                 setImage(result)
                 setFileObj(e.target.files[0])
             })}></input>
-            {!image && '+'}
-            <PhotoEditModal src={image} modalIsOpen={modalIsOpen} modalIsClosed={() => setIsOpen(false)} fileObj={fileObj} />
+            {!image && !previewSrc && '+'}
+            {previewSrc && <img src={previewSrc} alt="preview" />}
+            <PhotoEditModal 
+                src={image} 
+                modalIsOpen={modalIsOpen} 
+                modalIsClosed={() => {
+                    setIsOpen(false) 
+                    setImage(null)
+                }} 
+                fileObj={fileObj} 
+                onImageCroppedCallback={(src) => {
+                    setPreviewSrc(src)
+                    setImage('temp')
+                }} 
+            />
         </label>
     )
 }
@@ -27,7 +41,7 @@ function ImageInputBox(){
 function fileUploaded(e, callback){
     var fr = new FileReader();
     fr.onload = () => callback(fr.result)
-    fr.readAsDataURL(e.target.files[0]);
+    if(e.target.files[0]) fr.readAsDataURL(e.target.files[0]);
 }
 
 export default ImageInputBox

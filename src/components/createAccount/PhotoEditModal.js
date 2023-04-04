@@ -22,15 +22,15 @@ const modalStyles = {
   },
 };
 
-function PhotoEditModal({ src, fileObj, modalIsOpen, modalIsClosed }){
+function PhotoEditModal({ src, fileObj, modalIsOpen, modalIsClosed, onImageCroppedCallback }){
     const [crop, setCrop] = useState()
-    const [croppedImage, setCroppedImage] = useState(null)
     const imgRef = useRef(null)
 
     return (
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={modalIsClosed}
+            shouldCloseOnOverlayClick={false}
             style={modalStyles}
             id="photo-edit-modal"
         >
@@ -39,14 +39,33 @@ function PhotoEditModal({ src, fileObj, modalIsOpen, modalIsClosed }){
             <ReactCrop crop={crop} onChange={c => setCrop(c)} aspect={1}>
               <img src={src} alt="crop" ref={imgRef} />
             </ReactCrop>
-            {croppedImage && <img src={croppedImage} alt="cropped" />}
-            <button onClick={async() => setCroppedImage(await getCroppedImg(fileObj, imgRef.current, crop))}>Crop</button>
-            <button onClick={modalIsClosed}>close</button>
+            <div id="buttons-row">
+              <button onClick={modalIsClosed}>Cancel</button>
+              <button 
+                onClick={async() => {
+                  onImageCroppedCallback(await getCroppedImg(fileObj, imgRef.current, crop))
+                  modalIsClosed()
+                }} 
+                disabled={!cropIsPresent(crop)}
+              >
+                Crop
+              </button>
+            </div>
         </Modal>
     )
 }
 
+function cropIsPresent(crop){
+  return crop && crop.width > 50 && crop.height > 50
+}
+
 function getCroppedImg(image, imgRef, pixelCrop) {
+  // Because the image the client uploads is usually scaled down by the CSS,
+  // We have to accordingly scale the crop dimensions up
+  // We do this by getting the proportion of the actual image width from its blob,
+  // And the width of the displayed image from the React ref hook
+  // This took me a ridiculous amount of time to figure out
+  
   return new Promise((resolve) => {
     createImageBitmap(image).then((imageBitmap) => {
       getImgDimensions(image).then((dimensions) => {
