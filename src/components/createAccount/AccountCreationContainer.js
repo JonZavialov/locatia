@@ -28,6 +28,13 @@ function AccountCreationContainer(){
         updateHasEmptyFields(checkEmptyFields(formRef.current))
         console.log('yes')
     }, [socials])
+
+    window.addEventListener("beforeunload", function (event) {
+        // Cancel the default event action
+        event.preventDefault();
+        // Prompt the user with a confirmation dialog
+        event.returnValue = "Are you sure you want to leave this page? Your form data will be lost.";
+    });
     
     return(
         <>
