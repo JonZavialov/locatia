@@ -6,11 +6,11 @@ const providers = {
 }
 // TODO: host images on firebase
 
-function LoginButton({ provider, onClick, style }){
+function LoginButton({ provider, onClick, style, altText }){
     return (
         <button onClick={() => onClick(provider)} style={style} id="signin-button">
             {providers[provider] && <img src={providers[provider]} alt={provider} />}
-            <p>Sign in with {provider}</p>
+            <p>Sign {!altText ? "in" : altText} with {provider}</p>
         </button>
     )
 }

@@ -13,7 +13,7 @@ function SelectPhotos({ onAddImage }){
                     })
                 }
             </div>
-            <p>Add at least one photo to continue</p>
+            <p>Add at least two photos to continue</p>
         </div>
     )
 }

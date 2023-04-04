@@ -11,3 +11,4 @@
 - Create navbar and footer
 - Remember me feature
 - Organize imports in each file
+- Marketing idea- tiktok add that says get in while we have rare usernames

@@ -133,7 +133,7 @@ function AccountCreationContainer(){
                 </div>
                 <button 
                     id="continue-button" 
-                    disabled={!validDate || hasEmptyFields || numOfImageInserts === 0} 
+                    disabled={!validDate || hasEmptyFields || numOfImageInserts < 2} 
                     onClick={handleSubmit}
                 >
                     Continue
