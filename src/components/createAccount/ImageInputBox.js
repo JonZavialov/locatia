@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import PhotoEditModal from './PhotoEditModal';
 
-function ImageInputBox(){
+function ImageInputBox({ onAddImage }){
     const [image, setImage] = useState(null);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [fileObj, setFileObj] = useState(null);
@@ -32,6 +32,7 @@ function ImageInputBox(){
                 onImageCroppedCallback={(src) => {
                     setPreviewSrc(src)
                     setImage('temp')
+                    onAddImage()
                 }} 
             />
         </label>

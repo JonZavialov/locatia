@@ -1,6 +1,6 @@
 import ImageInputBox from "./ImageInputBox";
 
-function SelectPhotos(){    
+function SelectPhotos({ onAddImage }){    
     return (
         <div id="photo-selector-container">
             <label>Profile photos</label>
@@ -8,7 +8,7 @@ function SelectPhotos(){
                 {
                     [1,2,3,4,5,6].map((i) => {
                         return (
-                            <ImageInputBox key={i} id={i} />
+                            <ImageInputBox key={i} onAddImage={onAddImage} />
                         )
                     })
                 }

@@ -2,7 +2,7 @@ import getCurrentUser from "../../utils/getCurrentUser"
 import SelectPhotos from "./SelectPhotos";
 import SocialsSelectorBox from "./SocialsSelectorBox";
 import './createAccount.css'
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function AccountCreationContainer(){
     // TODO: for now, users should not see this page unless they have not previously created an account
@@ -10,20 +10,24 @@ function AccountCreationContainer(){
     // TODO: verify user socials are valid
     const [socials, updateSocials] = useState([]);
     const [validDate, updateValidDate] = useState(true);
+    const [hasEmptyFields, updateHasEmptyFields] = useState(true);
+    const [numOfImageInserts, updateNumOfImageInserts] = useState(0);
     const formRef = useRef(null)
 
     const handleSocialSelectOnParent = (platform) => {
-        if (socials.includes(platform)){
-            updateSocials(socials.filter((social) => social !== platform));
-        } else {
-            updateSocials([...socials, platform]);
-        }
+        if (socials.includes(platform)) updateSocials(socials.filter((social) => social !== platform));
+        else updateSocials([...socials, platform]);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // TODO: create/update database entry
     }
+
+    useEffect(() => {
+        updateHasEmptyFields(checkEmptyFields(formRef.current))
+        console.log('yes')
+    }, [socials])
     
     return(
         <>
@@ -31,7 +35,14 @@ function AccountCreationContainer(){
             <div id="create-account">
                 <h1>Create your account</h1>
                 <div id="info-container">
-                    <form onSubmit={handleSubmit} onBlur={() => updateValidDate(validateFormInfo(formRef.current))} ref={formRef}>
+                    <form 
+                        onSubmit={handleSubmit} 
+                        onBlur={() => {
+                            updateValidDate(validateDate(formRef.current))
+                            updateHasEmptyFields(checkEmptyFields(formRef.current))
+                        }} 
+                        ref={formRef}
+                    >
                         <label>Full Name</label>
                         <input
                             type="text"
@@ -111,15 +122,21 @@ function AccountCreationContainer(){
                             </>
                         }
                     </form>
-                    < SelectPhotos />
+                    < SelectPhotos onAddImage={() => updateNumOfImageInserts(numOfImageInserts + 1)} />
                 </div>
-                <button id="continue-button" disabled={!validDate}>Continue</button>
+                <button 
+                    id="continue-button" 
+                    disabled={!validDate || hasEmptyFields || numOfImageInserts === 0} 
+                    onClick={handleSubmit}
+                >
+                    Continue
+                </button>
             </div>
         </>
     )
 }
 
-function validateFormInfo(ref){
+function validateDate(ref){
     const REGEX = {
         month: /\b(0?[1-9]|1[0-2])\b/,
         day: /\b(0?[1-9]|[1-2][0-9]|3[0-1])\b/,
@@ -133,6 +150,13 @@ function validateFormInfo(ref){
 
     if ((month && day && year).length === 0) return true
     return month && day && year
+}
+
+function checkEmptyFields(ref){
+    if(!ref) return true
+    const formData = new FormData(ref)
+    const fields = Array.from(formData.values())
+    return fields.includes('')
 }
 
 // TODO: add length limiters to MM DD YYYY
