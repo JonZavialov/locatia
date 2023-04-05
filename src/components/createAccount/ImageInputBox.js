@@ -15,10 +15,17 @@ function ImageInputBox({ onAddImage }){
 
     return (
         <label className="photo-insert-grid-item">
-            <input type="file" accept="image/*" onChange={(e) => fileUploaded(e, (result) => {
-                setImage(result)
-                setFileObj(e.target.files[0])
-            })}></input>
+            <input 
+                type="file" 
+                accept="image/*" 
+                onClick={(e) => {
+                    if (previewSrc) e.preventDefault()
+                }} 
+                onChange={(e) => fileUploaded(e, (result) => {
+                    setImage(result)
+                    setFileObj(e.target.files[0])
+                })}
+            ></input>
             {!image && !previewSrc && '+'}
             {previewSrc && <img src={previewSrc} alt="preview" />}
             <PhotoEditModal 
@@ -32,12 +39,15 @@ function ImageInputBox({ onAddImage }){
                 onImageCroppedCallback={(src) => {
                     setPreviewSrc(src)
                     setImage('temp')
-                    onAddImage()
+                    onAddImage(src)
                 }} 
             />
         </label>
     )
 }
+
+
+// TODO: add support for heic files
 
 function fileUploaded(e, callback){
     var fr = new FileReader();

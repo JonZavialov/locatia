@@ -8,7 +8,7 @@ function SelectPhotos({ onAddImage }){
                 {
                     [1,2,3,4,5,6].map((i) => {
                         return (
-                            <ImageInputBox key={i} onAddImage={onAddImage} />
+                            <ImageInputBox key={i} onAddImage={(src) => onAddImage(src)} />
                         )
                     })
                 }

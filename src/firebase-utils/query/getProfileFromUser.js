@@ -4,8 +4,11 @@ function getProfileFromUser(user) {
     return new Promise((resolve, reject) => {
         getProfiles()
         .then((profiles) => {
-            profiles.forEach(profile => {
-                if (profile.username === user) resolve(profile);
+            Object.keys(profiles).forEach(uuid => {
+                if (profiles[uuid].username === user) resolve({
+                    profile: profiles[uuid], 
+                    uuid
+                });
             });
 
             reject()

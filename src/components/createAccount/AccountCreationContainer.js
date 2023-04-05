@@ -1,3 +1,4 @@
+import postAccountInfo from "../../firebase-utils/post/postAccountInfo";
 import getCurrentUser from "../../utils/getCurrentUser"
 import SelectPhotos from "./SelectPhotos";
 import SocialsSelectorBox from "./SocialsSelectorBox";
@@ -11,7 +12,7 @@ function AccountCreationContainer(){
     const [socials, updateSocials] = useState([]);
     const [validDate, updateValidDate] = useState(true);
     const [hasEmptyFields, updateHasEmptyFields] = useState(true);
-    const [numOfImageInserts, updateNumOfImageInserts] = useState(0);
+    const [imageInserts, updateImageInserts] = useState([])
     const formRef = useRef(null)
 
     const handleSocialSelectOnParent = (platform) => {
@@ -21,12 +22,11 @@ function AccountCreationContainer(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // TODO: create/update database entry
+        postAccountInfo(formRef.current, imageInserts)
     }
 
     useEffect(() => {
         updateHasEmptyFields(checkEmptyFields(formRef.current))
-        console.log('yes')
     }, [socials])
 
     window.addEventListener("beforeunload", function (event) {
@@ -129,11 +129,11 @@ function AccountCreationContainer(){
                             </>
                         }
                     </form>
-                    < SelectPhotos onAddImage={() => updateNumOfImageInserts(numOfImageInserts + 1)} />
+                    < SelectPhotos onAddImage={(src) => updateImageInserts(imageInserts.concat(src))} />
                 </div>
                 <button 
                     id="continue-button" 
-                    disabled={!validDate || hasEmptyFields || numOfImageInserts < 2} 
+                    disabled={!validDate || hasEmptyFields || imageInserts.length < 2} 
                     onClick={handleSubmit}
                 >
                     Continue

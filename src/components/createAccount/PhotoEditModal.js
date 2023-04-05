@@ -75,8 +75,8 @@ function getCroppedImg(image, imgRef, pixelCrop) {
         }
 
         const canvas = document.createElement('canvas');
-        canvas.width = pixelCrop.width;
-        canvas.height = pixelCrop.height;
+        canvas.width = pixelCrop.width * cropScale.x;
+        canvas.height = pixelCrop.height * cropScale.y;
         const ctx = canvas.getContext('2d');
 
         ctx.drawImage(
@@ -87,8 +87,8 @@ function getCroppedImg(image, imgRef, pixelCrop) {
           pixelCrop.height * cropScale.y,
           0,
           0,
-          pixelCrop.width,
-          pixelCrop.height,
+          pixelCrop.width * cropScale.x,
+          pixelCrop.height * cropScale.y,
         );
       
         // As Base64 string

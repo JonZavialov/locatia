@@ -8,14 +8,18 @@ import NavBar from "../navBar/NavBar";
 function ProfilePageContainer(){
     const { username } = useParams();
     const [data, updateData] = useState('');
+    const [uuid, updateUUID] = useState('');
 
     useEffect(() => {
-        const getData = async () => {
-            updateData(await getProfileFromUser(username)
-                .catch(() => {
-                    window.location.href = '/404';
-                })
-            );
+        const getData = () => {
+            getProfileFromUser(username)
+            .then(({profile, uuid}) => {
+                updateData(profile);
+                updateUUID(uuid);
+            })
+            .catch(() => {
+                window.location.href = '/404';
+            })
         }
         getData();
     }, [username]);
@@ -28,7 +32,7 @@ function ProfilePageContainer(){
                     {
                         !data && <p>Loading...</p>}
                     {
-                        data && <ProfilePage data={data} />
+                        data && <ProfilePage data={data} uuid={uuid} />
                     }
                 </div>
             </div>

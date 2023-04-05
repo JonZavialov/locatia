@@ -1,30 +1,39 @@
-import getImageFromUUID from "../../firebase-utils/query/getImageFromUUID";
+import getImageListFromUUID from "../../firebase-utils/query/getImageListFromUUID";
 import ProfileBanner from "./ProfileBanner";
 import "./profilePage.css";
 import Carousel from "./Carousel";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import SocialsBox from "../homePage/SocialsBox";
 import clickedContact from "../../utils/clickedContact";
+import getImageFromRef from "../../firebase-utils/query/getImageFromRef";
 
-function ProfilePage({ data }){    
-    const [uri, setUri] = useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
-    // TODO: host this image on firebase
+function ProfilePage({ data, uuid }){    
+    const imageList = useMemo(() => [], [])
+    const [numImages, setNumImages] = useState(0)
+    const [reRender, setReRender] = useState(false)
+    // TODO: there's definitely a better way to do this but i am very stupid
 
     useEffect(() => {
-        const asd = async () => {
-            const response = await getImageFromUUID(data.uuid)
-            setUri(response);
-        };
-        asd()
-    }, [data])
-    
+        getImageListFromUUID(uuid)
+        .then((imageRefList) => {
+            setNumImages(imageRefList.length)
+            imageRefList.forEach((imageRef) => {
+                getImageFromRef(imageRef)
+                .then((uri) => {
+                    imageList.push(uri)
+                })
+            })
+        })
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [imageList, uuid])
+
     return (
         <>
             <h1>{data.name}</h1>
             <ProfileBanner data={data} />
             <div id="gallery-contacts">
-                {!uri && 'Loading...'}
-                {uri && <Carousel images={[uri].concat(data.images)} name={data.name}/>}
+                {imageList.length === 0 && 'Loading...'}
+                {imageList.length === numImages && <Carousel images={imageList} name={data.name}/>}
                 <div id="contact-area">
                     <SocialsBox display={'Connect'} clickFunc={clickedContact} />     
                 </div>
@@ -32,8 +41,14 @@ function ProfilePage({ data }){
             <hr />
             <h2>About</h2>
             <p>{data.bio}</p>
+            <button onClick={() => {
+                console.log(imageList)
+                setReRender(!reRender)
+            }}>Test</button>
         </>
     )
 }
+
+// TODO: line 27 can be changed later
 
 export default ProfilePage;
