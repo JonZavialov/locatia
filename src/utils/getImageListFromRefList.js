@@ -10,6 +10,7 @@ function getImageListFromRefList(imageRefList){
                 imageList.push(uri)
 
                 if (imageList.length === imageRefList.length){
+                    imageList.sort()
                     resolve(imageList)
                 }
             })

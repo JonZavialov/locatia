@@ -1,9 +1,13 @@
+import { NotificationContainer } from "react-notifications";
 import Main from "./components/Main";
+import 'react-notifications/lib/notifications.css';
 
 function App() {
   return (
-    <Main />
-    // TODO: redundant
+    <>
+      <Main />
+      <NotificationContainer />
+    </>
   );
 }
 
