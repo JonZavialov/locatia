@@ -8,7 +8,7 @@ function CreateAccount({ onClick }){
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!passIsInvalid(formRef.current)) 
-            createAccountWithEmail(formRef.current.email.value, formRef.current.password.value)
+            createAccountWithEmail(formRef.current.email.value, formRef.current.password.value, formRef.current.username.value)
         // TODO: add username to user profile
         // TODO: make sure username doesn't already exist
         // TODO: add regex to username (no special characters, min length)

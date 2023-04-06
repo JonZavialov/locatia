@@ -14,7 +14,6 @@ function postAccountInfo(formRef, picsData){
             tiktok: formData.get("tiktok") || false,
         },
         sport: formData.get("sport"),
-        username: "test"
     }
 
     // TODO: add username
