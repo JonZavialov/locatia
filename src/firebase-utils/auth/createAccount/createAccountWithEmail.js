@@ -7,8 +7,9 @@ function createAccountWithEmail(email,password,username){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
-        postAccountUsername(username)
-        signedIn(user);
+        postAccountUsername(username, () => {
+            signedIn(user)
+        })
     })
     .catch((error) => {
         const errorCode = error.code;

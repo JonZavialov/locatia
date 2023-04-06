@@ -3,11 +3,13 @@ import { useState, useRef } from 'react';
 
 function CreateAccount({ onClick }){
     const [invalidPassword, setInvalidPassword] = useState(false);
+    const [invalidUsername, setInvalidUsername] = useState(false);
+    const [invalidEmail, setInvalidEmail] = useState(false);
     const formRef = useRef(null);
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!passIsInvalid(formRef.current)) 
+        if (!passIsInvalid(formRef.current) && !usernameIsInvalid(formRef.current)) 
             createAccountWithEmail(formRef.current.email.value, formRef.current.password.value, formRef.current.username.value)
         // TODO: add username to user profile
         // TODO: make sure username doesn't already exist
@@ -18,7 +20,15 @@ function CreateAccount({ onClick }){
         <>
             <p id="back-button" onClick={() => onClick(false)}>← Back</p>
             <h1 id="email-header">Sign Up with Email</h1>
-            <form onSubmit={handleSubmit} onBlur={() => setInvalidPassword(passIsInvalid(formRef.current))} ref={formRef}>
+            <form 
+                onSubmit={handleSubmit} 
+                onBlur={() => {
+                    setInvalidPassword(passIsInvalid(formRef.current))
+                    setInvalidUsername(usernameIsInvalid(formRef.current))
+                    setInvalidEmail(emailIsInvalid(formRef.current))
+                }} 
+                ref={formRef}
+            >
                 <div id="names">
                     <div className='input-container'>
                         <label>Email</label>
@@ -60,6 +70,8 @@ function CreateAccount({ onClick }){
                     </div>
                 </div>
                 <p id="error-text">{invalidPassword}</p>
+                <p id="error-text">{invalidUsername}</p>
+                <p id="error-text">{invalidEmail}</p>
                 <input type="submit" value="Submit" />
             </form>
         </>
@@ -78,7 +90,20 @@ function passIsInvalid(ref){
     return false
 }
 
-// TODO: confim email format
-// TODO: check passwords are matching
+function usernameIsInvalid(ref){
+    const userRegex = /^[a-zA-Z0-9]{1,30}$/
+
+    if (ref.username.value.length < 1) return false
+    if (!userRegex.test(ref.username.value)) return "Invalid username! Make sure there are no special characters."
+    return false
+}
+
+function emailIsInvalid(ref){
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+    if (ref.email.value.length < 1) return false
+    if (!emailRegex.test(ref.email.value)) return "Invalid email!"
+    return false
+}
 
 export default CreateAccount;
