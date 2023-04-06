@@ -13,9 +13,9 @@ function ProfilePageContainer(){
     useEffect(() => {
         const getData = () => {
             getProfileFromUser(username)
-            .then(({profile, uuid}) => {
+            .then(({profile, UUID}) => {
                 updateData(profile);
-                updateUUID(uuid);
+                updateUUID(UUID);
             })
             .catch(() => {
                 window.location.href = '/404';
@@ -32,7 +32,7 @@ function ProfilePageContainer(){
                     {
                         !data && <p>Loading...</p>}
                     {
-                        data && <ProfilePage data={data} uuid={uuid} />
+                        data && <ProfilePage data={data} uuid={uuid} username={username} />
                     }
                 </div>
             </div>

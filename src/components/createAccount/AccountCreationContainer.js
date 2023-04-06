@@ -166,9 +166,6 @@ function checkEmptyFields(ref){
     return fields.includes('')
 }
 
-// TODO: add length limiters to MM DD YYYY
-// TODO: add at symbol to instagram and tiktok
-// TODO: only numbers in MM DD YYYY
-// TODO: length limiter to name, school, sport, insta, tiktok
+// TODO: no spaces in usernames
 
 export default AccountCreationContainer

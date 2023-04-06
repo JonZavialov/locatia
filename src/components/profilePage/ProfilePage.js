@@ -7,7 +7,7 @@ import SocialsBox from "../homePage/SocialsBox";
 import clickedContact from "../../utils/clickedContact";
 import getImageListFromRefList from "../../utils/getImageListFromRefList";
 
-function ProfilePage({ data, uuid }){
+function ProfilePage({ data, uuid, username }){
     const [images, setImages] = useState([])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ function ProfilePage({ data, uuid }){
     return (
         <>
             <h1>{data.name}</h1>
-            <ProfileBanner data={data} />
+            <ProfileBanner data={data} username={username} />
             <div id="gallery-contacts">
                 {!images && 'Loading...'}
                 {images && <Carousel images={images} name={data.name}/>}

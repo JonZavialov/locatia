@@ -16,9 +16,7 @@ function postAccountInfo(formRef, picsData){
         sport: formData.get("sport"),
     }
 
-    // TODO: add username
-
-    set(ref(db, auth.currentUser.uid + '/'), submitData);
+    set(ref(db, 'accounts/' + auth.currentUser.uid + '/'), submitData);
     postImagesToUid(picsData)
 
     // TODO: handle error

@@ -1,13 +1,14 @@
-import { ref, child, get } from "firebase/database";
-import { db } from '../initApp';
+import { db } from "../initApp";
+import { ref, get, child } from "firebase/database";
 
-function getProfiles(){
+function getUserFromUUID(UUID){
     return new Promise((resolve, reject) => {
         const dbRef = ref(db);
 
-        get(child(dbRef, '/accounts')).then((snapshot) => {
+        get(child(dbRef, '/usernames')).then((snapshot) => {
             if (snapshot.exists()) {
-                resolve(snapshot.val());
+                const object = snapshot.val();
+                resolve(Object.keys(object).find(key => object[key] === UUID));
             } else {
                 reject("No data available");
                 // TODO: handle error
@@ -19,4 +20,4 @@ function getProfiles(){
     })
 }
 
-export default getProfiles
+export default getUserFromUUID

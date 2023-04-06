@@ -4,9 +4,11 @@ import SocialsContainer from './SocialsContainer'
 import { useEffect, useState } from "react"
 import redirectFromCard from '../../utils/redirectFromCard'
 import getImageFromStorage from '../../firebase-utils/query/getImageFromStorage'
+import getUserFromUUID from '../../firebase-utils/query/getUserFromUUID'
 
 function ProfileCard({ profileInfo, uuid }){
     const [uri, setUri] = useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
+    const [username, setUsername] = useState('')
     // TODO: host this image on firebase
 
     useEffect(() => {
@@ -16,10 +18,18 @@ function ProfileCard({ profileInfo, uuid }){
         };
         asd()
     }, [uuid])
+
+    useEffect(() => {
+        const asd = async () => {
+            const user = await getUserFromUUID(uuid)
+            setUsername(user)
+        }
+        asd()
+    }, [uuid])
     
     // TODO: make images scroll when mouse is hovering
     return (
-        <div className="profile-card" onClick={(e) => redirectFromCard(e, profileInfo.username) }>
+        <div className="profile-card" onClick={(e) => redirectFromCard(e, username) }>
             <img src={uri} alt={profileInfo.name} id="profile-image"></img>
             <h3>{profileInfo.name}</h3>
             <p>{profileInfo.school}</p>
