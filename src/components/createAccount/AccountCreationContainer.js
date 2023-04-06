@@ -147,7 +147,7 @@ function validateDate(ref){
     const REGEX = {
         month: /\b(0?[1-9]|1[0-2])\b/,
         day: /\b(0?[1-9]|[1-2][0-9]|3[0-1])\b/,
-        year: /^\d{4}$/
+        year: /^(19\d\d|20[0-9][0-9])$/
     }
     const formData = new FormData(ref)
     

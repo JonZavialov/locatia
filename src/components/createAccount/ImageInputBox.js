@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PhotoEditModal from './PhotoEditModal';
 
 function ImageInputBox({ onAddImage }){
@@ -6,6 +6,7 @@ function ImageInputBox({ onAddImage }){
     const [modalIsOpen, setIsOpen] = useState(false);
     const [fileObj, setFileObj] = useState(null);
     const [previewSrc, setPreviewSrc] = useState(null);
+    const inputRef = useRef(null);
 
     useEffect(() => {
         if(image){
@@ -18,7 +19,9 @@ function ImageInputBox({ onAddImage }){
             <input 
                 type="file" 
                 accept="image/*" 
+                ref = {inputRef}
                 onClick={(e) => {
+                    inputRef.current.value = null
                     if (previewSrc) e.preventDefault()
                 }} 
                 onChange={(e) => fileUploaded(e, (result) => {
