@@ -30,6 +30,7 @@ function SignIn({ backCallback }){
                     />
                 </div>
                 <input type="submit" value="Submit" />
+                <p id="forgot-pass" onClick={() => backCallback('forgot-pass')}>Forgot password?</p>
             </form>
         </>
     )

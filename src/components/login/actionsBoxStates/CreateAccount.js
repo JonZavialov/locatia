@@ -1,5 +1,6 @@
 import createAccountWithEmail from '../../../firebase-utils/auth/createAccount/createAccountWithEmail';
 import { useState, useRef } from 'react';
+import emailIsInvalid from '../../../utils/emailIsInvalid';
 
 function CreateAccount({ onClick }){
     const [invalidPassword, setInvalidPassword] = useState(false);
@@ -29,7 +30,7 @@ function CreateAccount({ onClick }){
                     setInvalidPassword(passIsInvalid(formRef.current))
                     setInvalidUsername(usernameIsInvalid(formRef.current))
                     setInvalidEmail(emailIsInvalid(formRef.current))
-                }} 
+                }}
                 ref={formRef}
             >
                 <div id="names">
@@ -98,14 +99,6 @@ function usernameIsInvalid(ref){
 
     if (ref.username.value.length < 1) return false
     if (!userRegex.test(ref.username.value)) return "Invalid username! Make sure there are no special characters."
-    return false
-}
-
-function emailIsInvalid(ref){
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-
-    if (ref.email.value.length < 1) return false
-    if (!emailRegex.test(ref.email.value)) return "Invalid email!"
     return false
 }
 

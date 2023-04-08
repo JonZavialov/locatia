@@ -156,3 +156,15 @@
   margin: 10px 0 -10px !important;
   text-align: center;
 }
+
+#forgot-pass {
+  margin-top: 15px !important;
+  color: rgb(25, 137, 207);
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  cursor: pointer;
+}
+
+.forgot-pass {
+  margin-top: 40px !important;
+}

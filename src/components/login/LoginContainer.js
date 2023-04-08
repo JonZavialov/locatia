@@ -3,6 +3,7 @@ import NoProvider from './actionsBoxStates/NoProvider'
 import { useState } from 'react'
 import CreateAccount from './actionsBoxStates/CreateAccount';
 import SignIn from './actionsBoxStates/SignIn';
+import ResetPassword from './actionsBoxStates/ResetPassword';
 
 function LoginContainer(){
     const [provider, setProvider] = useState(false);
@@ -17,6 +18,7 @@ function LoginContainer(){
                 {!provider && < NoProvider onClick={handleProviderChange} />}
                 {provider === "email" && < CreateAccount onClick={handleProviderChange} />}
                 {provider === "signin" && <SignIn backCallback={handleProviderChange} />}
+                {provider === "forgot-pass" && <ResetPassword backCallback={handleProviderChange} />}
             </div>
         </div>
     )
