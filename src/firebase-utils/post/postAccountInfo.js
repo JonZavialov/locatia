@@ -1,6 +1,7 @@
 import {  ref, set } from "firebase/database";
 import { db, auth } from "../initApp";
 import postImagesToUid from "./postImagesToUid";
+import createNotification from "../../utils/createNotification";
 
 function postAccountInfo(formRef, picsData){
     const formData = new FormData(formRef)
@@ -16,9 +17,10 @@ function postAccountInfo(formRef, picsData){
         sport: formData.get("sport"),
     }
 
+    createNotification('success', 'Uploading images...')
     set(ref(db, 'accounts/' + auth.currentUser.uid + '/'), submitData)
     .then(() => {
-        postImagesToUid(picsData)
+        postImagesToUid(Object.values(picsData).filter(value => value !== null))
         .then(() => window.location.href = '/home')
         // TODO: make this async
     })

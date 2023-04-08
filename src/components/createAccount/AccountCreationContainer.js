@@ -4,6 +4,8 @@ import SelectPhotos from "./SelectPhotos";
 import SocialsSelectorBox from "./SocialsSelectorBox";
 import './createAccount.css'
 import { useState, useRef, useEffect } from "react";
+import detectProfanity from "../../utils/detectProfanity";
+import createNotification from "../../utils/createNotification";
 
 function AccountCreationContainer(){
     // TODO: for now, users should not see this page unless they have not previously created an account
@@ -12,8 +14,15 @@ function AccountCreationContainer(){
     const [socials, updateSocials] = useState([]);
     const [validDate, updateValidDate] = useState(true);
     const [hasEmptyFields, updateHasEmptyFields] = useState(true);
-    const [imageInserts, updateImageInserts] = useState([])
     const formRef = useRef(null)
+    const [imageInserts, updateImageInserts] = useState({
+        1: null,
+        2: null,
+        3: null,
+        4: null,
+        5: null,
+        6: null
+    })
 
     const handleSocialSelectOnParent = (platform) => {
         if (socials.includes(platform)) updateSocials(socials.filter((social) => social !== platform));
@@ -22,13 +31,17 @@ function AccountCreationContainer(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        postAccountInfo(formRef.current, imageInserts)
+        detectProfanity(formRef.current)
+        .then((hasProfanity) => {
+            if (hasProfanity) createNotification('error', `We dected profanity in your account info. Please remove it and try again.`)
+            else postAccountInfo(formRef.current, imageInserts)
+        })
     }
 
     useEffect(() => {
         updateHasEmptyFields(checkEmptyFields(formRef.current))
     }, [socials])
-    
+
     return(
         <>
             <p id="welcome">Welcome {getCurrentUser()}!</p>
@@ -122,11 +135,16 @@ function AccountCreationContainer(){
                             </>
                         }
                     </form>
-                    < SelectPhotos onAddImage={(src) => updateImageInserts(imageInserts.concat(src))} />
+                    < SelectPhotos 
+                        onAddImage={(index, src) => {
+                            const updatedInserts = {...imageInserts, [index]: src}
+                            updateImageInserts(updatedInserts)
+                        }} 
+                    />
                 </div>
                 <button 
                     id="continue-button" 
-                    disabled={!validDate || hasEmptyFields || imageInserts.length < 2} 
+                    disabled={!validDate || hasEmptyFields || Object.values(imageInserts).filter(value => value !== null).length < 2} 
                     onClick={handleSubmit}
                 >
                     Continue

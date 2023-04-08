@@ -138,6 +138,10 @@
   border-radius: 8px;
 }
 
+.photo-insert-grid-item img:hover {
+  opacity: 0.5;
+}
+
 #photo-edit-modal {
   display: flex;
   justify-content: center;
