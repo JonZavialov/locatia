@@ -1,6 +1,7 @@
 import createAccountWithEmail from '../../../firebase-utils/auth/createAccount/createAccountWithEmail';
 import { useState, useRef } from 'react';
-import emailIsInvalid from '../../../utils/emailIsInvalid';
+import emailIsInvalid from '../../../utils/validate/emailIsInvalid';
+import passIsInvalid from '../../../utils/validate/passIsInvalid';
 
 function CreateAccount({ onClick }){
     const [invalidPassword, setInvalidPassword] = useState(false);
@@ -80,18 +81,6 @@ function CreateAccount({ onClick }){
             </form>
         </>
     );
-}
-
-function passIsInvalid(ref){
-    const password = ref.password.value;
-    const confirmPassword = ref['confirm-password'].value;
-
-    if (password.length < 6 && password.length > 0){
-        return "Password must be at least 6 characters long!"
-    }else if (password !== confirmPassword && confirmPassword.length > 0){
-        return "Passwords don't match!"
-    }
-    return false
 }
 
 function usernameIsInvalid(ref){

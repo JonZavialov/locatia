@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import emailIsInvalid from "../../../utils/emailIsInvalid";
+import emailIsInvalid from "../../../utils/validate/emailIsInvalid";
 import sendPassResetEmail from "../../../firebase-utils/auth/sendPassResetEmail";
 
 function ResetPassword({ backCallback }){

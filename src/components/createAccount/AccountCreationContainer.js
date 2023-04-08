@@ -4,7 +4,7 @@ import SelectPhotos from "./SelectPhotos";
 import SocialsSelectorBox from "./SocialsSelectorBox";
 import './createAccount.css'
 import { useState, useRef, useEffect } from "react";
-import detectProfanity from "../../utils/detectProfanity";
+import detectProfanity from "../../utils/validate/detectProfanity";
 import createNotification from "../../utils/createNotification";
 import getProfileFromUUID from "../../firebase-utils/query/getProfileFromUUID";
 

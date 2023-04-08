@@ -5,13 +5,18 @@ import SketchButton from './SketchButton';
 
 function LandingPage(){
     const [uri, setUri] = useState('')
+    const urlParams = new URLSearchParams(window.location.search);
 
     useEffect(() => {
+        if (urlParams.get('mode') === 'resetPassword') window.location.href = '/login?mode=reset&code=' + urlParams.get('oobCode') 
+        
         const asd = async () => {
             const response = await getImageFromStorage('/assets/hero.png')
             setUri(response);
         };
         asd()
+    // TODO: fix
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     return (

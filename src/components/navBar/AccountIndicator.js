@@ -19,7 +19,7 @@ function AccountIndicator(){
             {isLoggedIn ? 
                 <button onClick={signOutClient}>Log out</button> 
                 : 
-                <button onClick={() => {window.location.href='/login'}}>Log in</button>
+                <button onClick={() => {window.location.href='/login?mode=signin'}}>Log in</button>
             }
         </div>
     )
