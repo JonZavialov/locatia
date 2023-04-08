@@ -9,8 +9,11 @@ function CreateAccount({ onClick }){
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!passIsInvalid(formRef.current) && !usernameIsInvalid(formRef.current)) 
-            createAccountWithEmail(formRef.current.email.value, formRef.current.password.value, formRef.current.username.value)
+        if (!passIsInvalid(formRef.current) && !usernameIsInvalid(formRef.current)){
+            createAccountWithEmail(formRef.current.email.value, formRef.current.password.value, formRef.current.username.value, (code) => {
+                if (code === 'auth/email-already-in-use') setInvalidEmail("Email already in use! Go back and click the Sign In button to log in.")
+            })
+        }
         // TODO: add username to user profile
         // TODO: make sure username doesn't already exist
         // TODO: add regex to username (no special characters, min length)

@@ -6,7 +6,9 @@ function NavBar({ search }){
     const formRef = useRef(null);
 
     const handleSubmit = (e) => {
-        if(formRef.current.search.value.length === 0) e.preventDefault();
+        e.preventDefault();
+        if(formRef.current.search.value.length === 0) return
+        window.location.href = '/home?search=' + formRef.current.search.value;
     }
     
     return(
