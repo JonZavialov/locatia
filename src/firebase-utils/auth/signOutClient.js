@@ -1,12 +1,12 @@
-import { getAuth, signOut } from "firebase/auth";
-const auth = getAuth();
+import { signOut } from "firebase/auth";
+import { auth } from "../initApp";
+import createNotification from "../../utils/createNotification";
 
 function signOutClient(){
     signOut(auth).then(() => {
-        console.log('signed out')
-    }).catch((error) => {
-        console.log('error signing out')
-        // TODO: handle error
+        window.location.href='/'
+    }).catch(() => {
+        createNotification('error', 'Error signing out');
     });
 }
 

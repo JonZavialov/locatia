@@ -1,5 +1,5 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
-const auth = getAuth();
+import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { auth } from "../../initApp";
 
 function createAccountWithThirdParty(provider){
     if(provider === 'Google') provider = new GoogleAuthProvider();

@@ -24,8 +24,6 @@ function postAccountInfo(formRef, picsData){
         .then(() => window.location.href = '/home')
         // TODO: make this async
     })
-    
-
     // TODO: handle error
 }
 
