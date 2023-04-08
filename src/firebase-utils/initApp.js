@@ -26,6 +26,7 @@ const app = initializeApp(firebaseConfig);
 
 getAuth(app).onAuthStateChanged(function(user) {
   document.cookie = `loggedIn=${user ? user.email : false}`;
+  document.cookie = `uid=${user ? user.uid : false}`;
 });
 
 export const auth = getAuth(app);

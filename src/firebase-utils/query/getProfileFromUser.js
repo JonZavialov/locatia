@@ -1,19 +1,15 @@
 
 import getUUIDFromUsername from "./getUUIDFromUsername";
-import { ref, onValue } from "firebase/database";
-import { db } from "../initApp";
+import getProfileFromUUID from "./getProfileFromUUID";
 
 async function getProfileFromUser(user) {
     return new Promise((resolve) => {
         getUUIDFromUsername(user)
         .then((UUID) => {
-            const profileRef = ref(db, 'accounts/' + UUID);
-            onValue(profileRef, (snapshot) => {
-                resolve({
-                    profile: snapshot.val(),
-                    UUID
-                })
-            });
+            getProfileFromUUID(UUID)
+            .then((profile) => {
+                resolve(profile);
+            })
         })
     })
 }

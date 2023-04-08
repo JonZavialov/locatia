@@ -14,7 +14,7 @@ function getUserFromUUID(UUID){
                 // TODO: handle error
             }
         }).catch((error) => {
-            console.error(error);
+            console.error('test');
             // TODO: handle error
         });
     })

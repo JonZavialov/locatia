@@ -6,6 +6,7 @@ import './createAccount.css'
 import { useState, useRef, useEffect } from "react";
 import detectProfanity from "../../utils/detectProfanity";
 import createNotification from "../../utils/createNotification";
+import getProfileFromUUID from "../../firebase-utils/query/getProfileFromUUID";
 
 function AccountCreationContainer(){
     // TODO: for now, users should not see this page unless they have not previously created an account
@@ -33,7 +34,7 @@ function AccountCreationContainer(){
         e.preventDefault();
         detectProfanity(formRef.current)
         .then((hasProfanity) => {
-            if (hasProfanity) createNotification('error', `We dected profanity in your account info. Please remove it and try again.`)
+            if (hasProfanity) createNotification('error', `We detected profanity in your account info. Please remove it and try again.`)
             else postAccountInfo(formRef.current, imageInserts)
         })
     }
@@ -42,9 +43,22 @@ function AccountCreationContainer(){
         updateHasEmptyFields(checkEmptyFields(formRef.current))
     }, [socials])
 
+    useEffect(() => {
+        const asd = async() => {
+            const userInfo = getCurrentUser()
+
+            if (!userInfo) window.location.href = '/login'
+            else {
+                const profileInfo = await getProfileFromUUID(userInfo.uid)
+                if (profileInfo.profile) window.location.href = '/home'
+            }
+        }
+        asd()
+    }, [])
+
     return(
         <>
-            <p id="welcome">Welcome {getCurrentUser()}!</p>
+            {getCurrentUser() && <p id="welcome">Welcome {getCurrentUser().email}!</p>}
             <div id="create-account">
                 <h1>Create your account</h1>
                 <div id="info-container">

@@ -12,7 +12,7 @@ function AccountIndicator(){
     return(
         <div id="account-indicator">
             {isLoggedIn ? 
-                <p>Logged in as {getCurrentUser()}</p> 
+                <p>Logged in as {getCurrentUser().email}</p> 
                 : 
                 <p>Not logged in</p>
             }
