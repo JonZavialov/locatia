@@ -5,7 +5,6 @@ body {
 
 #profile-page-container {
   display: flex;
-  flex-direction: column;
 }
 
 #profile-page {

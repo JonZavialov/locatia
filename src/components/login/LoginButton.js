@@ -1,15 +1,29 @@
+import { useEffect, useState } from 'react'
+import getImageFromStorage from '../../firebase-utils/query/getImageFromStorage'
 import './login.css'
 
-const providers = {
-    'Google': "https://companieslogo.com/img/orig/GOOG-0ed88f7c.png?t=1633218227",
-    'Facebook': "https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-facebook-social-media-icon-png-image_6315968.png",
+const images = {
+    'Google': '/assets/google.png',
+    'Facebook': '/assets/facebook.png',
 }
-// TODO: host images on firebase
 
 function LoginButton({ provider, onClick, style, altText }){
+    const [uri, setUri] = useState('')
+    
+    useEffect(() => {
+        const asd = async () => {
+            if (!images[provider]) setUri('')
+            else {
+                const response = await getImageFromStorage(images[provider])
+                setUri(response);
+            }
+        };
+        asd()
+    }, [provider])
+    
     return (
         <button onClick={() => onClick(provider)} style={style} id="signin-button">
-            {providers[provider] && <img src={providers[provider]} alt={provider} />}
+            {uri && <img src={uri} alt={provider} />}
             <p>Sign {!altText ? "in" : altText} with {provider}</p>
         </button>
     )

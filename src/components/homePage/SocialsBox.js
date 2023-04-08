@@ -1,19 +1,34 @@
+import { useState, useEffect } from "react";
+import getImageFromStorage from "../../firebase-utils/query/getImageFromStorage";
+
 const socialsLogos = {
     "instagram": {
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png",
+        logo: "/assets/instagram.png",
         link: "https://www.instagram.com/"
     },
     "tiktok": {
-        logo: "https://cdn-icons-png.flaticon.com/512/5969/5969008.png",
+        logo: "/assets/tiktok.png",
         link: "https://www.tiktok.com/@"
     }
 }
-// TODO: host images on firebase
 
 function SocialsBox({ platform, handle, display, clickFunc }){    
+    const [uri, setUri] = useState('')
+    
+    useEffect(() => {
+        const asd = async () => {
+            if (!socialsLogos[platform]) setUri('')
+            else {
+                const response = await getImageFromStorage(socialsLogos[platform].logo)
+                setUri(response);
+            }
+        };
+        asd()
+    }, [platform])
+    
     if(socialsLogos[platform] && handle) return (
         <div className="socials-box" onClick={() => window.open(socialsLogos[platform].link + handle, '_blank')}>
-            <img src={socialsLogos[platform].logo} alt={platform}></img>
+            <img src={uri} alt={platform}></img>
             <p>{display}</p>
         </div>
     )

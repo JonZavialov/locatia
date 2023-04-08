@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProfilePage from "./ProfilePage";
 import "./profilePage.css";
 import NavBar from "../navBar/NavBar";
+import Menu from "../menu/Menu";
 
 function ProfilePageContainer(){
     const { username } = useParams();
@@ -28,6 +29,7 @@ function ProfilePageContainer(){
         <>
             <NavBar />
             <div id="profile-page-container">
+                <Menu />
                 <div id="profile-page">
                     {
                         !data && <p>Loading...</p>}

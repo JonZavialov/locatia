@@ -1,0 +1,35 @@
+#menu li svg {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  fill: rgb(76, 76, 76);
+}
+
+#menu li {
+  all: unset;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: rgb(76, 76, 76);
+  cursor: pointer;
+  padding: 5px 30px;
+  border-radius: 20px;
+}
+
+#menu li:hover {
+  color: #0091ea;
+  background-color: #f0f9fe;
+}
+
+#menu li:hover svg {
+  fill: #0091ea;
+}
+
+#menu {
+  border-right: 1px solid #a5a5a5;
+  border-bottom: 1px solid #a5a5a5;
+  margin-top: -20px;
+  padding: 30px 10px;
+}

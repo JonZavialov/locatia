@@ -4,7 +4,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 15px 15px 10px;
-  margin: 20px;
+  margin: 15px;
   cursor: pointer;
   width: 250px;
   height: min-content;
@@ -47,6 +47,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  height: min-content;
 }
 
 .socials-box {
@@ -76,4 +78,9 @@
 
 .socials-container {
   margin-top: 10px;
+}
+
+#profile-cards-container-container {
+  display: flex;
+  height: 100%;
 }
