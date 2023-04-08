@@ -16,8 +16,13 @@ function postAccountInfo(formRef, picsData){
         sport: formData.get("sport"),
     }
 
-    set(ref(db, 'accounts/' + auth.currentUser.uid + '/'), submitData);
-    postImagesToUid(picsData)
+    set(ref(db, 'accounts/' + auth.currentUser.uid + '/'), submitData)
+    .then(() => {
+        postImagesToUid(picsData)
+        .then(() => window.location.href = '/home')
+        // TODO: make this async
+    })
+    
 
     // TODO: handle error
 }
