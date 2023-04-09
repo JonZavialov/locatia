@@ -3,6 +3,7 @@ function SocialsSelectorBox({ callback, selected }){
         <div id="socials-select">
             <p onClick={(e) => handleSocialSelect(e, callback)} className={selected.includes('Instagram') ? 'selected' : ''} >Instagram</p>
             <p onClick={(e) => handleSocialSelect(e, callback)} className={selected.includes('Tiktok') ? 'selected' : ''} >Tiktok</p>
+            <p onClick={(e) => handleSocialSelect(e, callback)} className={selected.includes('Twitter') ? 'selected' : ''} >Twitter</p>
         </div>
     )
 }

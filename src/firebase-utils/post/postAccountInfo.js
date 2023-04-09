@@ -18,6 +18,7 @@ function postAccountInfo(formRef, picsData){
         socials: {
             instagram: formData.get("instagram") || false,
             tiktok: formData.get("tiktok") || false,
+            twitter: formData.get("twitter") || false,
         },
         sport: formData.get("sport"),
     }

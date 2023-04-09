@@ -9,6 +9,10 @@ const socialsLogos = {
     "tiktok": {
         logo: "/assets/tiktok.png",
         link: "https://www.tiktok.com/@"
+    },
+    "twitter": {
+        logo: "/assets/twitter.png",
+        link: "https://twitter.com/"
     }
 }
 

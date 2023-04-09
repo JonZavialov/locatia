@@ -208,6 +208,19 @@ function AccountCreationContainer(){
                                 />
                             </>
                         }
+                        {
+                            socials.includes('Twitter') &&
+                            <>
+                                <label>Twitter</label>
+                                <input
+                                    type="text"
+                                    name="twitter"
+                                    maxLength={15}
+                                    placeholder="Enter your Twitter username"
+                                    required
+                                />
+                            </>
+                        }
                     </form>
                     < SelectPhotos 
                         onAddImage={(index, src) => {
