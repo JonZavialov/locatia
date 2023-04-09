@@ -21,21 +21,32 @@ function ImageInputBox({ onAddImage, index, previewImg }){
     }, [previewImg])
 
     return (
-        <label className="photo-insert-grid-item">
-            <input 
-                type="file" 
-                accept="image/*" 
-                ref = {inputRef}
-                onClick={() => {
-                    inputRef.current.value = null
-                }} 
-                onChange={(e) => fileUploaded(e, (result) => {
-                    setImage(result)
-                    setFileObj(e.target.files[0])
-                })}
-            ></input>
-            {!image && !previewSrc && '+'}
-            {previewSrc && <img src={previewSrc} alt="preview" />}
+        <>
+            <label 
+                className="photo-insert-grid-item"
+            >
+                <input 
+                    type="file" 
+                    accept="image/*" 
+                    ref = {inputRef}
+                    onClick={(e) => {
+                        inputRef.current.value = null
+
+                        if(previewSrc){
+                            e.preventDefault()
+                            setPreviewSrc(null)
+                            setImage(null)
+                            onAddImage(index, null)
+                        }
+                    }} 
+                    onChange={(e) => fileUploaded(e, (result) => {
+                        setImage(result)
+                        setFileObj(e.target.files[0])
+                    })}
+                ></input>
+                {!image && !previewSrc && '+'}
+                {previewSrc && <img src={previewSrc} alt="preview" />}
+            </label>
             <PhotoEditModal 
                 src={image} 
                 modalIsOpen={modalIsOpen} 
@@ -50,7 +61,7 @@ function ImageInputBox({ onAddImage, index, previewImg }){
                     onAddImage(index, src)
                 }} 
             />
-        </label>
+        </>
     )
 }
 
