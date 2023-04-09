@@ -21,6 +21,7 @@ function postAccountInfo(formRef, picsData){
             twitter: formData.get("twitter") || false,
         },
         sport: formData.get("sport"),
+        timestamp: Date.now(),
     }
 
     createNotification('success', 'Uploading images...')

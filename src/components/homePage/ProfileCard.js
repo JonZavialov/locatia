@@ -9,7 +9,6 @@ import getUserFromUUID from '../../firebase-utils/query/getUserFromUUID'
 function ProfileCard({ profileInfo, uuid }){
     const [uri, setUri] = useState('https://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png')
     const [username, setUsername] = useState('')
-    // TODO: host this image on firebase
 
     useEffect(() => {
         const asd = async () => {

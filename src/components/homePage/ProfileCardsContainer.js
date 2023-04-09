@@ -8,8 +8,11 @@ function ProfileCardsContainer({ data }){
             <div id="profile-cards-container">
                 {
                     Object.keys(data).length !==0 ? 
-                        Object.keys(data).map((x) => (
-                            <ProfileCard key={x} profileInfo={data[x]} uuid={x} />
+                        Object.entries(data).map(([uuid, obj]) => ({
+                            uuid,
+                            ...obj
+                        })).sort((a, b) => b.timestamp - a.timestamp).map((x) => (
+                            <ProfileCard key={x.uuid} profileInfo={x} uuid={x.uuid} />
                         ))
                     :
                         <h1>No results found!</h1>
