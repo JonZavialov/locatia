@@ -123,7 +123,7 @@ function AccountCreationContainer(){
                 <div id="info-container">
                     <form 
                         onSubmit={handleSubmit} 
-                        onBlur={() => {
+                        onChange={() => {
                             updateValidDate(validateDate(formRef.current))
                             updateHasEmptyFields(checkEmptyFields(formRef.current))
                             
@@ -131,7 +131,16 @@ function AccountCreationContainer(){
                             .then((invalidUsers) => {
                                 updateInvalidUsers(invalidUsers)
                             })
-                        }} 
+                        }}
+                        onMouseMove={() => {
+                            updateValidDate(validateDate(formRef.current))
+                            updateHasEmptyFields(checkEmptyFields(formRef.current))
+                            
+                            getInvalidSocials(formRef.current, socials)
+                            .then((invalidUsers) => {
+                                updateInvalidUsers(invalidUsers)
+                            })
+                        }}
                         id='create-account-form'
                         ref={formRef}
                     >
@@ -304,7 +313,5 @@ function checkEmptyFields(ref){
     const fields = Array.from(formData.values())
     return fields.includes('')
 }
-
-// TODO: no spaces in usernames
 
 export default AccountCreationContainer
