@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import PhotoEditModal from './PhotoEditModal';
 
-function ImageInputBox({ onAddImage, index }){
+function ImageInputBox({ onAddImage, index, previewImg }){
     const [image, setImage] = useState(null);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [fileObj, setFileObj] = useState(null);
@@ -13,6 +13,12 @@ function ImageInputBox({ onAddImage, index }){
             setIsOpen(true);
         }
     }, [image])
+
+    useEffect(() => {
+        if(previewImg){
+            setPreviewSrc(previewImg)
+        }
+    }, [previewImg])
 
     return (
         <label className="photo-insert-grid-item">

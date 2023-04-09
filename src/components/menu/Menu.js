@@ -21,7 +21,7 @@ function Menu(){
                 </svg>
                 Chat
             </li>
-            <li>
+            <li onClick={() => window.location.href = '/create-account?mode=edit'}>
                 <svg>
                     <path d={svg.profile} />
                 </svg>

@@ -5,6 +5,11 @@ import createNotification from "../../utils/createNotification";
 
 function postAccountInfo(formRef, picsData){
     const formData = new FormData(formRef)
+    
+    for (const input of formRef.querySelectorAll('input, select, textarea')) {
+        formData.append(input.name, input.value);
+    }
+
     const submitData = {
         bio: "This user has not set their bio yet",
         birthday: `${formData.get("byear")}-${formatDate(formData.get("bmonth"))}-${formatDate(formData.get("bday"))}`,

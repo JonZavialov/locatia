@@ -17,7 +17,7 @@ function NavBar({ search }){
             <form onSubmit={handleSubmit} ref={formRef} id="search-form">
                 <input type="text" name="search" defaultValue={search ? search : ""} placeholder="Search" id="search-bar" />
                 <button type="submit" id="search-button">
-                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
             </form>
             <AccountIndicator />

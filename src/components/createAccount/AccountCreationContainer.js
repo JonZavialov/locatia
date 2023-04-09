@@ -7,6 +7,8 @@ import { useState, useRef, useEffect } from "react";
 import detectProfanity from "../../utils/validate/detectProfanity";
 import createNotification from "../../utils/createNotification";
 import getProfileFromUUID from "../../firebase-utils/query/getProfileFromUUID";
+import getImageListFromUUID from "../../firebase-utils/query/getImageListFromUUID";
+import getImageFromRef from "../../firebase-utils/query/getImageFromRef";
 
 function AccountCreationContainer(){
     // TODO: for now, users should not see this page unless they have not previously created an account
@@ -15,6 +17,7 @@ function AccountCreationContainer(){
     const [socials, updateSocials] = useState([]);
     const [validDate, updateValidDate] = useState(true);
     const [hasEmptyFields, updateHasEmptyFields] = useState(true);
+    const urlParams = new URLSearchParams(window.location.search);
     const formRef = useRef(null)
     const [imageInserts, updateImageInserts] = useState({
         1: null,
@@ -50,17 +53,71 @@ function AccountCreationContainer(){
             if (!userInfo) window.location.href = '/login'
             else {
                 const profileInfo = await getProfileFromUUID(userInfo.uid)
-                if (profileInfo.profile) window.location.href = '/home'
+                if (profileInfo.profile && urlParams.get('mode') !== 'edit') window.location.href = '/home'
             }
         }
         asd()
+    // TODO: fix
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
+        if (urlParams.get('mode') === 'edit') {
+            const asd = async() => {
+                const userInfo = getCurrentUser()
+                const profileInfo = await getProfileFromUUID(userInfo.uid)
+                const profile = profileInfo.profile
+                const form = formRef.current
+
+                if(!profile) window.location.href = '/create-account'
+
+                // add profile info
+                form['full-name'].value = profile.name
+                form['school'].value = profile.school
+                form['sport'].value = profile.sport
+
+                // add birthday
+                const birthday = profile.birthday.split('-')
+                form['bmonth'].value = birthday[1]
+                form['bday'].value = birthday[2]
+                form['byear'].value = birthday[0]
+                
+                // show social media slots
+                const socialMediaKeys = Object.keys(profile.socials).filter((key) => profile.socials[key]);
+                const capitalizedStrList = socialMediaKeys.map(str => str.charAt(0).toUpperCase() + str.slice(1));
+                updateSocials(capitalizedStrList)
+
+                // add social media handles
+                socialMediaKeys.forEach((key) => {
+                    setTimeout(() => {
+                        form[key].value = profile.socials[key]
+                    }, 100)
+                })
+
+                const images = await getImageListFromUUID(userInfo.uid) // list of refs
+                images.forEach((image, index) => {
+                    getImageFromRef(image)
+                    .then((src) => {
+                        updateImageInserts((prev) => {
+                            return {
+                                ...prev,
+                                [index + 1]: src
+                            }
+                        })
+                    })
+                })
+            }
+            asd()
+        }
+    // TODO: fix
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(
         <>
             {getCurrentUser() && <p id="welcome">Welcome {getCurrentUser().email}!</p>}
             <div id="create-account">
-                <h1>Create your account</h1>
+                <h1>{urlParams.get('mode') === 'edit' ? 'Edit' : 'Create'} your account</h1>
                 <div id="info-container">
                     <form 
                         onSubmit={handleSubmit} 
@@ -85,6 +142,7 @@ function AccountCreationContainer(){
                                 name="bmonth"
                                 placeholder="MM"
                                 maxLength={2}
+                                disabled = {urlParams.get('mode') === 'edit'}
                                 required
                             />
                             <input
@@ -92,6 +150,7 @@ function AccountCreationContainer(){
                                 name="bday"
                                 placeholder="DD"
                                 maxLength={2}
+                                disabled = {urlParams.get('mode') === 'edit'}
                                 required
                             />
                             <input
@@ -100,6 +159,7 @@ function AccountCreationContainer(){
                                 id="byear"
                                 placeholder="YYYY"
                                 maxLength={4}
+                                disabled = {urlParams.get('mode') === 'edit'}
                                 required
                             />
                             {!validDate && <p id="invalid-date">Invalid date!</p>}
@@ -121,7 +181,7 @@ function AccountCreationContainer(){
                             required
                         />
                         <label>Select your socials</label>
-                        < SocialsSelectorBox callback={handleSocialSelectOnParent} />
+                        < SocialsSelectorBox callback={handleSocialSelectOnParent} selected={socials} />
                         {
                             socials.includes('Instagram') &&
                             <>
@@ -153,7 +213,8 @@ function AccountCreationContainer(){
                         onAddImage={(index, src) => {
                             const updatedInserts = {...imageInserts, [index]: src}
                             updateImageInserts(updatedInserts)
-                        }} 
+                        }}
+                        previewImgDict={imageInserts}
                     />
                 </div>
                 <button 
@@ -174,8 +235,12 @@ function validateDate(ref){
         day: /\b(0?[1-9]|[1-2][0-9]|3[0-1])\b/,
         year: /^(19\d\d|20[0-9][0-9])$/
     }
-    const formData = new FormData(ref)
-    
+    const formData = new FormData()
+
+    for (const input of ref.querySelectorAll('input, select, textarea')) {
+        formData.append(input.name, input.value);
+    }
+        
     const month = formData.get('bmonth') && REGEX.month.test(formData.get('bmonth'))
     const day = formData.get('bday') && REGEX.day.test(formData.get('bday'))
     const year = formData.get('byear') && REGEX.year.test(formData.get('byear'))

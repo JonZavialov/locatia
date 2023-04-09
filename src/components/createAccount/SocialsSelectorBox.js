@@ -1,8 +1,8 @@
-function SocialsSelectorBox({ callback }){
+function SocialsSelectorBox({ callback, selected }){
     return (
         <div id="socials-select">
-            <p onClick={(e) => handleSocialSelect(e, callback)}>Instagram</p>
-            <p onClick={(e) => handleSocialSelect(e, callback)}>Tiktok</p>
+            <p onClick={(e) => handleSocialSelect(e, callback)} className={selected.includes('Instagram') ? 'selected' : ''} >Instagram</p>
+            <p onClick={(e) => handleSocialSelect(e, callback)} className={selected.includes('Tiktok') ? 'selected' : ''} >Tiktok</p>
         </div>
     )
 }
