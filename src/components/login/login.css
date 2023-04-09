@@ -168,3 +168,18 @@
 .forgot-pass {
   margin-top: 40px !important;
 }
+
+#remember-box {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  user-select: none;
+}
+
+#remember-box label {
+  margin: 0 0 0 5px !important;
+}
+
+#remember-box input:checked {
+  background-color: #1da1f2;
+}

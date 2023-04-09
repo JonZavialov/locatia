@@ -1,9 +1,11 @@
 import authorizeClient from '../../../firebase-utils/auth/authorizeClient'
+import setAuthPersistence from '../../../firebase-utils/auth/setAuthPersistence';
 
 function SignIn({ backCallback }){
     const handleSubmit = (e) => {
         e.preventDefault();
         authorizeClient(e.target.email.value, e.target.password.value)
+        setAuthPersistence(e.target['remember-me'].checked)
     }
     
     return(
@@ -28,6 +30,10 @@ function SignIn({ backCallback }){
                         placeholder="Enter your password"
                         required
                     />
+                </div>
+                <div id="remember-box">
+                    <input type="checkbox" name="remember-me" id="remember-me" />
+                    <label htmlFor='remember-me'>Remember me</label>
                 </div>
                 <input type="submit" value="Submit" />
                 <p id="forgot-pass" onClick={() => backCallback('forgot-pass')}>Forgot password?</p>
