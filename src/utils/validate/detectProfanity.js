@@ -79,7 +79,7 @@ const BAD_WORDS = [
 function detectProfanity(form){
     return new Promise((resolve) => {
         const inputs = form.querySelectorAll('input[type="text"]')
-    
+
         inputs.forEach(input => {
             for (let i = 0; i < BAD_WORDS.length; i++) {
                 const regex = new RegExp(BAD_WORDS[i]);

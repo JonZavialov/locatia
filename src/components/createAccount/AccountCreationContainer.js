@@ -17,6 +17,7 @@ function AccountCreationContainer(){
     const [socials, updateSocials] = useState([]);
     const [validDate, updateValidDate] = useState(true);
     const [hasEmptyFields, updateHasEmptyFields] = useState(true);
+    const [invalidUsers, updateInvalidUsers] = useState([]);
     const urlParams = new URLSearchParams(window.location.search);
     const formRef = useRef(null)
     const [imageInserts, updateImageInserts] = useState({
@@ -75,6 +76,7 @@ function AccountCreationContainer(){
                 form['full-name'].value = profile.name
                 form['school'].value = profile.school
                 form['sport'].value = profile.sport
+                form['bio'].value = profile.bio
 
                 // add birthday
                 const birthday = profile.birthday.split('-')
@@ -124,7 +126,13 @@ function AccountCreationContainer(){
                         onBlur={() => {
                             updateValidDate(validateDate(formRef.current))
                             updateHasEmptyFields(checkEmptyFields(formRef.current))
+                            
+                            getInvalidSocials(formRef.current, socials)
+                            .then((invalidUsers) => {
+                                updateInvalidUsers(invalidUsers)
+                            })
                         }} 
+                        id='create-account-form'
                         ref={formRef}
                     >
                         <label>Full Name</label>
@@ -193,6 +201,7 @@ function AccountCreationContainer(){
                                     placeholder="Enter your Instagram username"
                                     required
                                 />
+                                {invalidUsers.includes('instagram') && <p id="invalid-date">Invalid username!</p>}
                             </>
                         }
                         {
@@ -206,6 +215,7 @@ function AccountCreationContainer(){
                                     placeholder="Enter your Tiktok username"
                                     required
                                 />
+                                {invalidUsers.includes('tiktok') && <p id="invalid-date">Invalid username!</p>}
                             </>
                         }
                         {
@@ -219,20 +229,33 @@ function AccountCreationContainer(){
                                     placeholder="Enter your Twitter username"
                                     required
                                 />
+                                {invalidUsers.includes('twitter') && <p id="invalid-date">Invalid username!</p>}
                             </>
                         }
                     </form>
-                    < SelectPhotos 
-                        onAddImage={(index, src) => {
-                            const updatedInserts = {...imageInserts, [index]: src}
-                            updateImageInserts(updatedInserts)
-                        }}
-                        previewImgDict={imageInserts}
-                    />
+                    <div id="right-box">
+                        < SelectPhotos 
+                            onAddImage={(index, src) => {
+                                const updatedInserts = {...imageInserts, [index]: src}
+                                updateImageInserts(updatedInserts)
+                            }}
+                            previewImgDict={imageInserts}
+                        />
+                        <label>Bio</label>
+                        <textarea 
+                            placeholder="Write a little about yourself"
+                            onBlur={() => {
+                                updateValidDate(validateDate(formRef.current))
+                                updateHasEmptyFields(checkEmptyFields(formRef.current))
+                            }} 
+                            name="bio"
+                            form='create-account-form'
+                        />
+                    </div>
                 </div>
                 <button 
                     id="continue-button" 
-                    disabled={!validDate || hasEmptyFields || Object.values(imageInserts).filter(value => value !== null).length < 2} 
+                    disabled={!validDate || hasEmptyFields || Object.values(imageInserts).filter(value => value !== null).length < 2 || invalidUsers.length > 0} 
                     onClick={handleSubmit}
                 >
                     Continue
@@ -260,6 +283,19 @@ function validateDate(ref){
 
     if ((month && day && year).length === 0) return true
     return month && day && year
+}
+
+function getInvalidSocials(ref, socials){
+    return new Promise((resolve) => {
+        const formData = new FormData(ref)
+        const invalidSocials = []
+
+        socials.forEach((social, i) => {
+            const username = formData.get(social.toLowerCase())
+            if(username.includes(' ')) invalidSocials.push(social.toLowerCase())
+            if (i === socials.length - 1) resolve(invalidSocials)
+        })
+    })
 }
 
 function checkEmptyFields(ref){

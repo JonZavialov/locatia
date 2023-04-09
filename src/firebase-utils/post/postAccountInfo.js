@@ -11,7 +11,7 @@ function postAccountInfo(formRef, picsData){
     }
 
     const submitData = {
-        bio: "This user has not set their bio yet",
+        bio: formData.get("bio"),
         birthday: `${formData.get("byear")}-${formatDate(formData.get("bmonth"))}-${formatDate(formData.get("bday"))}`,
         name: formData.get("full-name"),
         school: formData.get("school"),
