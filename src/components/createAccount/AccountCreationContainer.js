@@ -11,8 +11,6 @@ import getImageListFromUUID from "../../firebase-utils/query/getImageListFromUUI
 import getImageFromRef from "../../firebase-utils/query/getImageFromRef";
 
 function AccountCreationContainer(){
-    // TODO: for now, users should not see this page unless they have not previously created an account
-    // TODO: later we can use this same page for updating account info but some form options will be disabled
     // TODO: verify user socials are valid
     const [socials, updateSocials] = useState([]);
     const [validDate, updateValidDate] = useState(true);
