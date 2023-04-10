@@ -1,3 +1,4 @@
+import createNotification from "../../utils/createNotification";
 import { db } from "../initApp";
 import { ref, get, child } from "firebase/database";
 
@@ -13,9 +14,8 @@ function getUserFromUUID(UUID){
                 reject("No data available");
                 // TODO: handle error
             }
-        }).catch((error) => {
-            console.error('test');
-            // TODO: handle error
+        }).catch(() => {
+            createNotification('error', 'Error getting user!')
         });
     })
 }

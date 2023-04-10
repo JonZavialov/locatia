@@ -1,5 +1,6 @@
 import { ref, child, get } from "firebase/database";
 import { db } from '../initApp';
+import createNotification from '../../utils/createNotification';
 
 function getProfiles(){
     return new Promise((resolve, reject) => {
@@ -13,8 +14,7 @@ function getProfiles(){
                 // TODO: handle error
             }
         }).catch((error) => {
-            console.error(error);
-            // TODO: handle error
+            createNotification('error', 'Error getting profiles!');
         });
     })
 }
