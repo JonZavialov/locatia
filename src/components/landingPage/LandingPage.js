@@ -2,6 +2,7 @@ import './landingPage.css'
 import getImageFromStorage from '../../firebase-utils/query/getImageFromStorage';
 import { useEffect, useState } from 'react';
 import SketchButton from './SketchButton';
+import getCurrentUser from '../../utils/getCurrentUser';
 
 function LandingPage(){
     const [uri, setUri] = useState('')
@@ -10,6 +11,9 @@ function LandingPage(){
     useEffect(() => {
         if (urlParams.get('mode') === 'resetPassword') window.location.href = '/login?mode=reset&code=' + urlParams.get('oobCode') 
         
+        const userInfo = getCurrentUser()
+        if (userInfo) window.location.href = '/home'
+
         const asd = async () => {
             const response = await getImageFromStorage('/assets/hero.png')
             setUri(response);

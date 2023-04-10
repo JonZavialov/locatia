@@ -1,13 +1,8 @@
 import getCurrentUser from "../../utils/getCurrentUser";
 import signOutClient from "../../firebase-utils/auth/signOutClient";
-import { useState, useEffect } from "react";
 
 function AccountIndicator(){
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    useEffect(() => {
-        if(getCurrentUser()) setIsLoggedIn(true);
-    }, [])
+    const isLoggedIn = getCurrentUser() !== null;
 
     return(
         <div id="account-indicator">
