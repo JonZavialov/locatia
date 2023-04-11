@@ -1,9 +1,8 @@
 #nav-bar {
   display: flex;
-  height: 95px;
+  height: 13vh;
   align-items: center;
   border-bottom: 1px solid #a5a5a5;
-  margin-bottom: 20px;
 }
 
 #search-bar {

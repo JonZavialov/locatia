@@ -15,7 +15,7 @@ function Menu(){
                 </svg>
                 Home
             </li>
-            <li>
+            <li onClick={() => window.location.href = '/messages'}>
                 <svg>
                     <path d={svg.chat} />
                 </svg>
