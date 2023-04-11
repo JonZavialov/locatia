@@ -1,6 +1,8 @@
 function ChatDisplay({ cid }){
     return(
-        'chat display for chat id ' + cid
+        <div id="chat-display">
+            {cid ? null : <p id="select-chat-filler">Select a chat to view messages</p>}
+        </div>
     )
 }
 

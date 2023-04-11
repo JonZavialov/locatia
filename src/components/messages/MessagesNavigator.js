@@ -1,6 +1,10 @@
 function MessagesNavigator({ uid }){
     return (
-        'navigator for' + uid
+        <div id="chat-nav">
+            <div id="chat-nav-header">
+                <h1>Messages</h1>
+            </div>
+        </div>
     )
 }
 
