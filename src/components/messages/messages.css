@@ -38,3 +38,37 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+#chat-nav .chat-selector {
+  display: flex;
+  height: min-content;
+  border-bottom: 1px solid #a5a5a5;
+  padding: 10px;
+  overflow: hidden;
+  align-items: center;
+}
+
+#chat-nav .chat-selector:hover {
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+#chat-nav .chat-selector img {
+  width: 75px;
+  height: 75px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+#chat-nav .chat-selector h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 0 10px;
+}
+
+#chat-nav .chat-selector p {
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0 0 0 5px;
+  color: gray;
+}

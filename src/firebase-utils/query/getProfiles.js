@@ -13,7 +13,7 @@ function getProfiles(){
                 reject("No data available");
                 // TODO: handle error
             }
-        }).catch((error) => {
+        }).catch(() => {
             createNotification('error', 'Error getting profiles!');
         });
     })

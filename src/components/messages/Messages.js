@@ -1,4 +1,4 @@
-import MessagesNavigator from "./MessagesNavigator";
+import MessagesNavigator from "./Navigator/MessagesNavigator";
 import ChatDisplay from "./ChatDisplay";
 import getCurrentUser from "../../utils/getCurrentUser";
 import { useState } from "react";
