@@ -4,6 +4,7 @@ import getCurrentUser from '../../../utils/getCurrentUser';
 import getImageListFromUUID from '../../../firebase-utils/query/getImageListFromUUID';
 import getImageFromRef from '../../../firebase-utils/query/getImageFromRef';
 import getUserFromUUID from '../../../firebase-utils/query/getUserFromUUID';
+import getAgeFromTimestamp from '../../../utils/getAgeFromTimestamp';
 
 function IndividualChatDisplay({ chatInfo }){
     const [profile, setProfile] = useState(false);
@@ -38,8 +39,14 @@ function IndividualChatDisplay({ chatInfo }){
     return (
         <>
             {profilePic ? <img src={profilePic} alt={profile.name} /> : 'Loading...'}
-            <h1>{profile ? profile.name : null}</h1>
-            <p>{username ? '@' + username : null}</p>
+            <div className="chat-text-display">
+                <div className="names">
+                    <h1>{profile ? profile.name : null}</h1>
+                    <p>{username ? '@' + username : null}</p>
+                </div>
+                <p className="recent-msg">{chatInfo.messages[chatInfo.messages.length - 1].msg}</p>
+                <p className="msg-timestamp">{getAgeFromTimestamp(chatInfo.messages[chatInfo.messages.length - 1].timestamp)}</p>
+            </div>
         </>
     )
 }
