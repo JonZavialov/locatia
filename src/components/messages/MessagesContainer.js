@@ -2,6 +2,8 @@ import NavBar from "../navBar/NavBar";
 import Menu from "../menu/Menu";
 import Messages from "./Messages";
 import './messages.css';
+import './Navigator/navigator.css'
+import './ChatDisplay/chatDisplay.css'
 import getCurrentUser from "../../utils/getCurrentUser";
 
 function MessagesContainer(){

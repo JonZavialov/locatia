@@ -1,10 +1,10 @@
 import MessagesNavigatorChat from "./MessagesNavigatorChat.js"
 
-function MessagesNavigatorChatsContainer({ chats }){
+function MessagesNavigatorChatsContainer({ chats, onClick }){
     return (
         chats.map((chat) => {
             return (
-                <MessagesNavigatorChat cid={chat} key={chat} />
+                <MessagesNavigatorChat cid={chat} key={chat} onClick={onClick} />
             )
         })
     )
