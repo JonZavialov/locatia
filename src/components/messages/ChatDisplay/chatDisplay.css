@@ -63,13 +63,19 @@
 
 #chat-bar button {
   all: unset;
-  width: 10%;
   height: 50%;
   margin: auto 0;
   background-color: #33adf9;
   display: flex;
   border-radius: 10px;
-  border: 2px solid #686868;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 40px;
+  padding: 0 20px;
+  font-size: 14px;
 }
 
 #chat-bar button:hover {
@@ -78,11 +84,6 @@
 
 #chat-bar button:active {
   background-color: #1576b3;
-}
-
-#chat-bar button img {
-  height: 95%;
-  margin: auto;
 }
 
 #chat-bar textarea:focus {
