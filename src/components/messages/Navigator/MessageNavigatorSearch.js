@@ -3,7 +3,7 @@ import getProfiles from "../../../firebase-utils/query/getProfiles";
 import getSearchResults from "../../../utils/getSearchResults";
 import SearchResults from "./SearchResults";
 
-function MessageNavigatorSearch(){
+function MessageNavigatorSearch({ onSelect }){
     const [searchResults, setSearchResults] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const searchInputRef = useRef();
@@ -32,7 +32,7 @@ function MessageNavigatorSearch(){
                     }
                 } />
             </div>
-            {(searchTerm !== '' && Object.keys(searchResults).length === 0) ? <p id="no-results">No results found!</p> : <SearchResults results={searchResults} />}
+            {(searchTerm !== '' && Object.keys(searchResults).length === 0) ? <p id="no-results">No results found!</p> : <SearchResults results={searchResults} onSelect={onSelect} />}
         </>
     )
 }

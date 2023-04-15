@@ -6,7 +6,7 @@ import { useState } from "react";
 function Messages(){    
     const [userInfo, setUserInfo] = useState(false);
     const [cid, setCid] = useState(false);
-
+    
     return (
         <div id="chat-container">
             <MessagesNavigator uid={getCurrentUser().uid} onClick={(info) => {

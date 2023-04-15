@@ -31,7 +31,7 @@ function MessagesNavigator({ uid, onClick }){
                 >+</button>
             </div>
             {displayState === 'chat' && <MessagesNavigatorChats chats={chats} onClick={onClick} />}
-            {displayState === 'search' && <MessagesNavigatorSearch />}
+            {displayState === 'search' && <MessagesNavigatorSearch onSelect={onClick} />}
         </div>
     )
 }

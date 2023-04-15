@@ -8,7 +8,7 @@ function sendChat(textRef, chatInfo, cid){
     const msg = textRef.value;
     if (msg.trim() === "") return;
 
-    set(ref(db, `chats/${cid}/messages/${chatInfo.messages.length}`), {
+    set(ref(db, `chats/${cid}/messages/${chatInfo.messages ? chatInfo.messages.length : 0}`), {
         messageID: v4(),
         msg,
         sender: getCurrentUser().uid,

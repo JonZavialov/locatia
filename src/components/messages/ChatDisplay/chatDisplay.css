@@ -148,3 +148,9 @@
 .message.left .timestamp {
   margin: 0 auto 0 15px;
 }
+
+#start-chat {
+  margin: auto;
+  font-size: 20px;
+  font-weight: 500;
+}

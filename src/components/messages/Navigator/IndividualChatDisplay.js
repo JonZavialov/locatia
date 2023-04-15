@@ -44,20 +44,31 @@ function IndividualChatDisplay({ chatInfo, onClick, cid, alternateUUID }){
     return (
         <>
             {profilePic ? <img src={profilePic} alt={profile.name} /> : 'Loading...'}
-            <div className="chat-text-display" onClick={() => onClick({
-                cid: cid,
-                user: {
-                    profilePic,
-                    username,
-                    name: profile.name
+            <div className="chat-text-display" onClick={() => {
+                if (!alternateUUID){
+                    onClick({
+                        cid: cid,
+                        user: {
+                            profilePic,
+                            username,
+                            name: profile.name
+                        }
+                    })
                 }
-            })}>
+                else{
+                    onClick({
+                        profilePic,
+                        username,
+                        name: profile.name
+                    })
+                }
+            }}>
                 <div className="names">
                     <h1>{profile ? profile.name : null}</h1>
                     <p>{username ? '@' + username : null}</p>
                 </div>
-                {chatInfo && <p className="recent-msg">{chatInfo.messages[chatInfo.messages.length - 1].msg}</p>}
-                {chatInfo && <p className="msg-timestamp">{getAgeFromTimestamp(chatInfo.messages[chatInfo.messages.length - 1].timestamp)}</p>}
+                {(chatInfo && chatInfo.messages) && <p className="recent-msg">{chatInfo.messages[chatInfo.messages.length - 1].msg}</p>}
+                {(chatInfo && chatInfo.messages) && <p className="msg-timestamp">{getAgeFromTimestamp(chatInfo.messages[chatInfo.messages.length - 1].timestamp)}</p>}
             </div>
         </>
     )
