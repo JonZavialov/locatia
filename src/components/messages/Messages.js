@@ -4,16 +4,16 @@ import getCurrentUser from "../../utils/getCurrentUser";
 import { useState } from "react";
 
 function Messages(){    
-    const [chatInfo, setChatInfo] = useState(false);
     const [userInfo, setUserInfo] = useState(false);
+    const [cid, setCid] = useState(false);
 
     return (
         <div id="chat-container">
             <MessagesNavigator uid={getCurrentUser().uid} onClick={(info) => {
-                setChatInfo(info.chat);
                 setUserInfo(info.user);
+                setCid(info.cid)
             }} />
-            <ChatDisplay chatInfo={chatInfo} userInfo={userInfo} />
+            <ChatDisplay userInfo={userInfo} cid={cid} />
         </div>
     )
 }

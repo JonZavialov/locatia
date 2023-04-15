@@ -1,6 +1,8 @@
 import IndividualMessage from "./IndividualMessage";
 
-function Discussion({ chatInfo }){
+function Discussion({ chatInfo, onLoad }){        
+    onLoad();
+
     return (
         chatInfo.messages.map((message) => {
             return (

@@ -3,7 +3,7 @@ import getCurrentUser from "../../../utils/getCurrentUser"
 
 function IndividualMessage({ messageInfo }){
     const self = getCurrentUser().uid
-    
+
     return (
         <div className={"message " + (messageInfo.sender === self ? 'right': "left")}>
             <p className="content">{messageInfo.msg}</p>

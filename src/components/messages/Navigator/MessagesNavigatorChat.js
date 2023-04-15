@@ -15,7 +15,7 @@ function MessagesNavigatorChat({ cid, onClick }){
     
     return(
         <div className="chat-selector">
-            {chatInfo ? <IndividualChatDisplay chatInfo={chatInfo} onClick={onClick} /> : 'Loading...'}
+            {chatInfo ? <IndividualChatDisplay chatInfo={chatInfo} onClick={onClick} cid={cid} /> : 'Loading...'}
         </div>
     )
 }

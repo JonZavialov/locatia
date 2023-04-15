@@ -6,7 +6,7 @@ import getImageFromRef from '../../../firebase-utils/query/getImageFromRef';
 import getUserFromUUID from '../../../firebase-utils/query/getUserFromUUID';
 import getAgeFromTimestamp from '../../../utils/getAgeFromTimestamp';
 
-function IndividualChatDisplay({ chatInfo, onClick }){
+function IndividualChatDisplay({ chatInfo, onClick, cid }){
     const [profile, setProfile] = useState(false);
     const [uuid, setUUID] = useState(false);
     const [profilePic, setProfilePic] = useState(false);
@@ -40,7 +40,7 @@ function IndividualChatDisplay({ chatInfo, onClick }){
         <>
             {profilePic ? <img src={profilePic} alt={profile.name} /> : 'Loading...'}
             <div className="chat-text-display" onClick={() => onClick({
-                chat: chatInfo, 
+                cid: cid,
                 user: {
                     profilePic,
                     username,

@@ -4,12 +4,12 @@ function getAgeFromTimestamp(timestamp){
 
     // Define the time units and their values in seconds
     const timeUnits = [
-    { unit: 'y', seconds: 31536000 }, // years
-    { unit: 'w', seconds: 604800 },   // weeks
-    { unit: 'd', seconds: 86400 },    // days
-    { unit: 'h', seconds: 3600 },     // hours
-    { unit: 'm', seconds: 60 },       // minutes
-    { unit: 's', seconds: 1 },        // seconds
+        { unit: 'y', seconds: 31536000 }, // years
+        { unit: 'w', seconds: 604800 },   // weeks
+        { unit: 'd', seconds: 86400 },    // days
+        { unit: 'h', seconds: 3600 },     // hours
+        { unit: 'm', seconds: 60 },       // minutes
+        { unit: 's', seconds: 1 }         // seconds
     ];
 
     // Loop through the time units and build the string
@@ -24,6 +24,7 @@ function getAgeFromTimestamp(timestamp){
         }
     }
 
+    if (str === '') str = 'Now';
     return str
 }
 
