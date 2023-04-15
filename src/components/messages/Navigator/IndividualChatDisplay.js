@@ -6,15 +6,20 @@ import getImageFromRef from '../../../firebase-utils/query/getImageFromRef';
 import getUserFromUUID from '../../../firebase-utils/query/getUserFromUUID';
 import getAgeFromTimestamp from '../../../utils/getAgeFromTimestamp';
 
-function IndividualChatDisplay({ chatInfo, onClick, cid }){
+function IndividualChatDisplay({ chatInfo, onClick, cid, alternateUUID }){
     const [profile, setProfile] = useState(false);
     const [uuid, setUUID] = useState(false);
     const [profilePic, setProfilePic] = useState(false);
     const [username, setUsername] = useState(false);
     
-    const otherUid = chatInfo.users.filter((uid) => {
-        return uid !== getCurrentUser().uid
-    })[0];
+    let otherUid = null;
+    if(!alternateUUID){
+        otherUid = chatInfo.users.filter((uid) => {
+            return uid !== getCurrentUser().uid
+        })[0];
+    }else{
+        otherUid = alternateUUID;
+    }
 
     useEffect(() => {
         getProfileFromUUID(otherUid).then((user) => {
@@ -51,8 +56,8 @@ function IndividualChatDisplay({ chatInfo, onClick, cid }){
                     <h1>{profile ? profile.name : null}</h1>
                     <p>{username ? '@' + username : null}</p>
                 </div>
-                <p className="recent-msg">{chatInfo.messages[chatInfo.messages.length - 1].msg}</p>
-                <p className="msg-timestamp">{getAgeFromTimestamp(chatInfo.messages[chatInfo.messages.length - 1].timestamp)}</p>
+                {chatInfo && <p className="recent-msg">{chatInfo.messages[chatInfo.messages.length - 1].msg}</p>}
+                {chatInfo && <p className="msg-timestamp">{getAgeFromTimestamp(chatInfo.messages[chatInfo.messages.length - 1].timestamp)}</p>}
             </div>
         </>
     )

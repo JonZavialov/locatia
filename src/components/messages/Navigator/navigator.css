@@ -126,4 +126,19 @@
 #messages-search i {
   font-size: 30px;
   margin: 0 10px;
+  cursor: pointer;
+}
+
+#no-results {
+  margin: 10px auto;
+  font-weight: 500;
+  width: fit-content;
+}
+
+#messages-search-results .chat-selector .chat-text-display .names {
+  flex-direction: column;
+}
+
+#messages-search-results .chat-selector .chat-text-display .names p {
+  margin: 0;
 }
