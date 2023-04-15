@@ -3,6 +3,7 @@
   height: 13vh;
   align-items: center;
   border-bottom: 1px solid #a5a5a5;
+  margin: 0 100px;
 }
 
 #search-bar {
@@ -32,15 +33,9 @@
 #nav-bar #logo {
   width: 150px;
   height: 50px;
-  position: absolute;
-  top: 10px;
-  left: 20px;
 }
 
 #account-indicator {
-  position: absolute;
-  right: 20px;
-  top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

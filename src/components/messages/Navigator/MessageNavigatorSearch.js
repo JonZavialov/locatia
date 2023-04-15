@@ -27,10 +27,11 @@ function MessageNavigatorSearch({ onSelect }){
         <>
             <div id="messages-search">
                 <i className="fa fa-search" aria-hidden="true" onClick={handleSubmit} ></i>
-                <input ref={searchInputRef} type="text" placeholder="Add people" onKeyDown={(e) => {
-                        if(e.key === 'Enter') handleSubmit();
-                    }
-                } />
+                <input ref={searchInputRef} type="text" placeholder="Add people" onKeyDown={() => {
+                    setTimeout(() => {
+                        handleSubmit()
+                    }, 10)
+                }} />
             </div>
             {(searchTerm !== '' && Object.keys(searchResults).length === 0) ? <p id="no-results">No results found!</p> : <SearchResults results={searchResults} onSelect={onSelect} />}
         </>
