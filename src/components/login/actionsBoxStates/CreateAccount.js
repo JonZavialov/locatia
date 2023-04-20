@@ -2,6 +2,7 @@ import createAccountWithEmail from '../../../firebase-utils/auth/createAccount/c
 import { useState, useRef } from 'react';
 import emailIsInvalid from '../../../utils/validate/emailIsInvalid';
 import passIsInvalid from '../../../utils/validate/passIsInvalid';
+import usernameExists from '../../../firebase-utils/query/usernameExists';
 
 function CreateAccount({ onClick }){
     const [invalidPassword, setInvalidPassword] = useState(false);
@@ -12,12 +13,16 @@ function CreateAccount({ onClick }){
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!passIsInvalid(formRef.current) && !usernameIsInvalid(formRef.current)){
-            createAccountWithEmail(formRef.current.email.value, formRef.current.password.value, formRef.current.username.value, (code) => {
-                if (code === 'auth/email-already-in-use') setInvalidEmail("Email already in use! Go back and click the Sign In button to log in.")
+            usernameExists(formRef.current.username.value).then(() => {
+                setInvalidUsername("Username already in use!")
+            }).catch(() => {
+                createAccountWithEmail(formRef.current.email.value, formRef.current.password.value, formRef.current.username.value, (code) => {
+                    if (code === 'auth/email-already-in-use') setInvalidEmail("Email already in use! Go back and click the Sign In button to log in.")
+                })
             })
         }
         // TODO: add username to user profile
-        // TODO: make sure username doesn't already exist
+        // TODO: username duplicate exploit with caps
         // TODO: add regex to username (no special characters, min length)
     }
 
