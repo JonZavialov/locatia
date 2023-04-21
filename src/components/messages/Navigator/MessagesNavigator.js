@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import getChatsFromUID from "../../../firebase-utils/query/getChatsFromUID";
-import  MessagesNavigatorChats  from "./MessagesNavigatorChatsContainer";
+import  MessagesNavigatorChatsContainer  from "./MessagesNavigatorChatsContainer";
 import MessagesNavigatorSearch from "./MessageNavigatorSearch";
 
 function MessagesNavigator({ uid, onClick }){
@@ -12,7 +12,7 @@ function MessagesNavigator({ uid, onClick }){
         getChatsFromUID(uid).then((chats) => {
             setChats(chats);
         }).catch(() => {
-            setChats(false)
+            setChats([])
         })
     }, [uid])
     
@@ -30,7 +30,7 @@ function MessagesNavigator({ uid, onClick }){
                     }}
                 >+</button>
             </div>
-            {displayState === 'chat' && <MessagesNavigatorChats chats={chats} onClick={onClick} />}
+            {displayState === 'chat' && <MessagesNavigatorChatsContainer chats={chats} onClick={onClick} />}
             {displayState === 'search' && <MessagesNavigatorSearch onSelect={(info) => {
                 onClick(info)
                 setDisplayState('chat')
