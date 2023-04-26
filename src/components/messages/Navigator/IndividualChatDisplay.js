@@ -45,6 +45,7 @@ function IndividualChatDisplay({ chatInfo, onClick, cid, alternateUUID }){
         <>
             {profilePic ? <img src={profilePic} alt={profile.name} /> : 'Loading...'}
             <div className="chat-text-display" onClick={() => {
+                console.log('yes')
                 if (!alternateUUID){
                     onClick({
                         cid: cid,

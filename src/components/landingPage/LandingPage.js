@@ -26,8 +26,8 @@ function LandingPage(){
     return (
         <div id="landing-page">
             <div id="hero-text">
-                <h1>Empowering college athletes to showcase their game, one brand partnership at a time</h1>
-                <h2>Bridge the gap between college athletes and top brands, creating meaningful partnerships that elevate both parties and celebrate the spirit of competition.</h2>
+                <h1>Elevate your social life with paid meetups and unique experiences.</h1>
+                <h2>Enjoy the company of others today through paid meetups.</h2>
                 <SketchButton onClick={() => document.location.href = "/login"} text={"Get Started →"} />
             </div>
             {uri && <img src={uri} alt="hero" id="hero-image"></img>}
