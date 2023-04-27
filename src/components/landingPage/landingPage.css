@@ -9,6 +9,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  opacity: 1;
+  transition: 0.5s;
 }
 
 #hero-logo-display {

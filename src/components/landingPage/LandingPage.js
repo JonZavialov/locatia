@@ -1,9 +1,11 @@
 import './landingPage.css'
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SketchButton from './SketchButton';
 import getCurrentUser from '../../utils/getCurrentUser';
 
 function LandingPage(){
+    const [heroImage, setHeroImage] = useState('hero-1.png')
+    const heroImgRef = useRef(null);
     const urlParams = new URLSearchParams(window.location.search);
 
     useEffect(() => {
@@ -11,6 +13,20 @@ function LandingPage(){
         
         const userInfo = getCurrentUser()
         if (userInfo) window.location.href = '/home'
+        
+        const images = ['hero-1.png', 'hero-2.png', 'hero-3.png']
+        let i = 0;
+        setInterval(() => {
+            if (i === images.length-1) i = 0;
+            else i++;
+
+            heroImgRef.current.style.opacity = 0;
+            setTimeout(() => {
+                setHeroImage(images[i]);
+                heroImgRef.current.style.opacity = 1;
+            }, 500)
+        }, 5500)
+        
     // TODO: fix
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -26,7 +42,7 @@ function LandingPage(){
                 <h2>Join paid meetups with like-minded people to enjoy fun activities and earn money. Swap dull nights at home for thrilling experiences and new connections.</h2>
                 <SketchButton onClick={() => document.location.href = "/login"} text={"Get Started →"} />
             </div>
-            <img src={process.env.PUBLIC_URL + '/assets/hero.png'} alt="hero" id="hero-image"></img>
+            <img src={process.env.PUBLIC_URL + `/assets/${heroImage}`} alt="hero" id="hero-image" ref={heroImgRef}></img>
         </div>
     )
 }
