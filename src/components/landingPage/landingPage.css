@@ -11,6 +11,18 @@
   right: 0;
 }
 
+#hero-logo-display {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+#hero-logo-display img {
+  height: 100%;
+  margin-right: 10px;
+}
+
 #hero-text {
   color: white;
   margin: 100px 0 0 100px;
