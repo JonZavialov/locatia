@@ -16,7 +16,7 @@ function LandingPage(){
         
         const images = ['hero-1.png', 'hero-2.png', 'hero-3.png']
         let i = 0;
-        setInterval(() => {
+        const changeImage = () => setTimeout(() => {
             if (i === images.length-1) i = 0;
             else i++;
 
@@ -24,8 +24,12 @@ function LandingPage(){
             setTimeout(() => {
                 setHeroImage(images[i]);
                 heroImgRef.current.style.opacity = 1;
+                setTimeout(() => 
+                    changeImage()
+                , 500)
             }, 500)
-        }, 5500)
+        }, 5000)
+        changeImage();
         
     // TODO: fix
     // eslint-disable-next-line react-hooks/exhaustive-deps
