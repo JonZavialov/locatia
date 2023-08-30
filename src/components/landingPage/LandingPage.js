@@ -14,11 +14,11 @@ function LandingPage(){
         const userInfo = getCurrentUser()
         if (userInfo) window.location.href = '/home'
         
-        const images = ['hero-1.png', 'hero-2.png', 'hero-3.png']
+        const images = ['hero-1.png', 'hero-2.png', 'hero-3.png', 'hero-4.png']
         let i = 0;
         const changeImage = () => setTimeout(() => {
             if (i === images.length-1) i = 0;
-            else i++;
+            else i++; //TODO: Refactor to use modulo division
 
             heroImgRef.current.style.opacity = 0;
             setTimeout(() => {
