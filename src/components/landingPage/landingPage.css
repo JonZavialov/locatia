@@ -4,13 +4,13 @@
   background: linear-gradient(to right bottom, #491f7b, #8238da);
 }
 
+#hero-content {
+  height: min-content;
+  margin: 100px 0 0 100px;
+  display: flex;
+}
+
 #hero-image {
-  height: 80%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  opacity: 1;
-  transition: 0.5s;
 }
 
 #hero-logo-display {
@@ -27,7 +27,6 @@
 
 #hero-text {
   color: white;
-  margin: 100px 0 0 100px;
   width: 50%;
 }
 
