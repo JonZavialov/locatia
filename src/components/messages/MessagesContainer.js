@@ -1,5 +1,6 @@
 import NavBar from "../navBar/NavBar";
 import Menu from "../menu/Menu";
+import CopyrightFooter from "../Footer";
 import Messages from "./Messages";
 import './messages.css';
 import './Navigator/navigator.css'
@@ -16,6 +17,7 @@ function MessagesContainer(){
                 <Menu/>
                 <Messages />
             </div>
+            <CopyrightFooter />
         </>
     )
 }
