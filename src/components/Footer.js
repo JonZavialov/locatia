@@ -4,6 +4,7 @@ function CopyrightFooter(){
             'background-color': '#f3f3f3',
             'display': 'flex',
             'padding': '20px 0',
+            'border-top': '1px solid #a5a5a5'
         }}>
             <p style={{
                 'margin': '0 auto',
