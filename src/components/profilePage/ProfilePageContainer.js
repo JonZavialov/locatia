@@ -5,6 +5,7 @@ import ProfilePage from "./ProfilePage";
 import "./profilePage.css";
 import NavBar from "../navBar/NavBar";
 import Menu from "../menu/Menu";
+import CopyrightFooter from "../Footer";
 
 function ProfilePageContainer(){
     const { username } = useParams();
@@ -38,6 +39,7 @@ function ProfilePageContainer(){
                     }
                 </div>
             </div>
+            <CopyrightFooter />
         </>
     )
 }
