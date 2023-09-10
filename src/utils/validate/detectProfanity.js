@@ -76,19 +76,12 @@ const BAD_WORDS = [
     /\bn[i1][g6][g6][a@]\b/i
 ]
 
-function detectProfanity(form){
-    return new Promise((resolve) => {
-        const inputs = form.querySelectorAll('input[type="text"]')
-
-        inputs.forEach(input => {
-            for (let i = 0; i < BAD_WORDS.length; i++) {
-                const regex = new RegExp(BAD_WORDS[i]);
-                if (regex.test(input.value)) resolve(true);
-            }
-        })
-
-        resolve(false);
-    }) 
+function detectProfanity(str){
+    for (let i = 0; i < BAD_WORDS.length; i++) {
+        const regex = new RegExp(BAD_WORDS[i]);
+        if (regex.test(str)) return true;
+    }
+    return false
 }
 
 export default detectProfanity;
