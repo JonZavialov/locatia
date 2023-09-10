@@ -46,7 +46,7 @@ function AccountCreationContainer(){
         detectProfanityFromForm(formRef.current)
         .then((hasProfanity) => {
             if (hasProfanity) createNotification('error', `We detected profanity in your account info. Please remove it and try again.`)
-            else postAccountInfo(formRef.current, imageInserts)
+            else postAccountInfo(formRef.current, imageInserts, tags)
         })
     }
 
@@ -99,6 +99,9 @@ function AccountCreationContainer(){
                 form['bmonth'].value = birthday[1]
                 form['bday'].value = birthday[2]
                 form['byear'].value = birthday[0]
+
+                // add tags
+                updateTags(profile.tags)
                 
                 // show social media slots
                 const socialMediaKeys = Object.keys(profile.socials).filter((key) => profile.socials[key]);
