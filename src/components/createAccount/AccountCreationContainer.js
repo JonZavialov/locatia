@@ -91,7 +91,7 @@ function AccountCreationContainer(){
 
                 // add profile info
                 form['full-name'].value = profile.name
-                form['school'].value = profile.school
+                form['city'].value = profile.city
                 form['bio'].value = profile.bio
 
                 // add birthday
@@ -201,12 +201,12 @@ function AccountCreationContainer(){
                             />
                             {!validDate && <p id="invalid-date">Invalid date!</p>}
                         </div>
-                        <label>School</label>
+                        <label>Where are you from?</label>
                         <input
                             type="text"
-                            name="school"
+                            name="city"
                             maxLength={50}
-                            placeholder="Enter your school"
+                            placeholder="Enter your city"
                             required
                         />
 

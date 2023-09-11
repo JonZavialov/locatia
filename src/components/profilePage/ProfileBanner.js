@@ -8,7 +8,7 @@ function ProfileBanner({ data, username }){
             <div id="profile-banner">
                 <p>@{username}</p>
                 <p>•</p>
-                <p>{data.school}</p>
+                <p>{data.city}</p>
                 <p>•</p>
                 <p>{getAge(data.birthday)} years old</p>
             </div>
