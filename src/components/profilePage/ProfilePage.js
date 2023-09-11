@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import SocialsBox from "../homePage/SocialsBox";
 import clickedContact from "../../utils/clickedContact";
 import getImageListFromRefList from "../../utils/getImageListFromRefList";
+import UserTag from "../createAccount/UserTag";
 
 function ProfilePage({ data, uuid, username }){
     const [images, setImages] = useState([])
@@ -28,7 +29,18 @@ function ProfilePage({ data, uuid, username }){
                 {!images && 'Loading...'}
                 {images && <Carousel images={images} name={data.name}/>}
                 <div id="contact-area">
-                    <SocialsBox display={'Connect'} clickFunc={clickedContact} />     
+                    <SocialsBox display={'Connect'} clickFunc={clickedContact} />
+                    <p id="tags-label">Tags:</p>
+                    <div style={{
+                        'display': 'flex',
+                        'flexWrap': 'wrap',
+                    }}>
+                        {
+                            data.tags.map((tag, index) => (
+                                <UserTag key={index} tag={tag} />
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
             <hr />

@@ -109,3 +109,8 @@ body {
   border-radius: 50px;
   font-weight: bold;
 }
+
+#tags-label {
+  margin: 10px 80% 5px 0;
+  font-weight: bold;
+}
