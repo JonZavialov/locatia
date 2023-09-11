@@ -1,9 +1,14 @@
-# TODO
+<h1 align="center">Locatia</h1>
 
-- Look into making the app a way for athletes to network with each other as well
-- Add a meta description tag
-- Add an apple icon and theme color
-- Email verification
-- Create footer
-- Organize imports in each file
-- Marketing idea- tiktok add that says get in while we have rare usernames
+<p align="center">
+<img src="https://img.shields.io/tokei/lines/github/JonZavialov/locatia?color=lightgray" alt="Total Lines" />
+<img src="https://img.shields.io/github/repo-size/JonZavialov/locatia?color=lightgray&logo=GitHub" alt="GitHub Repo Size" />
+<img src="https://img.shields.io/github/commit-activity/m/JonZavialov/locatia?color=lightgray&logo=GitHub" alt="Commit Activity" />
+</p>
+
+<p align="center">Form judgement-free connections.</p>
+<a href="https://locatia.co/">View Website</a> <br>
+
+## 💻 Frontend
+
+React with vanillaJS!
