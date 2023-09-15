@@ -2,7 +2,7 @@ import getProfiles from "../../firebase-utils/query/getProfiles"
 import { useEffect, useState } from "react"
 import ProfileCardsContainer from "./ProfileCardsContainer";
 import getSearchResults from "../../utils/getSearchResults";
-import CopyrightFooter from '../Footer'
+import CopyrightFooter from '../footer/Footer'
 import NavBar from "../navBar/NavBar";
 
 function HomePage(){

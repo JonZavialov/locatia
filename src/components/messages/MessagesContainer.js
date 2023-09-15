@@ -1,6 +1,6 @@
 import NavBar from "../navBar/NavBar";
 import Menu from "../menu/Menu";
-import CopyrightFooter from "../Footer";
+import CopyrightFooter from "../footer/Footer";
 import Messages from "./Messages";
 import './messages.css';
 import './Navigator/navigator.css'

@@ -9,7 +9,7 @@ import createNotification from "../../utils/createNotification";
 import getProfileFromUUID from "../../firebase-utils/query/getProfileFromUUID";
 import getImageListFromUUID from "../../firebase-utils/query/getImageListFromUUID";
 import getImageFromRef from "../../firebase-utils/query/getImageFromRef";
-import CopyrightFooter from "../Footer";
+import CopyrightFooter from "../footer/Footer";
 import UserTag from "./UserTag";
 import Fuse from 'fuse.js'
 

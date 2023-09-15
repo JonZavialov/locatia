@@ -1,0 +1,30 @@
+#footer {
+  background-color: #f3f3f3;
+  display: flex;
+  padding: 20px 0;
+  border-top: 1px solid #a5a5a5;
+  transform: translateY(-1px);
+}
+
+#copyright-statement {
+  margin: 0 40px;
+  color: #a7aaa8;
+}
+
+#footer > div {
+  width: 100%;
+}
+
+#contact-container {
+  padding-left: 500px;
+}
+
+#contact-p {
+  font-weight: bold;
+  margin: 0;
+}
+
+#contact-container svg {
+  margin-left: -8px;
+  cursor: pointer;
+}
