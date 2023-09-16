@@ -19,7 +19,7 @@
   width: 100%;
 }
 
-.profile-card .profile-card:hover {
+.profile-card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
   background: linear-gradient(to right bottom, #105e8f, #1da1f2);
