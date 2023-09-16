@@ -51,8 +51,8 @@ function AccountCreationContainer(){
     }
 
     useEffect(() => {
-        updateHasEmptyFields(checkEmptyFields(formRef.current))
-    }, [socials])
+        updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
+    }, [socials, tags])
 
     useEffect(() => {
         fetch('/assets/tags.json')
@@ -140,7 +140,7 @@ function AccountCreationContainer(){
             <div id="create-account"
                 onMouseMove={() => {
                     updateValidDate(validateDate(formRef.current))
-                    updateHasEmptyFields(checkEmptyFields(formRef.current))
+                    updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
                     
                     getInvalidSocials(formRef.current, socials)
                     .then((invalidUsers) => {
@@ -154,7 +154,7 @@ function AccountCreationContainer(){
                         onSubmit={handleSubmit} 
                         onChange={() => {
                             updateValidDate(validateDate(formRef.current))
-                            updateHasEmptyFields(checkEmptyFields(formRef.current))
+                            updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
                             
                             getInvalidSocials(formRef.current, socials)
                             .then((invalidUsers) => {
@@ -306,7 +306,7 @@ function AccountCreationContainer(){
                             placeholder="Write a little about yourself"
                             onBlur={() => {
                                 updateValidDate(validateDate(formRef.current))
-                                updateHasEmptyFields(checkEmptyFields(formRef.current))
+                                updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
                             }} 
                             name="bio"
                             form='create-account-form'
@@ -391,7 +391,7 @@ function getInvalidSocials(ref, socials){
     })
 }
 
-function checkEmptyFields(ref){
+function checkEmptyFields(ref, tags){
     if(!ref) return true
     const formData = new FormData(ref)
     const fields = Array.from(formData.entries())
@@ -401,7 +401,7 @@ function checkEmptyFields(ref){
     fields.forEach((field) => {
         if (!exclude.includes(field[0]) && field[1].length === 0) emptyFields.push(field[0])
     })
-    return emptyFields.length > 0
+    return emptyFields.length > 0 || tags.length === 0
 }
 
 function detectProfanityFromForm(form){
