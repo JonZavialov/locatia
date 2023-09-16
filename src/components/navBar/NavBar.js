@@ -14,7 +14,7 @@ function NavBar({ search }){
     
     return(
         <div id="nav-bar">
-            <div id="logo">
+            <div id="logo" onClick={() => window.location.href = ('/home')}>
                 <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt="logo" id="logo" />
                 <h1>Locatia</h1>
             </div>
