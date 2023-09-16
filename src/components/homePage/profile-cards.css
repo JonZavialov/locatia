@@ -19,7 +19,7 @@
   width: 100%;
 }
 
-.profile-card:hover {
+.profile-card .profile-card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
   background: linear-gradient(to right bottom, #105e8f, #1da1f2);
@@ -79,9 +79,15 @@
 
 .socials-container {
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #profile-cards-container-container {
   display: flex;
   height: min-content;
+}
+
+.profile-card .socials-box {
+  margin-right: 10px;
 }
