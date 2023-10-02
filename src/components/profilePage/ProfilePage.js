@@ -44,8 +44,10 @@ function ProfilePage({ data, uuid, username }){
                 </div>
             </div>
             <hr />
-            <h2>About</h2>
-            <p>{data.bio}</p>
+            <div id="bio-box">
+                <h2>About</h2>
+                <p>{data.bio}</p>
+            </div>
         </>
     )
 }

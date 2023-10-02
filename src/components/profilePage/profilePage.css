@@ -104,6 +104,22 @@ body {
   height: 420px;
 }
 
+#bio-box {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border: 1px solid #bcbcbc;
+  margin: 20px 0;
+}
+
+#bio-box h2 {
+  margin-top: 0;
+}
+
+#bio-box p {
+  margin-bottom: 0;
+}
+
 #contact-area .socials-box {
   padding: 15px 50px;
   background-color: #1da1f2;
