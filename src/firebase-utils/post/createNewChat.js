@@ -9,16 +9,20 @@ function createNewChat(ownUUID, otherUUID){
         getChatsFromUID(ownUUID)
         // TODO: check that the chat doesn't already exist
         .then((userChats) => {
-            const cid = v4()
-            set(ref(db, `chat ids/${ownUUID}/${userChats.length}`), cid)
-            .then(() => {
-                set(ref(db, `chats/${cid}/`), {
-                    users: [ownUUID, otherUUID]
+            getChatsFromUID(otherUUID)
+            .then((otherUserChats) => {
+                const cid = v4()
+                set(ref(db, `chat ids/${ownUUID}/${userChats.length}`), cid)
+                set(ref(db, `chat ids/${otherUUID}/${otherUserChats.length}`), cid)
+                .then(() => {
+                    set(ref(db, `chats/${cid}/`), {
+                        users: [ownUUID, otherUUID]
+                    })
+                    resolve(cid)
                 })
-                resolve(cid)
-            })
-            .catch(() => {
-                createNotification("Error", "An error occurred finding that user. Please try again later.")
+                .catch(() => {
+                    createNotification("Error", "An error occurred finding that user. Please try again later.")
+                })
             })
         })
     })  
