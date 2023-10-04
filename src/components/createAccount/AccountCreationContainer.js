@@ -92,6 +92,7 @@ function AccountCreationContainer(){
                 // add profile info
                 form['full-name'].value = profile.name
                 form['city'].value = profile.city
+                form['zip'].value = profile.zip
                 form['bio'].value = profile.bio
 
                 // add birthday
@@ -207,6 +208,13 @@ function AccountCreationContainer(){
                             name="city"
                             maxLength={50}
                             placeholder="Enter your city"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="zip"
+                            maxLength={5}
+                            placeholder="Enter your zip code"
                             required
                         />
 
