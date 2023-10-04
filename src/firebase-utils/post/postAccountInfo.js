@@ -15,6 +15,7 @@ function postAccountInfo(formRef, picsData, tags){
         birthday: `${formData.get("byear")}-${formatDate(formData.get("bmonth"))}-${formatDate(formData.get("bday"))}`,
         name: formData.get("full-name"),
         city: formData.get("city"),
+        zip: formData.get("zip"),
         socials: {
             instagram: formData.get("instagram") || false,
             tiktok: formData.get("tiktok") || false,
