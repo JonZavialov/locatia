@@ -1,31 +1,31 @@
 import AccountIndicator from './AccountIndicator';
+import ExpandedSearchForm from './ExpandedSearchForm';
 import './navBar.css';
-import { useRef } from 'react';
+import { useState } from 'react';
 
 
-function NavBar({ search }){
-    const formRef = useRef(null);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if(formRef.current.search.value.length === 0) return
-        window.location.href = '/home?search=' + formRef.current.search.value;
-    }
+function NavBar(){
+    const [isSearchFormExpanded, setIsSearchFormExpanded] = useState(false);
     
     return(
-        <div id="nav-bar">
-            <div id="logo" onClick={() => window.location.href = ('/home')}>
-                <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt="logo" id="logo" />
-                <h1>Locatia</h1>
+        <>
+            <div id="nav-bar">
+                <div id="logo" onClick={() => window.location.href = ('/home')}>
+                    <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt="logo" id="logo" />
+                    <h1>Locatia</h1>
+                </div>
+                <div id="search-form">
+                    <div id="search-form-banner" onClick={() => setIsSearchFormExpanded(!isSearchFormExpanded)}>
+                        <p>Any time</p>
+                        <p>Any tags</p>
+                        <p>Anywhere</p>
+                        <i style={{'color': '#491f7b'}} className="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                    <ExpandedSearchForm isSearchFormExpanded={isSearchFormExpanded}/>
+                </div>
+                <AccountIndicator />
             </div>
-            <form onSubmit={handleSubmit} ref={formRef} id="search-form">
-                <input type="text" name="search" defaultValue={search ? search : ""} placeholder="Search" id="search-bar" />
-                <button type="submit" id="search-button">
-                    <i className="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </form>
-            <AccountIndicator />
-        </div>
+        </>
     )
 }
 

@@ -6,30 +6,6 @@
   margin: 0 100px;
 }
 
-#search-bar {
-  all: unset;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 200px;
-  padding: 0 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dddddd;
-  border-radius: 15px;
-  transition-duration: 0.2s;
-}
-
-#search-bar:focus {
-  border-color: black;
-  width: 400px;
-}
-
-#search-bar:hover {
-  width: 400px;
-}
-
 #nav-bar #logo {
   height: 50px;
   display: flex;
@@ -62,6 +38,7 @@
   color: white;
   cursor: pointer;
   font-size: 15px;
+  font-weight: bold;
 }
 
 #account-indicator button:hover {
@@ -72,23 +49,99 @@
   background-color: #1576b3;
 }
 
-#search-button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  padding-right: 8px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+#filters-button {
+  font-size: 30px;
+  margin: auto 10px;
 }
 
-#search-button i {
-  font-size: 26px;
-  color: #a5a5a5;
+#search-form-expansion {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+#search-form-expansion.expanded {
+  width: 344px;
+  height: 300px;
+  display: block;
+  z-index: 100000;
+}
+
+.search-input {
+  all: unset;
+  padding: 0 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  margin: 10px;
+}
+
+#search-bar {
+  height: 50px;
+  width: -webkit-fill-available;
+  border-radius: 15px;
 }
 
 #search-form {
   position: relative;
   margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+}
+
+#search-form-banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  cursor: pointer;
+  width: 320px;
+}
+
+#search-form-banner p {
+  font-weight: bold;
+  margin: 0;
+  padding: 0 10px;
+  border-right: 2px solid #dddddd;
+  user-select: none;
+}
+
+#search-form-banner i {
+  margin-left: 12px;
+  font-size: 23px;
+}
+
+#filters-header > * {
+  margin: 0 0 0 10px;
+}
+
+#search-sub-input {
+  height: 30px;
+  border-radius: 10px;
+  width: 110px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.filter-row button {
+  padding: 0 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: #33adf9;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  height: 30px;
 }
