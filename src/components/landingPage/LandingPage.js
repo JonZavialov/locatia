@@ -23,8 +23,8 @@ function LandingPage(){
                         <img src={process.env.PUBLIC_URL + '/assets/hero-logo.svg'} alt="logo"></img>
                         <h1>Locatia</h1>
                     </div>
-                    <h1>Form judgment-free connections.</h1>
-                    <h2>Get unbiased opinions from complete strangers that think like you. Connect with empathetic listeners for meaningful conversations and guidance.</h2>
+                    <h1>Connecting individuals seeking companionship and memorable experiences.</h1>
+                    <h2>Our platform empowers people to share their time and talents while also offering the opportunity to create meaningful connections and unforgettable moments. Join us today and embark on a journey of companionship and shared adventures.</h2>
                     <SketchButton onClick={() => document.location.href = "/login"} text={"Get Started →"} />
                 </div>
                 <img id="hero-image" src={process.env.PUBLIC_URL + '/assets/hero.png'} alt="hero"></img>
