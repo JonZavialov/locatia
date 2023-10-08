@@ -3,8 +3,6 @@ import ProfileBanner from "./ProfileBanner";
 import "./profilePage.css";
 import Carousel from "./Carousel";
 import { useState, useEffect } from "react";
-import SocialsBox from "../homePage/SocialsBox";
-import clickedContact from "../../utils/clickedContact";
 import getImageListFromRefList from "../../utils/getImageListFromRefList";
 import UserTag from "../createAccount/UserTag";
 
@@ -29,7 +27,6 @@ function ProfilePage({ data, uuid, username }){
                 {!images && 'Loading...'}
                 {images && <Carousel images={images} name={data.name}/>}
                 <div id="contact-area">
-                    <SocialsBox display={'Connect'} clickFunc={clickedContact} />
                     <p id="tags-label">Tags:</p>
                     <div style={{
                         'display': 'flex',
