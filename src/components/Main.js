@@ -8,6 +8,7 @@ import NotFound from './homePage/NotFound';
 import LandingPage from './landingPage/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
+import Schedule from './schedule/Schedule';
 
 const Main = () => {
   return (
@@ -18,6 +19,7 @@ const Main = () => {
       <Route exact path='/home' element={< HomePage />}></Route>
       <Route path="/profile/:username" element={< ProfilePageContainer />} />
       <Route path="/messages" element={< MessagesContainer />} />
+      <Route path="/calendar" element={< Schedule />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
     </Routes>
