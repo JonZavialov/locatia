@@ -70,7 +70,6 @@
   overflow: hidden;
   margin: 10px auto;
   border: 2px solid #6029a1;
-  height: 60px;
 }
 
 .hours-container > :not(:last-child) {
@@ -78,7 +77,8 @@
 }
 
 .hours-container p {
-  margin: auto;
+  margin: 4px 0;
+  padding: 15px 8px;
 }
 
 .hours-container p:first-child {
