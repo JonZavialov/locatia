@@ -19,17 +19,18 @@
 }
 
 #menu li:hover {
-  color: #0091ea;
-  background-color: #f0f9fe;
+  color: #6029a1;
+  background-color: #f5f1f8;
 }
 
 #menu li:hover svg {
-  fill: #0091ea;
+  fill: #6029a1;
 }
 
 #menu {
-  border-right: 1px solid #a5a5a5;
-  border-bottom: 1px solid #a5a5a5;
-  padding: 40px 10px 0 50px;
+  border-right: 2px solid #6029a1;
+  border-bottom: 2px solid #6029a1;
+  padding: 30px 10px 0 30px;
   margin: 0;
+  border-radius: 10px;
 }
