@@ -76,7 +76,7 @@
   all: unset;
   height: 50%;
   margin: auto 0;
-  background-color: #33adf9;
+  background-color: #6029a1;
   display: flex;
   border-radius: 10px;
   color: white;
@@ -90,7 +90,7 @@
 }
 
 #chat-bar button:hover {
-  background-color: #1da1f2;
+  background-color: #7f37d0;
 }
 
 #chat-bar button:active {
@@ -98,7 +98,7 @@
 }
 
 #chat-bar textarea:focus {
-  outline: 2px solid purple;
+  outline: 2px solid #6029a1;
 }
 
 #chat-display {

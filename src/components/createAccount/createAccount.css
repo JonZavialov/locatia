@@ -47,7 +47,7 @@
 
 #info-container input[type="text"]:focus,
 #info-container textarea:focus {
-  outline: 2px solid purple;
+  outline: 2px solid #6029a1;
 }
 
 #info-container input[type="text"],
@@ -97,8 +97,8 @@
 }
 
 #socials-select .selected {
-  outline: 2px solid purple;
-  color: purple;
+  outline: 2px solid #6029a1;
+  color: #6029a1;
 }
 
 #photo-insert-grid {
@@ -183,7 +183,7 @@
   padding: 15px 50px;
   border-radius: 5px;
   border: 1px solid gray;
-  background-color: #33adf9;
+  background-color: #6029a1;
   color: white;
   cursor: pointer;
 }
@@ -196,7 +196,7 @@
 
 #photo-edit-modal #buttons-row button:hover:enabled,
 #continue-button:hover:enabled {
-  background-color: #1da1f2;
+  background-color: #7f37d0;
 }
 
 #photo-edit-modal #buttons-row button:active:enabled,
@@ -211,9 +211,9 @@
 
 #continue-button {
   padding: 15px 50px;
-  border-radius: 5px;
+  border-radius: 50px;
   border: 1px solid gray;
-  background-color: #33adf9;
+  background-color: #6029a1;
   color: white;
   cursor: pointer;
   font-size: 16px;
@@ -254,7 +254,7 @@
 }
 
 .user-tag:hover {
-  outline: 2px solid purple;
+  outline: 2px solid #6029a1;
   background-color: #d1d1d1;
 }
 
@@ -288,7 +288,7 @@
 
 #submit-tag-button:hover {
   cursor: pointer;
-  color: purple;
+  color: #6029a1;
 }
 
 #tag-selection-box {

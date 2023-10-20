@@ -2,7 +2,7 @@
   display: flex;
   height: 13vh;
   align-items: center;
-  border-bottom: 1px solid #a5a5a5;
+  border-bottom: 2px solid #6029a1;
   margin: 0 100px;
 }
 
@@ -15,7 +15,7 @@
 
 #nav-bar #logo h1 {
   margin-left: 10px;
-  color: #491f7b;
+  color: #6029a1;
 }
 
 #account-indicator {
@@ -32,9 +32,9 @@
 
 #account-indicator button {
   padding: 14px 40px;
-  border-radius: 5px;
+  border-radius: 50px;
   border: 1px solid gray;
-  background-color: #33adf9;
+  background-color: #6029a1;
   color: white;
   cursor: pointer;
   font-size: 15px;
@@ -42,7 +42,7 @@
 }
 
 #account-indicator button:hover {
-  background-color: #1da1f2;
+  background-color: #7f37d0;
 }
 
 #account-indicator button:active {
@@ -93,8 +93,9 @@
   position: relative;
   margin: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dddddd;
+  border: 2px solid #6029a1;
   border-radius: 20px;
+  background-color: white;
 }
 
 #search-form-banner {
@@ -138,7 +139,7 @@
   padding: 0 5px;
   border-radius: 5px;
   border: 1px solid gray;
-  background-color: #33adf9;
+  background-color: #6029a1;
   color: white;
   cursor: pointer;
   font-size: 15px;

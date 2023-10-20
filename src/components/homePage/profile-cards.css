@@ -8,7 +8,7 @@
   cursor: pointer;
   width: 250px;
   height: min-content;
-  border: 1px solid #bcbcbc;
+  border: 2px solid #6029a1;
   background-color: white;
 
   transition-duration: 0.2s;
@@ -23,7 +23,7 @@
 .profile-card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.05);
-  background: linear-gradient(to right bottom, #105e8f, #1da1f2);
+  background: linear-gradient(to right bottom, #6029a1, #8b4bd4);
 
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -51,7 +51,6 @@
   align-items: center;
   height: min-content;
   margin: 0 auto;
-  background-color: #f3f3f3;
 }
 
 .socials-box {

@@ -19,7 +19,7 @@ function NavBar(){
                         <p>Any time</p>
                         <p>Any tags</p>
                         <p>Anywhere</p>
-                        <i style={{'color': '#491f7b'}} className="fa fa-search" aria-hidden="true"></i>
+                        <i style={{'color': '#6029a1'}} className="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <ExpandedSearchForm isSearchFormExpanded={isSearchFormExpanded}/>
                 </div>

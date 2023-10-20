@@ -92,7 +92,7 @@
 }
 
 #actions-container input[type="submit"]:hover {
-  background-color: #1da1f2;
+  background-color: #7f37d0;
   color: white;
 }
 
@@ -103,7 +103,7 @@
 
 #actions-container input[type="text"]:focus,
 #actions-container input[type="password"]:focus {
-  outline: 2px solid purple;
+  outline: 2px solid #6029a1;
 }
 
 #actions-container input[type="text"],
@@ -181,5 +181,5 @@
 }
 
 #remember-box input:checked {
-  background-color: #1da1f2;
+  background-color: #7f37d0;
 }
