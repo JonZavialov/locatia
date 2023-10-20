@@ -1,9 +1,4 @@
-import { useState, useCallback } from "react";
-
-function DayOfWeekScheduler({ day, dayObject }){
-    const [, setValue] = useState(0);
-    const forceUpdate = useCallback(() => setValue(value => ++value), []);
-  
+function DayOfWeekScheduler({ day, updateAvailability, dayObject }){  
     return (
     <div className="day-schedule-container">
         <div className="day-label">
@@ -15,8 +10,7 @@ function DayOfWeekScheduler({ day, dayObject }){
             className="hour"
             key={hour}
             onClick={() => {
-                dayObject[hour - 1] = !dayObject[hour - 1]
-                forceUpdate()
+              updateAvailability(day, hour-1, !dayObject[hour-1]);
             }}
             style={{backgroundColor: dayObject[hour-1] ? "#9EBC96" : ""}}
           >
