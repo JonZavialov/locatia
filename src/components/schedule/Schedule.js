@@ -9,7 +9,8 @@ const daysOfWeek = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thu
 
 function Schedule(){    
     const [availability, setAvailability] = useState(Object.fromEntries(daysOfWeek.map(day => [day, Array(24).fill(false)])))
-    
+    const [currentDay, setCurrentDay] = useState(daysOfWeek[0])
+
     function updateAvailability(day, hour, value) {
         setAvailability({...availability, [day]: {...availability[day], [hour]: value}})
     }
@@ -35,12 +36,18 @@ function Schedule(){
             <div id="schedule-create-container">
                 <h1>Create your schedule</h1>
                 <h3>Select the times that you are available</h3>
-                {   
-                    daysOfWeek.every(day => availability.hasOwnProperty(day)) &&
-                    daysOfWeek.map(day =>
-                        <DayOfWeekScheduler key={day} day={day} dayObject={availability[day]} updateAvailability={updateAvailability} />
-                    )
-                }
+                <div id="day-selector">
+                    <i class="fa fa-caret-left" aria-hidden="true" onClick={() => {
+                        const index = daysOfWeek.indexOf(currentDay)
+                        setCurrentDay(daysOfWeek[(index + 6) % 7])
+                    }}></i>
+                    <h2>{currentDay}</h2>
+                    <i class="fa fa-caret-right" aria-hidden="true" onClick={() => {
+                        const index = daysOfWeek.indexOf(currentDay)
+                        setCurrentDay(daysOfWeek[(index + 1) % 7])
+                    }}></i>
+                </div>
+                <DayOfWeekScheduler day={currentDay} updateAvailability={updateAvailability} dayObject={availability[currentDay]} />
                 <button onClick={() => {
                     console.log(availability)
                 }}>Save</button>
