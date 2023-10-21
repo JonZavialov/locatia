@@ -11,6 +11,8 @@ import MessagesContainer from './messages/MessagesContainer';
 import Schedule from './schedule/Schedule';
 
 const Main = () => {
+  if (window.innerWidth < 1000 && window.location.pathname !== "/") window.location.replace('/')
+  
   return (
     <Routes>
       <Route exact path='/' element={< LandingPage />}></Route>
