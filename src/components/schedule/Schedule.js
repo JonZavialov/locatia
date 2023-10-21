@@ -1,9 +1,11 @@
 import getCurrentUser from "../../utils/getCurrentUser"
 import DayOfWeekScheduler from "./DayOfWeekScheduler";
 import CopyrightFooter from "../footer/Footer";
-import getProfileFromUUID from "../../firebase-utils/query/getProfileFromUUID";
 import { useEffect, useState } from "react";
+import createNotification from "../../utils/createNotification";
+import postAvailability from "../../firebase-utils/post/postAvailability";
 import './schedule.css'
+import getAvailabilityInfo from "../../firebase-utils/query/getAvailabilityInfo";
 
 const daysOfWeek = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
@@ -13,7 +15,11 @@ function Schedule(){
     const [notAvailableDays, setNotAvailableDays] = useState([])
 
     function updateAvailability(day, hour, value) {
-        setAvailability({...availability, [day]: {...availability[day], [hour]: value}})
+        setAvailability({...availability, [day]: [...availability[day].slice(0, hour), value, ...availability[day].slice(hour+1)]})
+    }
+
+    function clearAvailability(day) {
+        setAvailability({...availability, [day]: Array(24).fill(false)})
     }
 
     function updateNotAvailableDays(day) {
@@ -27,9 +33,9 @@ function Schedule(){
 
             if (!userInfo) window.location.href = '/login'
             else {
-                const profileInfo = await getProfileFromUUID(userInfo.uid)
-                if (profileInfo.profile.availability) {
-                    setAvailability(profileInfo.profile.availability)
+                const availInfo = await getAvailabilityInfo(userInfo.uid)
+                if (availInfo) {
+                    setAvailability(availInfo)
                 }
             }
         }
@@ -59,9 +65,17 @@ function Schedule(){
                     updateNotAvailableDays={updateNotAvailableDays} 
                     dayObject={availability[currentDay]} 
                     notAvailable={notAvailableDays.includes(currentDay)}
+                    clearAvailability={clearAvailability}
                 />
                 <button onClick={() => {
-                    console.log(availability)
+                    for(let day of daysOfWeek) {
+                        if (!notAvailableDays.includes(day) && availability[day].every(hour => !hour)) {
+                            createNotification('error', 'Please select at least one hour for each day, or mark the day as unavailable')
+                            return
+                        }
+                    }
+                    postAvailability(availability) 
+                    createNotification('success', 'Availability saved successfully')
                 }}>Save</button>
             </div>
             <CopyrightFooter />

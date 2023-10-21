@@ -1,4 +1,4 @@
-function DayOfWeekScheduler({ day, updateAvailability, dayObject, updateNotAvailableDays, notAvailable }){  
+function DayOfWeekScheduler({ day, updateAvailability, dayObject, updateNotAvailableDays, notAvailable, clearAvailability }){  
   return (
     <>
       <div className={`hours-container ${notAvailable ? 'not-available' : ''}`}>
@@ -18,7 +18,10 @@ function DayOfWeekScheduler({ day, updateAvailability, dayObject, updateNotAvail
         ))}
       </div>
       <div id="not-avail-day-check">
-        <input type="checkbox" id="not-avail" checked={notAvailable ?? false} onChange={() => updateNotAvailableDays(day)}/>
+        <input type="checkbox" id="not-avail" checked={notAvailable ?? false} onChange={() => {
+          updateNotAvailableDays(day)
+          clearAvailability(day)
+        }}/>
         <label htmlFor='not-avail'>I am not available on this day</label>
       </div>
     </>
