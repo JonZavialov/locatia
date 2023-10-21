@@ -264,7 +264,7 @@ function AccountCreationContainer(){
                         }
 
                         <label>Tags</label>
-                        <p>These will help us connect you to the right person.</p>
+                        <p>Add your own or select from the list.</p>
                         <div style={{'display': 'flex'}}>
                             <input
                                 type="text"
