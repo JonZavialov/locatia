@@ -1,0 +1,29 @@
+#faq-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 25px 0;
+}
+
+#faq-container h1 {
+  margin-bottom: 0;
+}
+
+#category-selector {
+  display: flex;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px auto 0;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#category-selector p {
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+#category-selector p.selected {
+  font-weight: 700;
+  border-bottom: 2px solid #6029a1;
+}
