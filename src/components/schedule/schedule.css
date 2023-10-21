@@ -62,6 +62,11 @@
   margin: 0 10px;
 }
 
+#not-avail-day-check {
+  margin: 15px auto 0;
+  user-select: none;
+}
+
 .hours-container {
   background-color: lightgray;
   display: flex;
@@ -70,6 +75,15 @@
   overflow: hidden;
   margin: 10px auto;
   border: 2px solid #6029a1;
+}
+
+.hours-container.not-available {
+  color: rgb(184, 184, 184);
+  border-color: #3e3d3d;
+}
+
+.hours-container.not-available p {
+  border-color: #3e3d3d;
 }
 
 .hours-container > :not(:last-child) {
