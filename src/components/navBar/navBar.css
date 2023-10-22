@@ -61,7 +61,7 @@
   overflow: hidden;
   transition-duration: 0.3s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dddddd;
+  border: 2px solid #6029a1;
   border-radius: 15px;
   background-color: white;
   display: flex;
@@ -123,19 +123,11 @@
   margin: 0 0 0 10px;
 }
 
-#search-sub-input {
-  height: 30px;
-  border-radius: 10px;
-  width: 110px;
-}
-
-.filter-row {
+#filters-header {
   display: flex;
-  align-items: center;
-  margin-top: 15px;
 }
 
-.filter-row button {
+#search-form-expansion button {
   padding: 0 5px;
   border-radius: 5px;
   border: 1px solid gray;
@@ -145,4 +137,21 @@
   font-size: 15px;
   font-weight: bold;
   height: 30px;
+}
+
+#filters {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#filters input[type="text"] {
+  height: 30px;
+  border-radius: 10px;
+  width: 110px;
+}
+
+#filters input[type="range"] {
+  width: 75%;
+  margin-left: 10px;
 }
