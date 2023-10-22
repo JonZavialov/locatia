@@ -6,25 +6,36 @@
   transform: translateY(-2px);
 }
 
+#links-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#links-container a {
+  all: unset;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
 #copyright-statement {
   margin: 0 40px;
   color: #a7aaa8;
 }
 
-#footer > div {
-  width: 100%;
+#links-container > div {
+  padding-right: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
-#contact-container {
-  padding-left: 500px;
-}
-
-#contact-p {
+.footer-p {
   font-weight: bold;
   margin: 0;
+  text-wrap: nowrap;
 }
 
-#contact-container svg {
+#footer svg {
   margin-left: -8px;
   cursor: pointer;
 }
