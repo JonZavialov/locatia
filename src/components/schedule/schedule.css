@@ -4,19 +4,13 @@
   flex-direction: column;
 }
 
-#schedule-create-container h1,
-#schedule-create-container h3 {
-  margin: 0 auto;
-}
-
 #schedule-create-container h1 {
-  margin-top: 50px;
-  margin-bottom: 10px;
+  margin: 60px auto 10px;
   letter-spacing: 0.5px;
 }
 
 #schedule-create-container h3 {
-  margin-bottom: 25px;
+  margin: 15px auto 50px;
   color: #3e3d3d;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -46,23 +40,37 @@
 #day-selector {
   margin: auto auto 30px;
   display: flex;
-  align-items: center;
+  width: 75%;
+  justify-content: space-between;
 }
 
 #day-selector h2 {
   width: 150px;
   text-align: center;
+  padding-bottom: 5px;
+  width: min-content;
+  cursor: pointer;
+  user-select: none;
 }
 
-#day-selector i {
-  font-size: 40px;
-  cursor: pointer;
-  margin: 0 10px;
+#day-selector h2.selected {
+  border-bottom: 2px solid #6029a1;
 }
 
 #not-avail-day-check {
-  margin: 15px auto 0;
+  margin: 20px auto 0;
   user-select: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#not-avail-day-check.not-avail-text {
+  color: #6029a1;
+}
+
+#not-avail-day-check input {
+  height: 15px;
+  width: 15px;
 }
 
 .hours-container {
@@ -72,7 +80,7 @@
   padding: 0 8px;
   overflow: hidden;
   margin: 10px auto;
-  border: 2px solid #6029a1;
+  border: 3px solid #6029a1;
 }
 
 .hours-container.not-available {
@@ -85,7 +93,7 @@
 }
 
 .hours-container > :not(:last-child) {
-  border-right: 2px solid #6029a1;
+  border-right: 3px solid #6029a1;
 }
 
 .hours-container p {
