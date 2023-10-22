@@ -7,7 +7,7 @@ import postAvailability from "../../firebase-utils/post/postAvailability";
 import './schedule.css'
 import getAvailabilityInfo from "../../firebase-utils/query/getAvailabilityInfo";
 
-const daysOfWeek = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 function Schedule(){    
     const [availability, setAvailability] = useState(Object.fromEntries(daysOfWeek.map(day => [day, Array(24).fill(false)])))
@@ -49,15 +49,17 @@ function Schedule(){
                 <h1>Create your schedule</h1>
                 <h3>Select the times that you are available</h3>
                 <div id="day-selector">
-                    <i className="fa fa-caret-left" aria-hidden="true" onClick={() => {
-                        const index = daysOfWeek.indexOf(currentDay)
-                        setCurrentDay(daysOfWeek[(index + 6) % 7])
-                    }}></i>
-                    <h2>{currentDay}</h2>
-                    <i className="fa fa-caret-right" aria-hidden="true" onClick={() => {
-                        const index = daysOfWeek.indexOf(currentDay)
-                        setCurrentDay(daysOfWeek[(index + 1) % 7])
-                    }}></i>
+                    {
+                        daysOfWeek.map(day => (
+                            <h2 
+                                key={day} 
+                                onClick={() => setCurrentDay(day)} 
+                                className={currentDay === day ? 'selected' : ''}
+                            >
+                                {day}
+                            </h2>
+                        ))
+                    }
                 </div>
                 <DayOfWeekScheduler 
                     day={currentDay} 
