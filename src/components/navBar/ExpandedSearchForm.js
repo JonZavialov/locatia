@@ -19,11 +19,11 @@ function ExpandedSearchForm({ isSearchFormExpanded }){
             </form>
             <div id="filters">
                 <div id="filters-header">
-                    <i style={{'color': '#491f7b'}} className="fa fa-sliders" aria-hidden="true" id="filters-button"></i>
+                    <i className="fa fa-sliders" aria-hidden="true" id="filters-button"></i>
                     <h2>Filters</h2>
                 </div>
-                <div style={{display: "flex", alignItems: "center", margin: "15px 0 10px 10px"}}>
-                    <p style={{margin: 0, fontWeight: "bold"}}>Age:</p>
+                <div className="range-slider">
+                    <p>Age:</p>
                     <AgeSlider onChange={(range) => console.log(range)} />
                 </div>
                 <input type="text" ref={zipRef} placeholder="Near zip code" className="search-input" maxLength={5}/>
