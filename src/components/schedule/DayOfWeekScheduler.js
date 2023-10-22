@@ -20,7 +20,7 @@ function DayOfWeekScheduler({ day, updateAvailability, dayObject, updateNotAvail
           </p>
         ))}
       </div>
-      <div id="not-avail-day-check">
+      <div id="not-avail-day-check" className={notAvailable ? 'not-avail-text' : ''}>
         <input type="checkbox" id="not-avail" checked={notAvailable ?? false} onChange={() => {
           updateNotAvailableDays(day)
           clearAvailability(day)

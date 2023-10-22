@@ -5,7 +5,7 @@
 }
 
 #schedule-create-container h1 {
-  margin: 75px auto 10px;
+  margin: 60px auto 10px;
   letter-spacing: 0.5px;
 }
 
@@ -61,6 +61,11 @@
   margin: 20px auto 0;
   user-select: none;
   font-size: 18px;
+  font-weight: 600;
+}
+
+#not-avail-day-check.not-avail-text {
+  color: #6029a1;
 }
 
 #not-avail-day-check input {
@@ -75,7 +80,7 @@
   padding: 0 8px;
   overflow: hidden;
   margin: 10px auto;
-  border: 2px solid #6029a1;
+  border: 3px solid #6029a1;
 }
 
 .hours-container.not-available {
@@ -88,7 +93,7 @@
 }
 
 .hours-container > :not(:last-child) {
-  border-right: 2px solid #6029a1;
+  border-right: 3px solid #6029a1;
 }
 
 .hours-container p {

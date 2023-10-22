@@ -6,6 +6,7 @@ import createNotification from "../../utils/createNotification";
 import postAvailability from "../../firebase-utils/post/postAvailability";
 import './schedule.css'
 import getAvailabilityInfo from "../../firebase-utils/query/getAvailabilityInfo";
+import NavBar from "../navBar/NavBar";
 
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -44,7 +45,7 @@ function Schedule(){
 
     return (
         <>
-            {getCurrentUser() && <p id="welcome">Welcome {getCurrentUser().email}!</p>}
+            <NavBar />
             <div id="schedule-create-container">
                 <h1>Create your schedule</h1>
                 <h3>Select the times that you are available</h3>
