@@ -28,3 +28,28 @@
   font-weight: 700;
   border-bottom: 2px solid #6029a1;
 }
+
+.question-container {
+  width: 75%;
+  text-align: left;
+  margin: auto;
+  border-bottom: 2px solid #6029a1;
+  user-select: none;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.question i {
+  font-size: 20px;
+  color: #6029a1;
+}
+
+.question i:hover {
+  color: #7f37d0;
+}
