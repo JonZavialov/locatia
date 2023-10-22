@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 25px 0;
+  margin: 25px 0 100px;
 }
 
 #faq-container h1 {
