@@ -4,19 +4,13 @@
   flex-direction: column;
 }
 
-#schedule-create-container h1,
-#schedule-create-container h3 {
-  margin: 0 auto;
-}
-
 #schedule-create-container h1 {
-  margin-top: 75px;
-  margin-bottom: 10px;
+  margin: 75px auto 10px;
   letter-spacing: 0.5px;
 }
 
 #schedule-create-container h3 {
-  margin: 25px auto 50px;
+  margin: 15px auto 50px;
   color: #3e3d3d;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -64,14 +58,14 @@
 }
 
 #not-avail-day-check {
-  margin: 15px auto 0;
+  margin: 20px auto 0;
   user-select: none;
   font-size: 18px;
 }
 
 #not-avail-day-check input {
-  width: 15px;
   height: 15px;
+  width: 15px;
 }
 
 .hours-container {
