@@ -6,8 +6,6 @@
 
 #schedule-create-container h1,
 #schedule-create-container h3 {
-  width: min-content;
-  text-wrap: nowrap;
   margin: 0 auto;
 }
 
