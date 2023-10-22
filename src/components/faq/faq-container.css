@@ -21,6 +21,7 @@
 #category-selector p {
   cursor: pointer;
   padding-bottom: 5px;
+  user-select: none;
 }
 
 #category-selector p.selected {
