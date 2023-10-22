@@ -9,6 +9,7 @@ import LandingPage from './landingPage/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
 import Schedule from './schedule/Schedule';
+import FaqContainer from './faq/FaqContainer';
 
 const Main = () => {
   if (window.innerWidth < 1000 && window.location.pathname !== "/") window.location.replace('/')
@@ -22,6 +23,7 @@ const Main = () => {
       <Route path="/profile/:username" element={< ProfilePageContainer />} />
       <Route path="/messages" element={< MessagesContainer />} />
       <Route path="/calendar" element={< Schedule />} />
+      <Route path="/faq" element={< FaqContainer />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
     </Routes>

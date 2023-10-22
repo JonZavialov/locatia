@@ -13,11 +13,17 @@ function CopyrightFooter(){
             <div>
                 <p id="copyright-statement">© {new Date().getFullYear()} The It Factor, LLC. </p>
             </div>
-            <div id="contact-container">
-                <p id="contact-p">Let's chat!</p>
-                <svg width="48px" height="48px" onClick={() => window.open(svg.linkedin.link, "_blank")}>
-                    <path d={svg.linkedin.svg} id="Shape" fill="#a7aaa8" />
-                </svg>
+            <div id="links-container">
+                <div>
+                    <p className="footer-p">Company Links</p>
+                    <a href="/faq">FAQ</a>
+                </div>
+                <div>
+                    <p className="footer-p">Let's chat!</p>
+                    <svg width="48px" height="48px" onClick={() => window.open(svg.linkedin.link, "_blank")}>
+                        <path d={svg.linkedin.svg} id="Shape" fill="#a7aaa8" />
+                    </svg>
+                </div>
             </div>
         </div>
     )
