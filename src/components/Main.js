@@ -20,6 +20,7 @@ const Main = () => {
       <Route exact path='/login' element={< LoginContainer />}></Route>
       <Route exact path='/create-account' element={< AccountCreationContainer />}></Route>
       <Route exact path='/home' element={< HomePage />}></Route>
+      <Route path="/search" element={< HomePage search={true} />} />
       <Route path="/profile/:username" element={< ProfilePageContainer />} />
       <Route path="/messages" element={< MessagesContainer />} />
       <Route path="/calendar" element={< Schedule />} />
