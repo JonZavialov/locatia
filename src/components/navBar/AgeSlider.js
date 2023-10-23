@@ -39,7 +39,7 @@ const StyledContainer = styled.div`
 function AgeSlider({onChange}){
     return (
         <StyledContainer>
-            <StyledSlider defaultValue={[30, 60]} renderTrack={Track} renderThumb={Thumb} min={18} max={80} onChange={onChange} />
+            <StyledSlider defaultValue={[18, 80]} renderTrack={Track} renderThumb={Thumb} min={18} max={80} onChange={onChange} />
         </StyledContainer>
     );
 }

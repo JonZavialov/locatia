@@ -1,22 +1,21 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import createNotification from "../../utils/createNotification";
 import AgeSlider from "./AgeSlider";
 
 function ExpandedSearchForm({ isSearchFormExpanded }){
-    const formRef = useRef(null);
+    const searchRef = useRef(null);
     const zipRef = useRef(null);
+    const [gender, setGender] = useState(null)
+    const [ageRange, setAgeRange] = useState([])
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if(formRef.current.search.value.length === 0) return
-        window.location.href = '/home?search=' + formRef.current.search.value;
+    function updateGender(selected){
+        if (selected === gender) setGender(null)
+        else setGender(selected)
     }
 
     return(
         <div id="search-form-expansion" className={isSearchFormExpanded ? "expanded" : ""}>
-            <form onSubmit={handleSubmit} ref={formRef}>
-                <input type="text" name="search" placeholder="Search a name" id="search-bar" className="search-input"/>
-            </form>
+            <input type="text" ref ={searchRef} name="search" placeholder="Search a name" id="search-bar" className="search-input"/>
             <div id="filters">
                 <div id="filters-header">
                     <i className="fa fa-sliders" aria-hidden="true" id="filters-button"></i>
@@ -24,16 +23,30 @@ function ExpandedSearchForm({ isSearchFormExpanded }){
                 </div>
                 <div className="range-slider">
                     <p>Age:</p>
-                    <AgeSlider onChange={(range) => console.log(range)} />
+                    <AgeSlider onChange={(range) => setAgeRange(range)} />
                 </div>
-                <input type="text" ref={zipRef} placeholder="Near zip code" className="search-input" maxLength={5}/>
+                <div className="filters-row">
+                    <input type="text" ref={zipRef} placeholder="Near zip code" className="search-input" maxLength={5}/>
+                    <div id="gender-selector-search">
+                        <p onClick={() => updateGender('male')} className={gender === 'male' ? 'selected' : ''}>Male</p>
+                        <p onClick={() => updateGender('female')} className={gender === 'female' ? 'selected': ''}>Female</p>
+                        <p onClick={() => updateGender('other')} className={gender === 'other' ? 'selected': ''}>Other</p>
+                    </div>
+                </div>
             </div>
             <button onClick={() => {
-                if(zipRef.current.value.length !== 5) {
+                const zip = zipRef.current.value
+                if(zip.length !== 5 && zip.length !== 0) {
                     createNotification('error', 'Zip code must be five digits!')
                     return
                 }
-                window.location.href = '/home?zip=' + zipRef.current.value;
+                const searchFilters = new URLSearchParams({
+                    zip,
+                    ageRange,
+                    gender,
+                    name: searchRef.current.value,
+                })
+                window.location.href = `/search?${searchFilters.toString()}`
             }}>Go</button>
         </div>
     )
