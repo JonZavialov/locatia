@@ -23,7 +23,7 @@ function HomePage({ search }){
     return (
         <>
             < NavBar />
-            {data && <ProfileCardsContainer data={data} sort={queryParameters.get('zip') !== '0' ? 'proximity' : 'timestamp'} />}
+            {data && <ProfileCardsContainer data={data} sort={queryParameters.get('zip') && queryParameters.get('zip') !== '0' ? 'proximity' : 'timestamp'} />}
             <CopyrightFooter />
         </>
     )
