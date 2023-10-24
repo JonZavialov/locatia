@@ -2,7 +2,6 @@
 // TODO need ot greate a js file in the queries folder to get the blogs and import it here
 //import getProfiles from "../../firebase-utils/query/getProfiles"
 import { useEffect, useState } from "react"
-import ProfileCardsContainer from "./BlogCardsContainer";
 import getSearchResults from "../../utils/getSearchResults";
 import CopyrightFooter from '../footer/Footer'
 import NavBar from "../navBar/NavBar";
