@@ -8,6 +8,7 @@ import NotFound from './homePage/NotFound';
 import LandingPage from './landingPage/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
+import indBlog from './indBlog/indBlog'
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
       <Route path="/messages" element={< MessagesContainer />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
+      <Route path='blogs/:title' element={<indBlog />} />
     </Routes>
   );
 }
