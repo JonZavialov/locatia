@@ -27,7 +27,7 @@ function postAccountInfo(formRef, picsData, tags, gender){
         gender: gender
     }
 
-    createNotification('success', 'Uploading images...')
+    createNotification('success', 'Uploading images... Do not leave this page or your changes may be lost.')
     set(ref(db, 'accounts/' + auth.currentUser.uid + '/'), submitData)
     .then(() => {
         postImagesToUid(Object.values(picsData).filter(value => value !== null))
