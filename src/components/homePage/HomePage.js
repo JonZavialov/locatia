@@ -22,7 +22,7 @@ function HomePage({ search }){
 
     return (
         <>
-            < NavBar />
+            <NavBar />
             {data && <ProfileCardsContainer data={data} sort={queryParameters.get('zip') && queryParameters.get('zip') !== '0' ? 'proximity' : 'timestamp'} />}
             <CopyrightFooter />
         </>
