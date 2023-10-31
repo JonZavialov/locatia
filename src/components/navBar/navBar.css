@@ -203,3 +203,22 @@
   display: flex;
   align-items: center;
 }
+
+.links {
+  width: 25%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.links a {
+  all: unset;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px 5px;
+}
+
+.links a:hover {
+  color: #6029a1;
+}
