@@ -30,13 +30,29 @@ const svg = {
 function CopyrightFooter(){
     return(
         <div id="footer">
-            <div>
-                <p id="copyright-statement">© {new Date().getFullYear()} The It Factor, LLC. </p>
-            </div>
-            <div id="links-container">
+            <div id="footer-content">
+                <div id="footer-desc">
+                    <div id="logo">
+                        <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt="logo" id="logo" />
+                        <h1>Locatia</h1>
+                    </div>
+                    <p>Locatia is the place where you can create meaningful connections by renting a friend, girlfriend, or companion for virtual or in-person interactions. Our platform is designed to foster camaraderie, alleviate loneliness, and enrich personal interactions in a modern setting.</p>
+                </div>
                 <div>
-                    <p className="footer-p">Company Links</p>
+                    <p className="footer-p">Company</p>
                     <a href="/faq">FAQ</a>
+                    <a href="">How it works</a>
+                    <a href="">Blogs</a>
+                    <a href="">Contact us</a>
+                </div>
+                <div>
+                    <p className="footer-p">Resources</p>
+                    <a href="">Privacy policy</a>
+                    <a href="">Terms of service</a>
+                    <a href="">2257 Statement</a>
+                    <a href="">DMCA Policy</a>
+                    <a href="">CCPA</a>
+                    <a href="">Buyer-Seller agreement</a>
                 </div>
                 <div>
                     <p className="footer-p">Let's chat!</p>
@@ -53,6 +69,7 @@ function CopyrightFooter(){
                     </div>
                 </div>
             </div>
+            <p id="copyright-statement">© {new Date().getFullYear()} The It Factor, LLC. </p>
         </div>
     )
 }
