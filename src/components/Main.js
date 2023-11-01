@@ -30,6 +30,7 @@ const Main = () => {
       <Route path="/2257" element={< LegalPage fileName="2257.txt" />} />
       <Route path="/dmca" element={< LegalPage fileName="dmca.txt" />} />
       <Route path="/ccpa" element={< LegalPage fileName="ccpa.txt" />} />
+      <Route path="/buyerseller" element={< LegalPage fileName="buyerseller.txt" />} />
       <Route path="/faq" element={< FaqContainer />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />

@@ -53,7 +53,7 @@ function CopyrightFooter(){
                     <a href="/2257">2257 Statement</a>
                     <a href="/dmca">DMCA Policy</a>
                     <a href="/ccpa">CCPA</a>
-                    <a href="">Buyer-Seller agreement</a>
+                    <a href="/buyerseller">Buyer-Seller agreement</a>
                 </div>
                 <div>
                     <p className="footer-p">Let's chat!</p>
