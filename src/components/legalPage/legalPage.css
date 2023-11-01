@@ -1,5 +1,5 @@
 #legal {
-  padding: 20px 100px;
+  padding: 20px 150px;
 }
 
 #legal h2 {
@@ -11,6 +11,7 @@
   text-indent: 50px;
   color: #6029a1;
   font-weight: bold;
+  font-size: 18px;
 }
 
 #legal p {

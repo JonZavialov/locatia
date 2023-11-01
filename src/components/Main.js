@@ -26,6 +26,10 @@ const Main = () => {
       <Route path="/messages" element={< MessagesContainer />} />
       <Route path="/calendar" element={< Schedule />} />
       <Route path="/privacy" element={< LegalPage fileName="privacypolicy.txt" />} />
+      <Route path="/terms" element={< LegalPage fileName="termsofservice.txt" />} />
+      <Route path="/2257" element={< LegalPage fileName="2257.txt" />} />
+      <Route path="/dmca" element={< LegalPage fileName="dmca.txt" />} />
+      <Route path="/ccpa" element={< LegalPage fileName="ccpa.txt" />} />
       <Route path="/faq" element={< FaqContainer />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />

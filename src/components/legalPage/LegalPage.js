@@ -25,6 +25,7 @@ function LegalPage({ fileName }){
                 <h2>{header}</h2>
                 {
                     content.map((line, index) => {
+                        line = line.trim()
                         let className = ""
                         if (line.startsWith('<indent>')){ 
                             className = "indent";

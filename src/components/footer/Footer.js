@@ -49,10 +49,10 @@ function CopyrightFooter(){
                     <p className="footer-p">Resources</p>
                     <a href="https://www.gigworkersolutions.com/" target='_blank' rel="noreferrer">Insurance</a>
                     <a href="/privacy">Privacy policy</a>
-                    <a href="">Terms of service</a>
-                    <a href="">2257 Statement</a>
-                    <a href="">DMCA Policy</a>
-                    <a href="">CCPA</a>
+                    <a href="/terms">Terms of service</a>
+                    <a href="/2257">2257 Statement</a>
+                    <a href="/dmca">DMCA Policy</a>
+                    <a href="/ccpa">CCPA</a>
                     <a href="">Buyer-Seller agreement</a>
                 </div>
                 <div>
