@@ -47,7 +47,8 @@ function CopyrightFooter(){
                 </div>
                 <div>
                     <p className="footer-p">Resources</p>
-                    <a href="">Privacy policy</a>
+                    <a href="https://www.gigworkersolutions.com/" target='_blank' rel="noreferrer">Insurance</a>
+                    <a href="/privacy">Privacy policy</a>
                     <a href="">Terms of service</a>
                     <a href="">2257 Statement</a>
                     <a href="">DMCA Policy</a>
