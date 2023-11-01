@@ -52,6 +52,10 @@
   margin-right: 10px;
 }
 
+#footer svg:hover path {
+  fill: #6029a1;
+}
+
 #footer #logo {
   height: 50px;
   display: flex;
@@ -66,4 +70,5 @@
 
 #footer-desc p {
   color: #6029a1;
+  font-weight: bold;
 }
