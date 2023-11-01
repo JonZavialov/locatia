@@ -22,7 +22,7 @@ function FaqContainer(){
             <NavBar />
             <div id="faq-container">
                 <h1>Frequently Asked Questions</h1>
-                <p>Can't find your answer? Email locatia.recruitment@gmail.com for more help!</p>
+                <p id="subhead">Can't find your answer? Email locatia.recruitment@gmail.com for more help!</p>
                 {
                     Object.keys(faqInfo).length !== 0 &&
                     <>

@@ -12,7 +12,7 @@ function Question({title, answer}){
                     aria-hidden="true"
                 ></i>
             </div>
-            <p style={{display: isExpanded ? "" : "none"}}>{answer}</p>
+            <p style={{display: isExpanded ? "" : "none"}} className="answer">{answer}</p>
         </div>
     )
 }

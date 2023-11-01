@@ -5,8 +5,17 @@
   margin: 25px 0 100px;
 }
 
+.category-selector {
+  color: #6029a1;
+}
+
 #faq-container h1 {
   margin-bottom: 0;
+}
+
+#faq-container #subhead {
+  color: rgb(115, 117, 136);
+  font-weight: 500;
 }
 
 #category-selector {
@@ -52,4 +61,13 @@
 
 .question i:hover {
   color: #7f37d0;
+}
+
+.question h3 {
+  font-size: 18px;
+}
+
+.answer {
+  color: rgb(115, 117, 136);
+  font-weight: bold;
 }
