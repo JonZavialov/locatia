@@ -11,6 +11,7 @@ import MessagesContainer from './messages/MessagesContainer';
 import Schedule from './schedule/Schedule';
 import FaqContainer from './faq/FaqContainer';
 import LegalPage from './legalPage/LegalPage';
+import ContactUs from './contactUs/ContactUs';
 
 const Main = () => {
   if (window.innerWidth < 1000 && window.location.pathname !== "/") window.location.replace('/')
@@ -32,6 +33,7 @@ const Main = () => {
       <Route path="/ccpa" element={< LegalPage fileName="ccpa.txt" />} />
       <Route path="/buyerseller" element={< LegalPage fileName="buyerseller.txt" />} />
       <Route path="/faq" element={< FaqContainer />} />
+      <Route path="/contact" element={< ContactUs />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
     </Routes>

@@ -36,14 +36,14 @@ function CopyrightFooter(){
                         <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt="logo" id="logo" />
                         <h1>Locatia</h1>
                     </div>
-                    <p>Locatia is the place where you can create meaningful connections by renting a friend, girlfriend, or companion for virtual or in-person interactions. Our platform is designed to foster camaraderie, alleviate loneliness, and enrich personal interactions in a modern setting.</p>
+                    <p>Experience a transformative approach to social connections. Our platform is designed to help you break free from the isolation of the digital world. Connect with like-minded individuals, craft your ideal in-person interactions, and benefit from our innovative incentive model. Join us in redefining the way you form genuine relationships and find companionship.</p>
                 </div>
                 <div>
                     <p className="footer-p">Company</p>
                     <a href="/faq">FAQ</a>
                     <a href="">How it works</a>
                     <a href="">Blogs</a>
-                    <a href="">Contact us</a>
+                    <a href="/contact">Contact us</a>
                 </div>
                 <div>
                     <p className="footer-p">Resources</p>

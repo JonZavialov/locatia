@@ -47,7 +47,7 @@ function LandingPage(){
                         <h1>Locatia</h1>
                     </div>
                     <h1>Connecting individuals seeking companionship and memorable experiences.</h1>
-                    <h2>Our platform empowers people to share their time and talents while also offering the opportunity to create meaningful connections and unforgettable moments. Join us today and embark on a journey of companionship and shared adventures.</h2>
+                    <h2>Experience a transformative approach to social connections. Our platform is designed to help you break free from the isolation of the digital world. Connect with like-minded individuals, craft your ideal in-person interactions, and benefit from our innovative incentive model. Join us in redefining the way you form genuine relationships and find companionship.</h2>
                     {viewportWidth > 1000 ? 
                         <SketchButton onClick={() => document.location.href = "/login"} text={"Get Started →"} />
                         :
