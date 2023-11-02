@@ -16,7 +16,7 @@
   letter-spacing: 0.5px;
 }
 
-#schedule-create-container button {
+#schedule-create-container #save-button {
   padding: 15px 50px;
   border-radius: 50px;
   border: 1px solid gray;
@@ -30,11 +30,11 @@
 }
 
 #schedule-create-container button:hover {
-  background-color: #7f37d0;
+  background-color: #7f37d0 !important;
 }
 
 #schedule-create-container button:active {
-  background-color: #6029a1;
+  background-color: #6029a1 !important;
 }
 
 #day-selector {
@@ -58,7 +58,7 @@
 }
 
 #not-avail-day-check {
-  margin: 20px auto 0;
+  margin: 0 20px;
   user-select: none;
   font-size: 18px;
   font-weight: 600;
@@ -115,4 +115,26 @@
   user-select: none;
   font-weight: bold;
   position: relative;
+}
+
+#bottom-row {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+#day-of-week-container {
+  width: min-content;
+  margin: auto;
+}
+
+#bottom-row #reset-button {
+  all: unset;
+  background-color: #6029a1;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid gray;
 }

@@ -70,7 +70,7 @@ function Schedule(){
                     notAvailable={notAvailableDays.includes(currentDay)}
                     clearAvailability={clearAvailability}
                 />
-                <button onClick={() => {
+                <button id="save-button" onClick={() => {
                     for(let day of daysOfWeek) {
                         if (!notAvailableDays.includes(day) && availability[day].every(hour => !hour)) {
                             createNotification('error', 'Please select at least one hour for each day, or mark the day as unavailable')
