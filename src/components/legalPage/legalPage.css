@@ -1,0 +1,20 @@
+#legal {
+  padding: 20px 150px;
+}
+
+#legal h2 {
+  text-align: center;
+  color: #6029a1;
+}
+
+#legal p.indent {
+  text-indent: 50px;
+  color: #6029a1;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#legal p {
+  color: rgb(115, 117, 136);
+  font-weight: 500;
+}

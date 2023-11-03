@@ -3,7 +3,7 @@ import { db, auth } from "../initApp";
 import postImagesToUid from "./postImagesToUid";
 import createNotification from "../../utils/createNotification";
 
-function postAccountInfo(formRef, picsData, tags){
+function postAccountInfo(formRef, picsData, tags, gender){
     const formData = new FormData(formRef)
     
     for (const input of formRef.querySelectorAll('input, select, textarea')) {
@@ -24,9 +24,10 @@ function postAccountInfo(formRef, picsData, tags){
         sport: formData.get("sport"),
         timestamp: Date.now(),
         tags: tags,
+        gender: gender
     }
 
-    createNotification('success', 'Uploading images...')
+    createNotification('success', 'Uploading images... Do not leave this page or your changes may be lost.')
     set(ref(db, 'accounts/' + auth.currentUser.uid + '/'), submitData)
     .then(() => {
         postImagesToUid(Object.values(picsData).filter(value => value !== null))

@@ -1,6 +1,6 @@
 import Fuse from 'fuse.js'
 
-function getSearchResults(query, data){
+function getSearchedNameResults(query, data){
     // data param is in the form:
     // {
     //    "uuid": { ...data},
@@ -31,4 +31,4 @@ function getSearchResults(query, data){
     return formattedResults
 }
 
-export default getSearchResults
+export default getSearchedNameResults

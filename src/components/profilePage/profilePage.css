@@ -35,7 +35,7 @@ body {
   margin-right: 10px;
 }
 
-#contact-area .socials-box {
+#tags-box-profile .socials-box {
   background-color: white;
 }
 
@@ -89,11 +89,11 @@ body {
   display: flex;
 }
 
-#contact-area {
+#tags-box-profile {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 15px 15px 10px;
-  margin: 20px;
+  margin: 20px 0 0 20px;
   width: 250px;
   background-color: white;
   display: flex;
@@ -102,6 +102,31 @@ body {
   border: 1px solid #bcbcbc;
   overflow-y: scroll;
   height: 420px;
+}
+
+#carousel-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#report-button {
+  all: unset;
+  margin: 10px auto;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: 1px solid gray;
+  background-color: #f3f3f3;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#report-button:hover {
+  background-color: #cacaca;
+}
+
+#report-button:active {
+  background-color: #a5a5a5;
 }
 
 #bio-box {
@@ -120,7 +145,7 @@ body {
   margin-bottom: 0;
 }
 
-#contact-area .socials-box {
+#tags-box-profile .socials-box {
   padding: 15px 50px;
   background-color: #7f37d0;
   color: white;

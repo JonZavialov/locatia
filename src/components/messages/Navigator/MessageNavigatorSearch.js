@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import getProfiles from "../../../firebase-utils/query/getProfiles";
-import getSearchResults from "../../../utils/getSearchResults";
+import getSearchResults from "../../../utils/getSearchedNameResults";
 import SearchResults from "./SearchResults";
 
 function MessageNavigatorSearch({ onSelect }){

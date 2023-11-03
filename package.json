@@ -17,6 +17,8 @@
     "react-notifications": "^1.7.4",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
+    "react-slider": "^2.0.6",
+    "styled-components": "^6.1.0",
     "swiper": "^9.1.1",
     "web-vitals": "^2.1.4"
   },

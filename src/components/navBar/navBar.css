@@ -46,7 +46,7 @@
 }
 
 #account-indicator button:active {
-  background-color: #1576b3;
+  background-color: #6029a1;
 }
 
 #filters-button {
@@ -61,18 +61,19 @@
   overflow: hidden;
   transition-duration: 0.3s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dddddd;
+  border: none;
   border-radius: 15px;
   background-color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 #search-form-expansion.expanded {
   width: 344px;
   height: 300px;
-  display: block;
   z-index: 100000;
+  border: 2px solid #6029a1;
 }
 
 .search-input {
@@ -81,6 +82,10 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #dddddd;
   margin: 10px;
+}
+
+.search-input:focus {
+  border: 2px solid #6029a1;
 }
 
 #search-bar {
@@ -123,26 +128,97 @@
   margin: 0 0 0 10px;
 }
 
-#search-sub-input {
+#filters-header {
+  display: flex;
+}
+
+#filters-header i {
+  color: #6029a1;
+}
+
+#search-form-expansion button {
+  padding: 0 20px;
+  border-radius: 100px;
+  border: 1px solid gray;
+  background-color: #6029a1;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  height: 30px;
+  margin: auto;
+}
+
+#search-form-expansion button:hover {
+  color: #7f37d0;
+}
+
+#filters {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#filters input[type="text"] {
   height: 30px;
   border-radius: 10px;
   width: 110px;
 }
 
-.filter-row {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
+#filters input[type="range"] {
+  width: 75%;
+  margin-left: 10px;
 }
 
-.filter-row button {
-  padding: 0 5px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  background-color: #6029a1;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
+.range-slider {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 10px 10px;
+}
+
+.range-slider p {
+  margin: 0;
   font-weight: bold;
-  height: 30px;
+}
+
+#gender-selector-search {
+  display: flex;
+}
+
+#gender-selector-search p {
+  margin: 0 10px 0 0;
+  height: min-content;
+  padding: 5px;
+  background-color: #f0f2f4;
+  border-radius: 5px;
+  outline: 1px solid black;
+}
+
+#gender-selector-search .selected {
+  outline: 2px solid #6029a1;
+  color: #6029a1;
+}
+
+.filters-row {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  width: 25%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.links a {
+  all: unset;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px 5px;
+}
+
+.links a:hover {
+  color: #6029a1;
 }

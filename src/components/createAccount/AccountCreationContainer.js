@@ -12,6 +12,7 @@ import getImageFromRef from "../../firebase-utils/query/getImageFromRef";
 import CopyrightFooter from "../footer/Footer";
 import UserTag from "./UserTag";
 import Fuse from 'fuse.js'
+import NavBar from "../navBar/NavBar";
 
 function AccountCreationContainer(){
     // TODO: verify user socials are valid
@@ -23,6 +24,7 @@ function AccountCreationContainer(){
     const [tagSuggestions, updateTagSuggestions] = useState([]);
     const [filteredTagSuggestions, updateFilteredTagSuggestions] = useState([]);
     const [tagSearcher, updateTagSearcher] = useState(null);
+    const [gender, updateGender] = useState(null);
     const urlParams = new URLSearchParams(window.location.search);
     const formRef = useRef(null)
     const inputTagsBox = useRef(null)
@@ -46,13 +48,13 @@ function AccountCreationContainer(){
         detectProfanityFromForm(formRef.current)
         .then((hasProfanity) => {
             if (hasProfanity) createNotification('error', `We detected profanity in your account info. Please remove it and try again.`)
-            else postAccountInfo(formRef.current, imageInserts, tags)
+            else postAccountInfo(formRef.current, imageInserts, tags, gender)
         })
     }
 
     useEffect(() => {
-        updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
-    }, [socials, tags])
+        updateHasEmptyFields(checkEmptyFields(formRef.current, tags, gender))
+    }, [socials, tags, gender])
 
     useEffect(() => {
         fetch('/assets/tags.json')
@@ -103,6 +105,9 @@ function AccountCreationContainer(){
 
                 // add tags
                 updateTags(profile.tags)
+
+                //add gender
+                updateGender(profile.gender)
                 
                 // show social media slots
                 const socialMediaKeys = Object.keys(profile.socials).filter((key) => profile.socials[key]);
@@ -137,11 +142,11 @@ function AccountCreationContainer(){
 
     return(
         <>
-            {getCurrentUser() && <p id="welcome">Welcome {getCurrentUser().email}!</p>}
+            <NavBar />
             <div id="create-account"
                 onMouseMove={() => {
                     updateValidDate(validateDate(formRef.current))
-                    updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
+                    updateHasEmptyFields(checkEmptyFields(formRef.current, tags, gender))
                     
                     getInvalidSocials(formRef.current, socials)
                     .then((invalidUsers) => {
@@ -155,7 +160,7 @@ function AccountCreationContainer(){
                         onSubmit={handleSubmit} 
                         onChange={() => {
                             updateValidDate(validateDate(formRef.current))
-                            updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
+                            updateHasEmptyFields(checkEmptyFields(formRef.current, tags, gender))
                             
                             getInvalidSocials(formRef.current, socials)
                             .then((invalidUsers) => {
@@ -173,6 +178,12 @@ function AccountCreationContainer(){
                             placeholder="Enter your full name"
                             required
                         />
+                        <label>Gender</label>
+                        <div id="gender-selector">
+                            <p onClick={() => updateGender('male')} className={gender === 'male' ? 'selected' : ''}>Male</p>
+                            <p onClick={() => updateGender('female')} className={gender === 'female' ? 'selected': ''}>Female</p>
+                            <p onClick={() => updateGender('other')} className={gender === 'other' ? 'selected': ''}>Other</p>
+                        </div>
                         <label>Birthday</label>
                         <div id="bday-input">
                             <input
@@ -264,7 +275,7 @@ function AccountCreationContainer(){
                         }
 
                         <label>Tags</label>
-                        <p>These will help us connect you to the right person.</p>
+                        <p>Add your own or select from the list.</p>
                         <div style={{'display': 'flex'}}>
                             <input
                                 type="text"
@@ -314,7 +325,7 @@ function AccountCreationContainer(){
                             placeholder="Write a little about yourself"
                             onBlur={() => {
                                 updateValidDate(validateDate(formRef.current))
-                                updateHasEmptyFields(checkEmptyFields(formRef.current, tags))
+                                updateHasEmptyFields(checkEmptyFields(formRef.current, tags, gender))
                             }} 
                             name="bio"
                             form='create-account-form'
@@ -399,7 +410,7 @@ function getInvalidSocials(ref, socials){
     })
 }
 
-function checkEmptyFields(ref, tags){
+function checkEmptyFields(ref, tags, gender){
     if(!ref) return true
     const formData = new FormData(ref)
     const fields = Array.from(formData.entries())
@@ -409,7 +420,7 @@ function checkEmptyFields(ref, tags){
     fields.forEach((field) => {
         if (!exclude.includes(field[0]) && field[1].length === 0) emptyFields.push(field[0])
     })
-    return emptyFields.length > 0 || tags.length === 0
+    return emptyFields.length > 0 || tags.length === 0 || !gender
 }
 
 function detectProfanityFromForm(form){

@@ -1,0 +1,140 @@
+#schedule-create-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#schedule-create-container h1 {
+  margin: 60px auto 10px;
+  letter-spacing: 0.5px;
+}
+
+#schedule-create-container h3 {
+  margin: 15px auto 50px;
+  color: #3e3d3d;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+#schedule-create-container #save-button {
+  padding: 15px 50px;
+  border-radius: 50px;
+  border: 1px solid gray;
+  background-color: #6029a1;
+  color: white;
+  cursor: pointer;
+  width: min-content;
+  margin: 50px auto 50px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#schedule-create-container button:hover {
+  background-color: #7f37d0 !important;
+}
+
+#schedule-create-container button:active {
+  background-color: #6029a1 !important;
+}
+
+#day-selector {
+  margin: auto auto 30px;
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+}
+
+#day-selector h2 {
+  width: 150px;
+  text-align: center;
+  padding-bottom: 5px;
+  width: min-content;
+  cursor: pointer;
+  user-select: none;
+}
+
+#day-selector h2.selected {
+  border-bottom: 2px solid #6029a1;
+}
+
+#not-avail-day-check {
+  margin: 0 20px;
+  user-select: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#not-avail-day-check.not-avail-text {
+  color: #6029a1;
+}
+
+#not-avail-day-check input {
+  height: 15px;
+  width: 15px;
+}
+
+.hours-container {
+  background-color: lightgray;
+  display: flex;
+  border-radius: 50px;
+  padding: 0 8px;
+  overflow: hidden;
+  margin: 10px auto;
+  border: 3px solid #6029a1;
+}
+
+.hours-container.not-available {
+  color: rgb(184, 184, 184);
+  border-color: #3e3d3d;
+}
+
+.hours-container.not-available p {
+  border-color: #3e3d3d;
+}
+
+.hours-container > :not(:last-child) {
+  border-right: 3px solid #6029a1;
+}
+
+.hours-container p {
+  margin: 4px 0;
+  padding: 15px 8px;
+}
+
+.hours-container p:first-child {
+  border-radius: 100px 0 0 100px;
+}
+
+.hours-container p:last-child {
+  border-radius: 0 100px 100px 0;
+}
+
+.hour {
+  padding: 10px 8px;
+  margin: 5px 0;
+  user-select: none;
+  font-weight: bold;
+  position: relative;
+}
+
+#bottom-row {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+#day-of-week-container {
+  width: min-content;
+  margin: auto;
+}
+
+#bottom-row #reset-button {
+  all: unset;
+  background-color: #6029a1;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid gray;
+}

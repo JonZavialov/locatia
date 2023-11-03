@@ -1,0 +1,74 @@
+Standard Agreement Between Buyer and Seller Effective Date: October 31st, 2023
+
+This standard agreement between the Buyer and the Seller sets out the terms that govern each transaction between a Buyer and a Seller on Locatia.
+
+<indent>1. Definitions
+In this agreement, the following definitions apply:
+
+- “Buyer” means a User who follows a Seller and is able to view the Seller's Hangouts.
+- “Buyer/Seller Transaction” means any transaction between a Buyer and a Seller on Locatia by which access is granted to the Seller's Hangouts, including in any of the following ways: (a) a Subscription; (b) payments made by a Buyer to view a Seller's pay-per-chat or pay-per-hangouts; (c) payments made by a Buyer to use the Buyer interaction function on a Seller's account; and (d) payments made by a Buyer to a Seller for any other paid feature available now or in the future.
+- “Buyer Payment” means (a) all payments made by a Buyer with respect to any Buyer/Seller Transaction, and (b) all tips.
+- “Hangouts” means any scheduled times uploaded to Locatia by any User (whether a Seller or a Buyer), including any photos, videos, audio (for example, music and other sounds), livestream material, data, text (such as comments and hashtags), metadata, images, interactive features, emojis, GIFs, memes, and any other material.
+- “Locatia” means the website located at www.locatia.co.
+- “Referring User” means a User who participates in the Locatia Referral Program.
+- “Relevant hangouts” has the meaning set out in section 5.
+- “Seller” means a User who has set up their Locatia account as a Seller account to post hangouts on Locatia to be viewed by other Users.
+- “Service Fee” means the fee charged by Locatia to Sellers under the Seller Agreement.
+- “Subscription” means a Buyer's subscription to a Seller's account.
+- “Tax” includes all forms of tax and statutory, governmental, state, federal, provincial, local government, or municipal charges, duties, imposts, contributions, levies, withholdings, or liabilities, including value added tax, sales tax, and use tax, wherever chargeable.
+- “User” means any user of Locatia, whether a Seller or a Buyer or both (also referred to as "you" or “your”).
+
+<indent>2. Applicability
+Each time a Buyer/Seller Transaction is initiated on Locatia, this agreement will apply to the exclusion of any other terms that the Buyer or Seller may propose, and this agreement legally binds the Buyer and Seller participating in the Buyer/Seller Transaction.
+
+<indent>3. Parties
+The only parties to this agreement are the Buyer and Seller participating in the Buyer/Seller Transaction. Locatia is not a party to this agreement, and neither grants any rights in respect of, nor participates in, any Buyer/Seller Transaction, except for acting as a payment intermediary under the Seller's and Buyer's instructions set out in section 4 of this agreement.
+
+<indent>4. Pricing and Payment
+By entering into a Buyer/Seller Transaction, the Buyer shall pay the Buyer Payment applicable to the relevant Buyer/Seller Transaction according to the pricing published in the Seller's account plus any applicable Tax. The Buyer and Seller participating in the Buyer/Seller Transaction authorize Locatia or any of its subsidiaries to act as a payment intermediary and to collect, hold, and process the Buyer Payment and any applicable Tax, to deduct the Service Fee, and to pay out the sums due to Sellers and (if applicable) Referring Users, as described in the Locatia Seller Agreement.
+
+<indent>5. Hangout License
+Once the Buyer has made the Buyer Payment for a Buyer/Seller Transaction, the Seller hereby grants the Buyer a limited license to access the applicable Hangout of that Seller to which the Buyer/Seller Transaction relates (“Relevant hangout”). This license is non-transferable, non-sublicensable, and non-exclusive, and allows the Buyer to access, view, and download the Relevant Hangouts on the Buyer's personal device and via a normal web browser (and to make a temporary copy of that Hangouts only to the extent that this is an incidental and technical process forming part of the Buyer's accessing the Hangouts (i.e., caching)), according to the Terms-of-Service Agreement.
+
+<indent>6. Hangouts Ownership
+The Buyer participating in the Buyer/Seller Transaction acknowledges that the Relevant Hangouts license provided in section 5 of this agreement does not result in the Buyer acquiring any rights in or to the Relevant Hangouts, which rights shall be retained by the Seller of the Relevant Hangouts.
+
+<indent>7. License Termination
+Except for Hangouts that the Buyer has downloaded, the license granted to a Buyer for the Relevant Hangouts will terminate automatically without notice in the following circumstances:
+
+- if the Buyer Payment related to the Buyer/Seller Transaction was unsuccessful or is charged back or reversed for any reason;
+- with respect to pay-per-hangout, and the hangout was not successfully executed or done on the date and hour as scheduled
+- if the Buyer's User account is suspended or terminated for any reason;
+- if the Buyer acts in breach of the Terms-of-Service Agreement (whether with respect to the Relevant Hangouts or at all);
+- if the Hangouts is removed from the Seller's account; or
+- if the Buyer closes their Locatia User account.
+
+<indent>8. Cancellation and Refunds
+With respect to every Buyer/Seller Transaction:
+
+- The Buyer acknowledges that the Buyer/Seller Transaction will result in a supply of the Relevant Hangouts to the Buyer before the end of the period of 14 days from the date when the Buyer/Seller Transaction is entered into, and the Buyer gives his or her express consent to this and confirms to the Seller that he or she is aware that any statutory right to cancel the Buyer/Seller Transaction that the Buyer has under applicable law will therefore be lost.
+- This agreement does not affect any statutory right to receive a refund from the Seller that a Buyer may have under applicable law.
+
+<indent>9. Seller and Buyer Obligations
+With respect to every Buyer/Seller Transaction:
+
+- The Buyer and the Seller participating in the Buyer/Seller Transaction shall comply at all times with the Locatia Terms-of-Service Agreement with respect to the Relevant Hangout, including when accessing, viewing, downloading, and interacting with it.
+- The Buyer participating in the Buyer/Seller Transaction shall make the Buyer Payment required to access, view, download, or interact with the Relevant Hangouts, and shall not initiate a chargeback other than if the Buyer disputes the Buyer/Seller Transaction in good faith.
+- The Seller participating in the Buyer/Seller Transaction shall make the Relevant Hangouts available to the Buyer once the Buyer has made the Buyer Payment applicable to the Relevant Hangout.
+- The Seller warrants that it possesses all necessary rights in and to the Relevant Hangouts sufficient to license it to the Buyer in the territory in which the Buyer will be available to hangout whether online or in person, and has obtained all permissions and consents needed to grant the license in section 5 of this agreement.
+- The Seller is solely responsible for creating and uploading the scheduled times. The Seller provides no guarantees that it will continue to create and schedule hangouts on an ongoing basis.
+- Unless there has been negligence or other breach of duty by the Seller, the Buyer's setting up and scheduling of the Seller's hangouts is entirely at the Buyer's own risk.
+
+<indent>10. No Guarantees
+The Buyer participating in the Buyer/Seller Transaction acknowledges that Sellers may add and remove scheduled hangouts at any time from their Seller account, and that Sellers have the discretion to decide what sort of hangouts to make available on their account. In addition, the Buyer participating in the Buyer/Seller Transaction acknowledges that there may be circumstances where it is not possible for the Buyer to access scheduled hangouts to be provided under the Buyer/Seller Transaction, including:
+
+- if the Seller's account is suspended or deleted;
+- if the Buyer's account is suspended or deleted;
+- if the availability of all or any part of the Locatia website is suspended or inaccessible; or
+- if the Seller is unable to schedule or upload Relevant Hangouts in the future.
+
+<indent>11. Governing Law and Dispute Resolution
+
+- Pennsylvania law governs all matters arising out of or relating to this agreement without giving effect to any conflicts of law principles. The Buyer will also be able to rely on mandatory rules of the law of the jurisdiction where the Buyer resides.
+- All claims and disputes arising under or relating to this agreement are to be settled by binding arbitration. The arbitration shall be conducted by Arbitration Resolution Services, Inc. (ARS) (or a similar online dispute resolution provider if ARS is not available) and the parties shall be bound by all rules of ARS and any award/decision rendered. ARS rules can be found at www.arbresolutions.com. Any decision or award as a result of any such arbitration proceeding shall be in writing and shall provide an explanation for all decisions. Any such arbitration shall be conducted by an arbitrator experienced in e-commerce and shall include a written record of the arbitration hearing. An award of arbitration may be confirmed in a court of competent jurisdiction.
+- Any disputes not subject to arbitration must be brought in the courts of competent jurisdiction where the Buyer resides.
