@@ -12,6 +12,7 @@ import getImageFromRef from "../../firebase-utils/query/getImageFromRef";
 import CopyrightFooter from "../footer/Footer";
 import UserTag from "./UserTag";
 import Fuse from 'fuse.js'
+import NavBar from "../navBar/NavBar";
 
 function AccountCreationContainer(){
     // TODO: verify user socials are valid
@@ -141,7 +142,7 @@ function AccountCreationContainer(){
 
     return(
         <>
-            {getCurrentUser() && <p id="welcome">Welcome {getCurrentUser().email}!</p>}
+            <NavBar />
             <div id="create-account"
                 onMouseMove={() => {
                     updateValidDate(validateDate(formRef.current))
