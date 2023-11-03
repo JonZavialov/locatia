@@ -35,7 +35,7 @@ body {
   margin-right: 10px;
 }
 
-#tags-box .socials-box {
+#tags-box-profile .socials-box {
   background-color: white;
 }
 
@@ -89,7 +89,7 @@ body {
   display: flex;
 }
 
-#tags-box {
+#tags-box-profile {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 15px 15px 10px;
@@ -145,7 +145,7 @@ body {
   margin-bottom: 0;
 }
 
-#tags-box .socials-box {
+#tags-box-profile .socials-box {
   padding: 15px 50px;
   background-color: #7f37d0;
   color: white;

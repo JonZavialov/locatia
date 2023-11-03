@@ -19,6 +19,7 @@ function ContactUs(){
         e.preventDefault();
         // TODO: link with backend
         // Make sure all fields are filled out
+        // If it is a report, append something to the beginning
     }
     
     return(

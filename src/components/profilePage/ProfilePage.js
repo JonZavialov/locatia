@@ -27,7 +27,7 @@ function ProfilePage({ data, uuid, username }){
                 {!images && 'Loading...'}
                 {images && <Carousel images={images} name={data.name}/>}
                 <div id="carousel-info">
-                    <div id="tags-box">
+                    <div id="tags-box-profile">
                         <p id="tags-label">Tags:</p>
                         <div style={{
                             'display': 'flex',
