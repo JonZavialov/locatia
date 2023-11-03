@@ -7,7 +7,7 @@ function BlogCard({id, imgURL, title, date, content}) {
     let publishedDate = new Date(date)
   return (
     <div className='card-body' onClick={()=>navigate(`/blog/${id}`)}>
-        <img className="blog-img" src={imgURL} />
+        <img className="blog-img" src={imgURL} alt="blog" />
         <h3 className='card-title'>{title}</h3>
         <p>{publishedDate.getMonth()+1}/{publishedDate.getDate()}/{publishedDate.getFullYear()}</p>
         <p>{content}</p>
