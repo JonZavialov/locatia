@@ -61,3 +61,8 @@
 #contact-us-container button:active {
   background-color: #6029a1;
 }
+
+#user-report-info {
+  color: #6029a1;
+  margin: 5px 0;
+}

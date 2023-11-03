@@ -26,18 +26,21 @@ function ProfilePage({ data, uuid, username }){
             <div id="gallery-contacts">
                 {!images && 'Loading...'}
                 {images && <Carousel images={images} name={data.name}/>}
-                <div id="contact-area">
-                    <p id="tags-label">Tags:</p>
-                    <div style={{
-                        'display': 'flex',
-                        'flexWrap': 'wrap',
-                    }}>
-                        {
-                            data.tags.map((tag, index) => (
-                                <UserTag key={index} tag={tag} />
-                            ))
-                        }
+                <div id="carousel-info">
+                    <div id="tags-box">
+                        <p id="tags-label">Tags:</p>
+                        <div style={{
+                            'display': 'flex',
+                            'flexWrap': 'wrap',
+                        }}>
+                            {
+                                data.tags.map((tag, index) => (
+                                    <UserTag key={index} tag={tag} />
+                                ))
+                            }
+                        </div>
                     </div>
+                    <button id="report-button" onClick={() => window.location.href = `/contact?report=${username}`}>⚠ Report User</button>
                 </div>
             </div>
             <hr />
