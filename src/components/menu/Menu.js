@@ -27,6 +27,12 @@ function Menu(){
                 </svg>
                 Profile
             </li>
+            <li onClick={() => window.location.href = '/blogs'}>
+                <svg>
+                    <path d={svg.chat} />
+                </svg>
+                Blogs
+            </li>
         </ul>
     )
 }
