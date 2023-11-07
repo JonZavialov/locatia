@@ -7,24 +7,17 @@ import { blogData } from '../mockdata';
 
 function IndBlog() {
     const { id } = useParams();
-    const [blog,setBlog] = useState({
-        title:"",
-        image:"",
-        bodyText:"",
-        pubdate: "",
-        pubdate1:new Date()
-    })
+    const [blog, setBlog] = useState({})
    
     useEffect(() => {
         // Write a query from the database here
         // getBlogFromTitle()
         setBlog(
             {
-                title:blogData[id].title,
-                image:blogData[id].urlToImage,
-                bodyText:blogData[id].content,
-                pubdate:blogData[id].publishedAt,
-                pubdate1:new Date(blogData[id].publishedAt),
+                title: blogData[id].title,
+                image: blogData[id].urlToImage,
+                bodyText: blogData[id].content,
+                pubdate: new Date(blogData[id].publishedAt),
             }
         )
     }, [id]);
@@ -32,20 +25,18 @@ function IndBlog() {
     return (
         <>
             <NavBar />
-            {/* Need a div here for the body*/}
-            {/* Close div */}
-            <div className='indBlog-container'>
-                {/* Here will hold the image (big image probably)*/}
-                <img src={blog.image} className='indBlog-img' alt="blog" />
-                {/* publication date in small text here (font-size = 14px)*/}
-                <p className='indBlog-dateText'><span className='published-text'>Published:</span> 
-                {blog.pubdate1.getMonth()+1}/{blog.pubdate1.getDate()}/{blog.pubdate1.getFullYear()}
-                </p>
-                {/* Then the title here (thinking probably size 'h3') */}
-                <p className='indBlog-title'>{blog.title}</p>
-                {/* Finally will be the body text */}
-                <p className='indBlog-bodytext'>{blog.bodyText}</p>
-            </div>
+            {
+                blog.title === undefined ? <h1 id="blog-not-found">Blog not found!</h1> :
+                <div id='ind-blog-container'>
+                    <img src={blog.image} alt="blog" />
+                    <p id='ind-blog-title'>{blog.title}</p>
+                    <p id='ind-blog-pubdate'>
+                        <span>Published </span> 
+                        {blog.pubdate.getMonth()+1}/{blog.pubdate.getDate()}/{blog.pubdate.getFullYear()}
+                    </p>
+                    <p id='ind-blog-content'>{blog.bodyText}</p>
+                </div>
+            }
             <CopyrightFooter />
         </>
     );

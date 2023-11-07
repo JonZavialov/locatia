@@ -6,13 +6,14 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.page-title {
-  padding: 15px 15px 10px;
-  margin: auto;
-  width: 80%;
+
+#page-title {
+  text-align: center;
+  margin-top: 50px;
 }
+
 .card-body {
-  background-color: #f6f6f6;
+  background-color: white;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -21,27 +22,25 @@
   margin: 15px;
   cursor: pointer;
   width: 250px;
-  height: 70vh;
-  /* border: 2px solid #6029a1; */
+  height: min-content;
+  border: 2px solid #6029a1;
 
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
+
 .blog-img {
   border-radius: 10px;
   width: 100%;
   height: fit-content;
 }
+
 .card-title {
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
-  color: rgb(19, 15, 38);
   height: min-content;
   margin-bottom: 0;
 }
@@ -49,7 +48,6 @@
 .card-body:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.05);
-  /* background: linear-gradient(to right bottom, #6029a1, #8b4bd4); */
 
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;

@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-function BlogCard({id, imgURL, title, date, content}) {
+function BlogCard({ id, imgURL, title, date, content }) {
   const navigate = useNavigate()
   let publishedDate = new Date(date)
   
