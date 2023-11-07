@@ -1,15 +1,26 @@
-#blog-cards-container {
-  margin: 1rem;
-  padding: 1rem;
+#blog-cards-collection {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0 100px;
 }
 
-#page-title {
-  text-align: center;
-  margin-top: 50px;
+#blog-cards-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#blog-search-bar {
+  all: unset;
+  padding: 15px;
+  outline: 1px solid black;
+  border-radius: 100px;
+  margin: 50px 300px;
+}
+
+#blog-search-bar:focus {
+  outline: 2px solid #6029a1;
 }
 
 .card-body {

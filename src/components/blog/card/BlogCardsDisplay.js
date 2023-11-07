@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import NavBar from '../../navBar/NavBar'
 import CopyrightFooter from '../../footer/Footer'
 import "./blogcards.css"
 import { blogData } from '../mockdata'
 import BlogCard from './BlogCard'
+import Fuse from 'fuse.js'
 
 function BlogCardsDisplay() {
     const [articles, setArticles] = useState([])
+    const [filteredArticles, setFilteredArticles] = useState([])
+    const searchBar = useRef(null)
     
     useEffect(()=>{
         // call data from api
@@ -17,26 +20,41 @@ function BlogCardsDisplay() {
         // }
         // fetchData()
         setArticles(blogData)
+        setFilteredArticles(blogData)
     }, [])
+
+    function searchName(name){
+      if (!name) {
+        setFilteredArticles(articles)
+        return
+      }
+
+      const fuse = new Fuse(articles, {
+        keys: ['title', 'description'],
+        threshold: 0.5
+      })
+      setFilteredArticles(fuse.search(name).map(a => a.item))
+    }
 
   return (
     <>
       <NavBar />
-      {/* TODO: Search bar for blogs */}
-      <h2 id="page-title">Blogs</h2>
-      <div id='blog-cards-container'>
-        {
-          articles.map((a,i) => {
-            return <BlogCard 
-              key={i}
-              imgURL={a.urlToImage}
-              title={a.title}
-              date={a.publishedAt}
-              content={a.content}
-              id={i}
-            />
-          })
-        }
+      <div id="blog-cards-page-container">
+        <input type="text" id="blog-search-bar" placeholder="Search for a blog" ref={searchBar} onChange={() => searchName(searchBar.current.value)} />
+        <div id='blog-cards-collection'>
+          {
+            filteredArticles.map((a,i) => {
+              return <BlogCard 
+                key={i}
+                imgURL={a.urlToImage}
+                title={a.title}
+                date={a.publishedAt}
+                content={a.description}
+                id={i}
+              />
+            })
+          }
+        </div>
       </div>
       <CopyrightFooter />
     </>
