@@ -4,11 +4,9 @@ import CopyrightFooter from '../../footer/Footer'
 import "./blogpage.css"
 import { blogData } from '../mockdata'
 import BlogCard from './BlogCard'
-import { useNavigate } from "react-router-dom";
 
-function BlogPage() {
-    const [articles,setArticles] = useState([])
-    const navigate = useNavigate()
+function BlogCardsDisplay() {
+    const [articles, setArticles] = useState([])
     
     useEffect(()=>{
         // call data from api
@@ -23,25 +21,26 @@ function BlogPage() {
 
   return (
     <>
-    <NavBar />
-    <div className='blogs-page'>
-        <h2 className='page-title'>Blogs</h2>
-        <div className='blogs-container'>
-            {articles.map((a,i) => {
-            return <BlogCard key={i}
-            imgURL={a.urlToImage}
-            title={a.title}
-            date={a.publishedAt}
-            content={a.content}
-            id={i}
-            //    onClick={()=>navigate(``)}
+      <NavBar />
+      <h2 className='page-title'>Blogs</h2>
+      <div id='blog-cards-container'>
+        {
+          articles.map((a,i) => {
+            return <BlogCard 
+              key={i}
+              imgURL={a.urlToImage}
+              title={a.title}
+              date={a.publishedAt}
+              content={a.content}
+              id={i}
+              // onClick={()=>navigate(``)}
             />
-            })}
-        </div>
-    </div>
-    <CopyrightFooter />
+          })
+        }
+      </div>
+      <CopyrightFooter />
     </>
   )
 }
 
-export default BlogPage
+export default BlogCardsDisplay

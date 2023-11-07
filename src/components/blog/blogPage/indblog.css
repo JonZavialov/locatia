@@ -1,33 +1,33 @@
-.indBlog-container{
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 2rem 5rem 2rem;
-    padding: 15px;
-    align-items: center;
-    background-color: #F6F6F6;
-    border-radius: 20px;
+.indBlog-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 2rem 5rem 2rem;
+  padding: 15px;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 20px;
 }
-.indBlog-img{
-    height: 500px;
-    width: 50%;
-    margin: 10px;
+.indBlog-img {
+  height: 500px;
+  width: 50%;
+  margin: 10px;
 }
-.indBlog-dateText{
-    text-align: left;
-    width: 100%;
-    font-size: 14px;
+.indBlog-dateText {
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
 }
-.published-text{
-    font-weight: bolder;
+.published-text {
+  font-weight: bolder;
 }
-.indBlog-title{
-    font-size: 26px;
-    font-weight: 600;
-    color: rgb(121, 69, 229);
-    margin-bottom: 30px;
-    width: 100%;
-    text-align: left;
+.indBlog-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: rgb(121, 69, 229);
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
 }
-.indBlog-bodytext{
-    line-height: 28px;
+.indBlog-bodytext {
+  line-height: 28px;
 }
