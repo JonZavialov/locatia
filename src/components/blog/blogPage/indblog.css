@@ -11,6 +11,7 @@
   align-items: center;
   background-color: #f6f6f6;
   border-radius: 20px;
+  border: 2px solid #6029a1;
 }
 
 #ind-blog-container img {
