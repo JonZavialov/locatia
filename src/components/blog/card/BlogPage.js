@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../navBar/NavBar'
-import CopyrightFooter from '../footer/Footer'
+import NavBar from '../../navBar/NavBar'
+import CopyrightFooter from '../../footer/Footer'
 import "./blogpage.css"
-import { blogData } from './mockdata'
+import { blogData } from '../mockdata'
 import BlogCard from './BlogCard'
 import { useNavigate } from "react-router-dom";
 

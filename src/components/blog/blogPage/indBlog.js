@@ -1,9 +1,9 @@
 import './indblog.css';
-import NavBar from '../navBar/NavBar';
-import CopyrightFooter from '../footer/Footer';
+import NavBar from '../../navBar/NavBar';
+import CopyrightFooter from '../../footer/Footer';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { blogData } from '../blogPage/mockdata';
+import { blogData } from '../mockdata';
 
 function IndBlog() {
     const { id } = useParams();

@@ -8,8 +8,8 @@ import NotFound from './homePage/NotFound';
 import LandingPage from './landingPage/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
-import IndBlog from './indBlog/indBlog'
-import BlogPage from './blogPage/BlogPage';
+import IndBlog from './blog/blogPage/indBlog'
+import BlogPage from './blog/card/BlogPage';
 import Schedule from './schedule/Schedule';
 import FaqContainer from './faq/FaqContainer';
 import LegalPage from './legalPage/LegalPage';
