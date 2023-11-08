@@ -12,21 +12,33 @@ function IndBlog() {
     useEffect(() => {
         // Write a query from the database here
         // getBlogFromTitle()
-        setBlog(
-            {
-                title: blogData[id].title,
-                image: blogData[id].urlToImage,
-                bodyText: blogData[id].content,
-                pubdate: new Date(blogData[id].publishedAt),
-            }
-        )
+
+        if(!blogData[id]) {
+            setBlog(
+                {
+                    title: undefined,
+                    image: undefined,
+                    bodyText: undefined,
+                    pubdate: new Date(),
+                }
+            )
+        }else{
+            setBlog(
+                {
+                    title: blogData[id].title,
+                    image: blogData[id].urlToImage,
+                    bodyText: blogData[id].content,
+                    pubdate: new Date(blogData[id].publishedAt),
+                }
+            )
+        }
     }, [id]);
 
     return (
         <>
             <NavBar />
             {
-                blog.title === undefined ? <h1 id="blog-not-found">Blog not found!</h1> :
+                !blog.title ? <h1 id="blog-not-found">Blog not found!</h1> :
                 <div id='ind-blog-container'>
                     <img src={blog.image} alt="blog" />
                     <p id='ind-blog-title'>{blog.title}</p>

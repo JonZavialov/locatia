@@ -33,7 +33,7 @@
   margin: 15px;
   cursor: pointer;
   width: 250px;
-  height: min-content;
+  height: 400px;
   border: 2px solid #6029a1;
 
   transition-duration: 0.2s;
@@ -54,6 +54,7 @@
   overflow: hidden;
   height: min-content;
   margin-bottom: 0;
+  display: table;
 }
 
 .card-body:hover {
@@ -62,4 +63,12 @@
 
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
+}
+
+#blog-card-content {
+  margin-top: 0;
+}
+
+.card-date {
+  margin: 10px 0;
 }

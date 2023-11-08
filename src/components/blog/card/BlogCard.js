@@ -9,9 +9,9 @@ function BlogCard({ id, imgURL, title, date, content }) {
   return (
     <div className='card-body' onClick={()=>navigate(`/blog/${id}`)}>
       <img className="blog-img" src={imgURL} alt="blog" />
-      <h3 className='card-title'>{title}</h3>
-      <p>{publishedDate.getMonth()+1}/{publishedDate.getDate()}/{publishedDate.getFullYear()}</p>
-      <p>{content}</p>
+      <h3 className='card-title'>{title}</h3> {/* Max length 60 */}
+      <p className="card-date">{publishedDate.getMonth()+1}/{publishedDate.getDate()}/{publishedDate.getFullYear()}</p>
+      <p id="blog-card-content">{content}</p> {/* Max length 112 */}
     </div>
   )
 }
