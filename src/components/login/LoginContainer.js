@@ -5,6 +5,7 @@ import CreateAccount from './actionsBoxStates/CreateAccount';
 import SignIn from './actionsBoxStates/SignIn';
 import ResetPassword from './actionsBoxStates/ResetPassword';
 import ResetPasswordFromEmail from './actionsBoxStates/ResetPasswordFromEmail';
+import getCurrentUser from '../../utils/getCurrentUser';
 
 function LoginContainer(){
     const [provider, setProvider] = useState(false);
@@ -17,6 +18,10 @@ function LoginContainer(){
     useEffect(() => {
         if (urlParams.get('mode') === 'reset') setProvider('reset-pass')
         else if (urlParams.get('mode') === 'signin') setProvider('signin')
+
+        const userInfo = getCurrentUser()
+        if (userInfo) window.location.href = '/home'
+
     // TODO: fix 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
