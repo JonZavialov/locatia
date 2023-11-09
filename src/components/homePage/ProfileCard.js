@@ -31,7 +31,7 @@ function ProfileCard({ profileInfo, uuid }){
         <div className="profile-card" onClick={(e) => redirectFromCard(e, username) }>
             <img src={uri} alt={profileInfo.name} id="profile-image"></img>
             <h3>{profileInfo.name}</h3>
-            <p>{profileInfo.school}</p>
+            <p>{profileInfo.city}</p>
             <p>{getAge(profileInfo.birthday)} years old</p>
             <SocialsContainer socials={profileInfo.socials}/>
         </div>
