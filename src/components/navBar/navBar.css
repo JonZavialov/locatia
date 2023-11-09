@@ -18,6 +18,30 @@
   color: #6029a1;
 }
 
+#navbar-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  margin: 0 30px;
+}
+
+#navbar-links a {
+  all: unset;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  line-height: 100px;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+#navbar-links a:hover {
+  background-color: #6029a1;
+  color: white;
+}
+
 #account-indicator {
   display: flex;
   flex-direction: column;
@@ -96,7 +120,7 @@
 
 #search-form {
   position: relative;
-  margin: auto;
+  margin: auto 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #6029a1;
   border-radius: 20px;
