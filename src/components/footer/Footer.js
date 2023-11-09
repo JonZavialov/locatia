@@ -41,7 +41,6 @@ function CopyrightFooter(){
                 <div>
                     <p className="footer-p">Company</p>
                     <a href="/faq">FAQ</a>
-                    <a href="">How it works</a>
                     <a href="/blog">Blogs</a>
                     <a href="/contact">Contact us</a>
                 </div>
