@@ -1,9 +1,19 @@
-#blog-cards-collection {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 100px;
+#categories-selector {
+  margin: 25px auto 10px;
+}
+
+#categories-selector a {
+  all: unset;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 10px 0;
+  padding-bottom: 2px;
+}
+
+#categories-selector a.selected {
+  color: #6029a1;
+  border-bottom: 2px solid #6029a1;
 }
 
 #blog-cards-page-container {
@@ -16,7 +26,27 @@
   padding: 15px;
   outline: 1px solid black;
   border-radius: 100px;
-  margin: 50px 300px;
+  margin: 20px 300px 50px;
+}
+
+#blog-cards-categories {
+  margin: 0 auto;
+}
+
+#blog-cards-categories h1 {
+  color: #6029a1;
+}
+
+#blog-cards-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 100px;
+}
+
+.blog-cards-row {
+  display: flex;
 }
 
 #blog-search-bar:focus {

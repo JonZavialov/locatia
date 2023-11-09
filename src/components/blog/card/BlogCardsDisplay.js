@@ -3,14 +3,23 @@ import NavBar from '../../navBar/NavBar'
 import CopyrightFooter from '../../footer/Footer'
 import "./blogcards.css"
 import { blogData } from '../mockdata'
+import { useParams } from 'react-router-dom'
+import SearchCards from './SearchCards'
+import CardsCategoriesPreview from './CardsCategoriesPreview'
 import BlogCard from './BlogCard'
-import Fuse from 'fuse.js'
+
+const categories = {
+  "personal-stories": "Personal Stories",
+  "tips-and-advice": "Tips & Advice",
+  "misc": "Miscellaneous"
+}
 
 function BlogCardsDisplay() {
-    const [articles, setArticles] = useState([])
-    const [filteredArticles, setFilteredArticles] = useState([])
+    const [articleInfo, setArticleInfo] = useState([])
+    const [searchTerm, setSearchTerm] = useState('')
     const searchBar = useRef(null)
-    
+    let { category } = useParams(); // Undefined if no category
+
     useEffect(()=>{
         // call data from api
         // const fetchData = async() => {
@@ -19,46 +28,49 @@ function BlogCardsDisplay() {
         //    setArticles(response)
         // }
         // fetchData()
-        setArticles(blogData)
-        setFilteredArticles(blogData)
+        setArticleInfo(blogData)
     }, [])
 
-    function searchName(name){
-      if (!name) {
-        setFilteredArticles(articles)
-        return
-      }
-
-      const fuse = new Fuse(articles, {
-        keys: ['title', 'description'],
-        threshold: 0.5
-      })
-      setFilteredArticles(fuse.search(name).map(a => a.item))
-    }
-
-  return (
-    <>
-      <NavBar />
-      <div id="blog-cards-page-container">
-        <input type="text" id="blog-search-bar" placeholder="Search for a blog" ref={searchBar} onChange={() => searchName(searchBar.current.value)} />
-        <div id='blog-cards-collection'>
+    return (
+      <>
+        <NavBar />
+        <div id="blog-cards-page-container">
+          <div id="categories-selector">
+            <a href="/blog/personal-stories" className={categories[category] === "Personal Stories" ? 'selected': ''}>Personal Stories</a>
+            <a href="/blog/tips-and-advice" className={categories[category] === "Tips & Advice" ? 'selected': ''}>Tips & Advice</a>
+            <a href="/blog/misc" className={categories[category] === "Miscellaneous" ? 'selected': ''}>Miscellaneous</a>
+          </div>
           {
-            filteredArticles.map((a,i) => {
-              return <BlogCard 
-                key={i}
-                imgURL={a.urlToImage}
-                title={a.title}
-                date={a.publishedAt}
-                content={a.description}
-                id={i}
-              />
-            })
+            category && articleInfo.length !== 0 ?
+              <div id="blog-cards-search">
+                {
+                  articleInfo[categories[category]].map((a,i) => {
+                      return <BlogCard 
+                      key={i}
+                      imgURL={a.urlToImage}
+                      title={a.title}
+                      date={a.publishedAt}
+                      content={a.description}
+                      id={i}
+                      />
+                  })
+                }
+              </div>
+            :
+              <>
+                <input type="text" id="blog-search-bar" placeholder="Search for a blog" ref={searchBar} onChange={() => setSearchTerm(searchBar.current.value)} />
+                {
+                  searchTerm ? 
+                    <SearchCards name={searchTerm} articleInfo={articleInfo} />
+                  :
+                    <CardsCategoriesPreview articleInfo={articleInfo} />
+                }
+              </>
           }
         </div>
-      </div>
-      <CopyrightFooter />
-    </>
-  )
+        <CopyrightFooter />
+      </>
+    )
 }
 
 export default BlogCardsDisplay
