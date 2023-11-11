@@ -1,0 +1,32 @@
+#notfound-container {
+  display: flex;
+  margin: 100px auto;
+  width: min-content;
+}
+
+#notfound-container img {
+  margin: 0 100px;
+}
+
+#notfound-container h1 {
+  text-wrap: nowrap;
+}
+
+#notfound-container button {
+  padding: 14px 40px;
+  border-radius: 50px;
+  border: 1px solid gray;
+  background-color: #6029a1;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#notfound-container button:hover {
+  background-color: #7f37d0;
+}
+
+#notfound-container button:active {
+  background-color: #6029a1;
+}

@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import AccountCreationContainer from './createAccount/AccountCreationContainer';
 import HomePage from './homePage/HomePage';
 import ProfilePageContainer from './profilePage/ProfilePageContainer';
-import NotFound from './homePage/NotFound';
+import NotFound from './notFound/NotFound';
 import LandingPage from './landingPage/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
@@ -36,11 +36,10 @@ const Main = () => {
       <Route path="/buyerseller" element={< LegalPage fileName="buyerseller.txt" />} />
       <Route path="/faq" element={< FaqContainer />} />
       <Route path="/contact" element={< ContactUs />} />
-      <Route path="/404" element={< NotFound />} />
-      <Route path="*" element={< NotFound />} />
       <Route path='blogs' element={<BlogCardsDisplay />} />
       <Route path='blogs/:category' element={<BlogCardsDisplay />} />
       <Route path='blogs/:category/:id' element={<IndBlog />} />
+      <Route path="*" element={< NotFound />} />
     </Routes>
   );
 }
