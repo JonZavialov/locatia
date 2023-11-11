@@ -28,7 +28,8 @@ function SearchCards({ articleInfo, name }){
                     title={a.title}
                     date={a.publishedAt}
                     content={a.description}
-                    id={i}
+                    id={a.id}
+                    category={a.category}
                     />
                 })
             }

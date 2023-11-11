@@ -38,9 +38,9 @@ const Main = () => {
       <Route path="/contact" element={< ContactUs />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
-      <Route path='blog' element={<BlogCardsDisplay />} />
-      <Route path='blog/:category' element={<BlogCardsDisplay />} />
-      <Route path='blog/:id' element={<IndBlog />} />
+      <Route path='blogs' element={<BlogCardsDisplay />} />
+      <Route path='blogs/:category' element={<BlogCardsDisplay />} />
+      <Route path='blogs/:category/:id' element={<IndBlog />} />
     </Routes>
   );
 }

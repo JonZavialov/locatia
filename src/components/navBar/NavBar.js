@@ -26,7 +26,7 @@ function NavBar(){
                 <a href="/">ABOUT US</a>
                 <a href="/contact">CONTACT US</a>
                 <a href="/faq">FAQ</a>
-                <a href="/blog">BLOGS</a>
+                <a href="/blogs">BLOGS</a>
             </div>
             <AccountIndicator />
         </div>

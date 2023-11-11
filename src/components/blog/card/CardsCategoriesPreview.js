@@ -10,14 +10,15 @@ function CardsCategoriesPreview({articleInfo}){
                             <h1>{a}</h1>
                             <div className='blog-cards-row'>
                                 {
-                                    articleInfo[a].slice(0, 3).map((a,i) => {
+                                    articleInfo[a].slice(0, 3).map((b,i) => {
                                         return <BlogCard 
                                         key={i}
-                                        imgURL={a.urlToImage}
-                                        title={a.title}
-                                        date={a.publishedAt}
-                                        content={a.description}
-                                        id={i}
+                                        imgURL={b.urlToImage}
+                                        title={b.title}
+                                        date={b.publishedAt}
+                                        content={b.description}
+                                        id={b.id}
+                                        category={b.category}
                                         />
                                     })
                                 }

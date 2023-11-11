@@ -36,9 +36,9 @@ function BlogCardsDisplay() {
         <NavBar />
         <div id="blog-cards-page-container">
           <div id="categories-selector">
-            <a href="/blog/personal-stories" className={categories[category] === "Personal Stories" ? 'selected': ''}>Personal Stories</a>
-            <a href="/blog/tips-and-advice" className={categories[category] === "Tips & Advice" ? 'selected': ''}>Tips & Advice</a>
-            <a href="/blog/misc" className={categories[category] === "Miscellaneous" ? 'selected': ''}>Miscellaneous</a>
+            <a href="/blogs/personal-stories" className={categories[category] === "Personal Stories" ? 'selected': ''}>Personal Stories</a>
+            <a href="/blogs/tips-and-advice" className={categories[category] === "Tips & Advice" ? 'selected': ''}>Tips & Advice</a>
+            <a href="/blogs/misc" className={categories[category] === "Miscellaneous" ? 'selected': ''}>Miscellaneous</a>
           </div>
           {
             category && articleInfo.length !== 0 ?
@@ -51,7 +51,8 @@ function BlogCardsDisplay() {
                       title={a.title}
                       date={a.publishedAt}
                       content={a.description}
-                      id={i}
+                      id={a.id}
+                      category={a.category}
                       />
                   })
                 }

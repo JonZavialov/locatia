@@ -5,34 +5,44 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { blogData } from '../mockdata';
 
+const categories = {
+  "personal-stories": "Personal Stories",
+  "tips-and-advice": "Tips & Advice",
+  "misc": "Miscellaneous"
+}
+
 function IndBlog() {
-    const { id } = useParams();
+    const { id, category } = useParams();
     const [blog, setBlog] = useState({})
+
    
     useEffect(() => {
         // Write a query from the database here
         // getBlogFromTitle()
 
-        if(!blogData[id]) {
-            setBlog(
-                {
-                    title: undefined,
-                    image: undefined,
-                    bodyText: undefined,
-                    pubdate: new Date(),
-                }
-            )
-        }else{
-            setBlog(
-                {
-                    title: blogData[id].title,
-                    image: blogData[id].urlToImage,
-                    bodyText: blogData[id].content,
-                    pubdate: new Date(blogData[id].publishedAt),
-                }
-            )
+        for(let blog of blogData[categories[category]]) {
+            if(blog.id === id) {
+                setBlog(
+                    {
+                        title: blog.title,
+                        image: blog.urlToImage,
+                        bodyText: blog.content,
+                        pubdate: new Date(blog.publishedAt),
+                    }
+                )
+                return
+            }
         }
-    }, [id]);
+
+        setBlog(
+            {
+                title: undefined,
+                image: undefined,
+                bodyText: undefined,
+                pubdate: new Date(),
+            }
+        )
+    }, [id, category]);
 
     return (
         <>
