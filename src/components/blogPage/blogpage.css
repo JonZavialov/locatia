@@ -1,3 +1,11 @@
+.blogs-page{
+    margin: 1rem 2rem;
+    padding: 2rem;
+    height: max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
 .blogs-container{
     margin: 1rem;
     padding: 1rem;
@@ -10,8 +18,8 @@
     padding: 15px 15px 10px;
     margin: auto;
     width: 80%;
-
 }
+
 .card-body{
     background-color: #F6F6F6;
     display: flex;
@@ -55,3 +63,27 @@
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
   }
+
+.page-index-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+    position: relative;
+    bottom: 0;
+}
+
+.page-index{
+    padding: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.selected{
+    color: white;
+    background-color: blueviolet;
+}

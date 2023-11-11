@@ -39,7 +39,7 @@ const Main = () => {
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
       <Route path='blogs' element={<BlogPage />} />
-      <Route path='blog/:id' element={<IndBlog />} />
+      <Route path='blog/:page/:id' element={<IndBlog />} />
     </Routes>
   );
 }

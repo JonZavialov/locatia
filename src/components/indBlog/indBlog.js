@@ -3,10 +3,10 @@ import NavBar from '../navBar/NavBar';
 import CopyrightFooter from '../footer/Footer';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { blogData } from '../blogPage/mockdata';
+import { mockData2 } from '../blogPage/mockData2';
 
 function IndBlog() {
-    const { id } = useParams();
+    const { page,id } = useParams();
     const [blog,setBlog] = useState({
         title:"",
         image:"",
@@ -20,13 +20,14 @@ function IndBlog() {
         // getBlogFromTitle()
         setBlog(
             {
-                title:blogData[id].title,
-                image:blogData[id].urlToImage,
-                bodyText:blogData[id].content,
-                pubdate:blogData[id].publishedAt,
-                pubdate1:new Date(blogData[id].publishedAt),
+                title:mockData2[page][id].title,
+                image:mockData2[page][id].urlToImage,
+                bodyText:mockData2[page][id].content,
+                pubdate:mockData2[page][id].publishedAt,
+                pubdate1:new Date(mockData2[page][id].publishedAt),
             }
         )
+        window.scrollTo(0, 0)
     }, []);
 
     // let date = blog.pubdate
