@@ -1,8 +1,6 @@
 import './landingPage.css'
 import { useEffect, useState } from 'react';
 import SketchButton from './SketchButton';
-import getCurrentUser from '../../utils/getCurrentUser';
-
 
 function LandingPage(){
     const urlParams = new URLSearchParams(window.location.search)
@@ -22,9 +20,6 @@ function LandingPage(){
 
     useEffect(() => {
         if (urlParams.get('mode') === 'resetPassword') window.location.href = '/login?mode=reset&code=' + urlParams.get('oobCode') 
-        
-        const userInfo = getCurrentUser()
-        if (userInfo) window.location.href = '/home'
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     

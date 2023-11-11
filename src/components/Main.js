@@ -8,6 +8,8 @@ import NotFound from './homePage/NotFound';
 import LandingPage from './landingPage/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
+import IndBlog from './blog/blogPage/IndBlog'
+import BlogCardsDisplay from './blog/card/BlogCardsDisplay';
 import Schedule from './schedule/Schedule';
 import FaqContainer from './faq/FaqContainer';
 import LegalPage from './legalPage/LegalPage';
@@ -36,6 +38,9 @@ const Main = () => {
       <Route path="/contact" element={< ContactUs />} />
       <Route path="/404" element={< NotFound />} />
       <Route path="*" element={< NotFound />} />
+      <Route path='blogs' element={<BlogCardsDisplay />} />
+      <Route path='blogs/:category' element={<BlogCardsDisplay />} />
+      <Route path='blogs/:category/:id' element={<IndBlog />} />
     </Routes>
   );
 }

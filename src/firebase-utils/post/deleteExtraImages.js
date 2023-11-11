@@ -7,9 +7,7 @@ function deleteExtraImages(imagesLength) {
         listAll(storageRef)
         .then((res) => {
             res.items.forEach((itemRef, i) => {
-                if (i >= imagesLength) {
-                    deleteObject(itemRef);
-                }
+                if (i >= imagesLength) deleteObject(itemRef);
                 if (i === res.items.length - 1) resolve()
             });
         });

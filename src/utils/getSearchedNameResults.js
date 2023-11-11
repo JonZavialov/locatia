@@ -16,7 +16,7 @@ function getSearchedNameResults(query, data){
     })
     
     const fuse = new Fuse(formattedData, {
-        keys: ['name', 'school'],
+        keys: ['name'],
         threshold: 0.3
     })
     const results = fuse.search(query)

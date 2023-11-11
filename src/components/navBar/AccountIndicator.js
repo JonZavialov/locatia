@@ -6,11 +6,8 @@ function AccountIndicator(){
 
     return(
         <div id="account-indicator">
-            {isLoggedIn ? 
-                <p>{getCurrentUser().email}</p> 
-                : 
-                <p>Not logged in</p>
-            }
+            {isLoggedIn && <p>{getCurrentUser().email}</p>}
+            {/* TODO: make this username instead */}
             {isLoggedIn ? 
                 <button onClick={signOutClient}>Log out</button> 
                 : 

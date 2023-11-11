@@ -9,7 +9,7 @@ function HomePage({ search }){
     const [data, updateData] = useState();
     const queryParameters = new URLSearchParams(window.location.search)
 
-    useEffect(() => {   
+    useEffect(() => {
         const getData = async () => {
             const profiles = await getProfiles();
             if (search) updateData(applyFiltersToProfiles(profiles, queryParameters));

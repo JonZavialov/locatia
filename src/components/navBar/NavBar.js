@@ -13,9 +13,6 @@ function NavBar(){
                 <img src={process.env.PUBLIC_URL + '/assets/logo.svg'} alt="logo" id="logo" />
                 <h1>Locatia</h1>
             </div>
-            <div className="links">
-                <a href="/faq">FAQ</a>
-            </div>
             <div id="search-form">
                 <div id="search-form-banner" onClick={() => setIsSearchFormExpanded(!isSearchFormExpanded)}>
                     <p>Any time</p>
@@ -25,8 +22,11 @@ function NavBar(){
                 </div>
                 <ExpandedSearchForm isSearchFormExpanded={isSearchFormExpanded}/>
             </div>
-            <div className="links">
-                <a href="https://www.gigworkersolutions.com/" target='_blank' rel="noreferrer">INSURANCE</a>
+            <div id="navbar-links">
+                <a href="/">ABOUT US</a>
+                <a href="/contact">CONTACT US</a>
+                <a href="/faq">FAQ</a>
+                <a href="/blogs">BLOGS</a>
             </div>
             <AccountIndicator />
         </div>
