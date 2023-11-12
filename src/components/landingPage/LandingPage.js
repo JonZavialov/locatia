@@ -54,6 +54,26 @@ function LandingPage(){
                     })
                 }
             </Marquee>
+            <div id="buyer-seller-desc">
+                <div>
+                    <h2>For Companion Seekers</h2>
+                    <ul>
+                        <li>Customize meetups to match your preferences</li>
+                        <li>Chat and screen potential companions beforehand</li>
+                        <li>Choose between virtual or in-person meetups</li>
+                        <li>Decide on location, time, and activities for your ideal companionship</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>For Companions</h2>
+                    <ul>
+                        <li>Set your own schedule and availability</li>
+                        <li>Set your own price per hour for your companionship</li>
+                        <li>Accept meetups based on your preferences</li>
+                        <li>Choose between online or in-person interactions based on your comfort</li>
+                    </ul>
+                </div>
+            </div>
             <CopyrightFooter />
         </>
     )
