@@ -45,7 +45,7 @@
 }
 
 #hero button {
-  padding: 15px;
+  padding: 15px 20px;
   margin-top: 20px;
   border: none;
   outline: none;
@@ -116,4 +116,25 @@
 
 #hero button:hover {
   color: #db93da;
+}
+
+.banner {
+  background-color: #5e7cea;
+  border-top: 2px solid #6029a1;
+  border-bottom: 2px solid #6029a1;
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-right: 125px;
+}
+
+.banner-item h2 {
+  margin-left: 10px;
+}
+
+.banner-item img {
+  height: 50px;
 }

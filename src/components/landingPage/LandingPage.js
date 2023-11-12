@@ -1,6 +1,22 @@
 import './landingPage.css'
 import { useEffect } from 'react';
 import CopyrightFooter from '../footer/Footer';
+import Marquee from "react-fast-marquee";
+
+const bannerItems = [
+    {
+        image: '/assets/landingpage-banner/friends.png',
+        title: 'Experience Companionship Today',
+    },
+    {
+        image: '/assets/landingpage-banner/money.png',
+        title: 'Earn Money While Making Connections',
+    },
+    {
+        image: '/assets/landingpage-banner/computer.png',
+        title: 'Forge Meaningful Connections Beyond the Screen',
+    }
+]
 
 function LandingPage(){
     const urlParams = new URLSearchParams(window.location.search)
@@ -26,6 +42,18 @@ function LandingPage(){
                     <img id="hero-image" src={process.env.PUBLIC_URL + '/assets/hero.svg'} alt="hero"></img>
                 </div>
             </div>
+            <Marquee className="banner">
+                {
+                    bannerItems.map((item, index) => {
+                        return (
+                            <div className="banner-item" key={index}>
+                                <img src={process.env.PUBLIC_URL + item.image} alt="banner"></img>
+                                <h2>{item.title}</h2>
+                            </div>
+                        )
+                    })
+                }
+            </Marquee>
             <CopyrightFooter />
         </>
     )
