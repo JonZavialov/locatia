@@ -1,23 +1,26 @@
-#landing-page {
+#hero {
   height: 100vh;
   display: flex;
   background: linear-gradient(to right bottom, #491f7b, #8238da);
 }
 
-#hero-content {
-  height: min-content;
-  margin: 100px 0 0 100px;
+#hero-inner-container {
   display: flex;
+  height: min-content;
+  max-height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
 }
 
-#hero-logo-display {
+#hero-logo {
   display: flex;
   align-items: center;
   height: 50px;
   margin-bottom: 20px;
 }
 
-#hero-logo-display img {
+#hero-logo img {
   height: 100%;
   margin-right: 10px;
 }
@@ -36,101 +39,81 @@
   margin: 10px 0;
 }
 
-#mobile-p {
-  font-weight: bold;
-  margin: 30px 0;
+#hero-image {
+  height: 500px;
+  margin-left: 50px;
 }
 
-.sketch-button {
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
+#hero button {
+  padding: 15px;
+  margin-top: 20px;
   border: none;
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: 500;
-  background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5);
-  border-radius: 11px;
-  padding: 16px 24px;
+  outline: none;
+  color: #6029a1;
+  background: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5);
+  cursor: pointer;
   position: relative;
-  line-height: 24px;
-  color: #14387e;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 4px 16px rgba(0, 0, 0, 0.02),
-    0 4px 24px rgba(0, 0, 0, 0.02);
-  margin-top: 50px;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: bold;
+  font-size: 17px;
 }
-#hero-text button:active {
-  background: #727272;
-}
-.sketch-button.start svg {
-  -webkit-animation: stroke 1s linear;
-  animation: stroke 1s linear;
-}
-.sketch-button .lines {
+
+#hero button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #8a00ff,
+    #bf00ff,
+    #e600ff,
+    #ff00ff,
+    #ff00c8,
+    #ff0091,
+    #ff005a,
+    #ff0023,
+    #8a00ff
+  );
   position: absolute;
-  inset: 0;
-  mix-blend-mode: hard-light;
-  pointer-events: none;
-  z-index: 1;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
-.sketch-button .lines > div {
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#hero button:after {
+  z-index: -1;
+  content: "";
   position: absolute;
-  inset: 0;
-}
-.sketch-button .lines > div:last-child {
-  transform: rotate(180deg);
-}
-.sketch-button .lines > div svg {
-  display: block;
-  position: absolute;
-  inset: 0;
-  overflow: visible;
-  fill: none;
-  stroke-width: 2;
-  stroke: #c9e9ff;
   width: 100%;
   height: 100%;
-  stroke-dasharray: 2 10;
-  stroke-dashoffset: 14;
-  opacity: 0;
-}
-.sketch-button .lines > div svg:nth-child(1) {
-  stroke: #f8fcff;
-}
-.sketch-button .lines > div svg:nth-child(2) {
-  stroke-width: 6px;
-  filter: blur(20px);
-}
-.sketch-button .lines > div svg:nth-child(3) {
-  stroke-width: 5px;
-  filter: blur(6px);
-}
-.sketch-button .lines > div svg:nth-child(4) {
-  stroke-width: 10px;
-  filter: blur(56px);
+  background: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
-@-webkit-keyframes stroke {
-  30%,
-  55% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 4;
-    opacity: 0;
-  }
-}
-
-@keyframes stroke {
-  30%,
-  55% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 4;
-    opacity: 0;
-  }
+#hero button:hover {
+  color: #db93da;
 }
