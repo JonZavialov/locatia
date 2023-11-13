@@ -23,8 +23,8 @@ function NavBar(){
                 <ExpandedSearchForm isSearchFormExpanded={isSearchFormExpanded}/>
             </div>
             <div id="navbar-links">
-                <a href="/">ABOUT US</a>
-                <a href="/contact">CONTACT US</a>
+                <a href="/">ABOUT</a>
+                <a href="/contact">CONTACT</a>
                 <a href="/faq">FAQ</a>
                 <a href="/blogs">BLOGS</a>
             </div>
