@@ -2,6 +2,7 @@ import './landingPage.css'
 import { useEffect } from 'react';
 import CopyrightFooter from '../footer/Footer';
 import Marquee from "react-fast-marquee";
+import HowItWorks from '../howItWorks/HowItWorks';
 
 const bannerItems = [
     {
@@ -54,6 +55,8 @@ function LandingPage(){
                     })
                 }
             </Marquee>
+            <HowItWorks />
+            <hr className="divider" />
             <div id="buyer-seller-desc">
                 <div>
                     <h2>For Companion Seekers</h2>
@@ -74,6 +77,7 @@ function LandingPage(){
                     </ul>
                 </div>
             </div>
+            {/* Add latest blogs here */}
             <CopyrightFooter />
         </>
     )

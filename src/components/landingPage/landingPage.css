@@ -150,7 +150,7 @@
 }
 
 #buyer-seller-desc div {
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   border: 2px solid #6029a1;
@@ -171,4 +171,9 @@
 
 #buyer-seller-desc h2 {
   margin-top: 0;
+}
+
+.divider {
+  margin: 0 35px;
+  border-top: 2px solid #6029a1;
 }

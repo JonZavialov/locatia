@@ -1,0 +1,16 @@
+#how-it-works {
+  display: flex;
+  flex-direction: column;
+}
+
+#how-it-works h1 {
+  text-align: center;
+}
+
+#how-it-works iframe {
+  border: 2px solid #6029a1;
+  border-radius: 10px;
+  margin: 0 auto 25px;
+  width: 900px;
+  height: 500px;
+}

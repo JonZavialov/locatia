@@ -14,6 +14,7 @@ import Schedule from './schedule/Schedule';
 import FaqContainer from './faq/FaqContainer';
 import LegalPage from './legalPage/LegalPage';
 import ContactUs from './contactUs/ContactUs';
+import HowItWorksContainer from './howItWorks/HowItWorksContainer';
 
 const Main = () => {
   if (window.innerWidth < 1000 && window.location.pathname !== "/") window.location.replace('/')
@@ -39,6 +40,7 @@ const Main = () => {
       <Route path='blogs' element={<BlogCardsDisplay />} />
       <Route path='blogs/:category' element={<BlogCardsDisplay />} />
       <Route path='blogs/:category/:id' element={<IndBlog />} />
+      <Route path='/how-it-works' element={<HowItWorksContainer />} />
       <Route path="*" element={< NotFound />} />
     </Routes>
   );
