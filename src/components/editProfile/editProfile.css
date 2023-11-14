@@ -1,0 +1,58 @@
+#editProfile-container{
+    margin: 20px ;
+}
+
+#profileImage-container{
+    text-align: center;
+}
+
+#profileImage-container p{
+    background-color: rgba(241, 243, 244, 1.00);
+    border-radius: 20px;
+    width: 10vw;
+    padding: 10px 2px;
+    margin: auto;
+    margin-top: 10px;
+}
+#editProfile-container img{
+    align-items: center;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+#credentials-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#credentials-form label, input{
+    margin: 10px 0;
+}
+
+#username, #password{
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+    padding: 3px;
+    outline: none;
+}
+
+#btn{
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #8238DA;
+    width:max-content;
+}
+
+#btn:hover{
+    background-color: #8238DA;
+    color: white;
+}
