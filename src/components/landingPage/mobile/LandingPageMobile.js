@@ -32,7 +32,7 @@ function LandingPageMobile(){
                     <h1>Locatia</h1>
                 </div>
                 <h1>Connecting individuals seeking companionship and memorable experiences.</h1>
-                <h2>Experience a transformative approach to social connections. Our platform is designed to help you break free from the isolation of the digital world. Connect with like-minded individuals, craft your ideal in-person interactions, and benefit from our innovative incentive model. Join us in redefining the way you form genuine relationships and find companionship.</h2>
+                <h2>Our platform is designed to help you break free from the isolation of the digital world. Join us in redefining the way you form genuine relationships and find companionship.</h2>
                 <p>Locatia is not currently available on mobile. Try it on desktop, or check back later!</p>
                 <i className="fa fa-arrow-down" aria-hidden="true"></i>
             </div>
