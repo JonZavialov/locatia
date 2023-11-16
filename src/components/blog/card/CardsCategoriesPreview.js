@@ -19,7 +19,7 @@ function CardsCategoriesPreview(){
             setArticleInfo(data)
         })
         .catch(err => console.log(err))
-    })
+    }, [])
     
     return(
         <div id='blog-cards-categories'>
