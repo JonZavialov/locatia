@@ -5,7 +5,7 @@ import AccountCreationContainer from './createAccount/AccountCreationContainer';
 import HomePage from './homePage/HomePage';
 import ProfilePageContainer from './profilePage/ProfilePageContainer';
 import NotFound from './notFound/NotFound';
-import LandingPage from './landingPage/LandingPage';
+import LandingPage from './landingPage/desktop/LandingPage';
 import LoginContainer from './login/LoginContainer';
 import MessagesContainer from './messages/MessagesContainer';
 import IndBlog from './blog/blogPage/IndBlog'

@@ -1,6 +1,7 @@
 #hero {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   background: linear-gradient(to right bottom, #491f7b, #8238da);
 }
 
@@ -120,6 +121,12 @@
 
 #hero button:active {
   opacity: 0.8;
+}
+
+#hero i {
+  color: white;
+  margin: auto auto 1%;
+  font-size: 50px;
 }
 
 .banner {

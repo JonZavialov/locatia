@@ -1,8 +1,6 @@
-import './landingPage.css'
+import './landingpagemobile.css'
 import { useEffect } from 'react';
-import CopyrightFooter from '../footer/Footer';
 import Marquee from "react-fast-marquee";
-import HowItWorks from '../howItWorks/HowItWorks';
 
 const bannerItems = [
     {
@@ -18,8 +16,7 @@ const bannerItems = [
         title: 'Forge Meaningful Connections Beyond the Screen',
     }
 ]
-
-function LandingPage(){
+function LandingPageMobile(){
     const urlParams = new URLSearchParams(window.location.search)
 
     useEffect(() => {
@@ -28,20 +25,16 @@ function LandingPage(){
     }, [])
     
     return (
-        <>
-            <div id="hero">
-                <div id="hero-inner-container">
-                    <div id="hero-text">
-                        <div id="hero-logo">
-                            <img src={process.env.PUBLIC_URL + '/assets/hero-logo.svg'} alt="logo"></img>
-                            <h1>Locatia</h1>
-                        </div>
-                        <h1>Connecting individuals seeking companionship and memorable experiences.</h1>
-                        <h2>Experience a transformative approach to social connections. Our platform is designed to help you break free from the isolation of the digital world. Connect with like-minded individuals, craft your ideal in-person interactions, and benefit from our innovative incentive model. Join us in redefining the way you form genuine relationships and find companionship.</h2>
-                        <button onClick={() => document.location.href = "/login"}>Get Started →</button>
-                    </div>
-                    <img id="hero-image" src={process.env.PUBLIC_URL + '/assets/hero.svg'} alt="hero"></img>
+        <div id="mobile-landing-page">
+            <div id="hero-mobile">
+                <div id="hero-logo-mobile">
+                    <img src={process.env.PUBLIC_URL + '/assets/hero-logo.svg'} alt="logo"></img>
+                    <h1>Locatia</h1>
                 </div>
+                <h1>Connecting individuals seeking companionship and memorable experiences.</h1>
+                <h2>Experience a transformative approach to social connections. Our platform is designed to help you break free from the isolation of the digital world. Connect with like-minded individuals, craft your ideal in-person interactions, and benefit from our innovative incentive model. Join us in redefining the way you form genuine relationships and find companionship.</h2>
+                <p>Locatia is not currently available on mobile. Try it on desktop, or check back later!</p>
+                <i className="fa fa-arrow-down" aria-hidden="true"></i>
             </div>
             <Marquee className="banner">
                 {
@@ -55,9 +48,16 @@ function LandingPage(){
                     })
                 }
             </Marquee>
-            <HowItWorks />
+            <div id="how-it-works-mobile">
+                <h1>How It Works</h1>
+                <iframe 
+                    src="https://www.youtube.com/embed/JDI6OlDdpGU?si=2mANarzhpSpLYXxX" 
+                    title="YouTube video player"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                />
+            </div>
             <hr className="divider" />
-            <div id="buyer-seller-desc">
+            <div id="buyer-seller-desc-mobile">
                 <div>
                     <h2>For Companion Seekers</h2>
                     <ul>
@@ -78,9 +78,8 @@ function LandingPage(){
                 </div>
             </div>
             {/* Add latest blogs here */}
-            <CopyrightFooter />
-        </>
+        </div>
     )
 }
 
-export default LandingPage;
+export default LandingPageMobile;

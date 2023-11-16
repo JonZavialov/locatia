@@ -1,0 +1,72 @@
+#mobile-landing-page {
+  text-align: center;
+}
+
+#hero-mobile {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: linear-gradient(to right bottom, #491f7b, #8238da);
+}
+
+#hero-logo-mobile {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin: 10% auto;
+  font-size: 25px;
+}
+
+#hero-logo-mobile img {
+  height: 150%;
+}
+
+#hero-mobile h2 {
+  margin: 0;
+  font-weight: 100;
+}
+
+#hero-mobile i {
+  margin: auto;
+  font-size: 60px;
+}
+
+#hero-mobile p {
+  font-style: italic;
+  margin-top: 25px;
+}
+
+#how-it-works-mobile iframe {
+  border: 2px solid #6029a1;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#buyer-seller-desc-mobile {
+  padding-bottom: 50px;
+}
+
+#buyer-seller-desc-mobile div {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #6029a1;
+  border-radius: 10px;
+  margin: 25px 10px;
+  background-color: white;
+  padding: 15px;
+}
+
+#buyer-seller-desc-mobile ul {
+  padding-left: 16px;
+  margin: 0;
+  text-align: left;
+}
+
+#buyer-seller-desc-mobile ul li {
+  margin: 10px 0;
+}
+
+#buyer-seller-desc-mobile h2 {
+  margin-top: 0;
+}
