@@ -9,8 +9,8 @@ function CategoryCards({ category }){
         sendReqToBackend(`blogs`)
         .then(res => JSON.parse(res))
         .then(data => {
-            console.log(data)
-            setArticles(data[category])
+            if(!data[category]) window.location.replace("/404")
+            else setArticles(data[category])
         })
         .catch(err => console.log(err))
     }, [category])
