@@ -27,7 +27,10 @@ function CardsCategoriesPreview(){
                 Object.keys(articleInfo).map((a,i) => {
                     return( 
                         <div key={i}>
-                            <h1>{categories[a]}</h1>
+                            <div className="category-header">
+                                <h1>{categories[a]}</h1>
+                                <a href={`/blogs/${a}`}>All</a>
+                            </div>
                             <div className='blog-cards-row'>
                                 {
                                     articleInfo[a].map((b,i) => {

@@ -33,8 +33,14 @@
   margin: 0 auto;
 }
 
-#blog-cards-categories h1 {
+.category-header {
   color: #6029a1;
+  display: flex;
+  align-items: center;
+}
+
+.category-header a {
+  margin-left: 10px;
 }
 
 #blog-cards-search {
