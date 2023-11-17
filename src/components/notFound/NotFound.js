@@ -8,7 +8,6 @@ function NotFound(){
             <NavBar />
             <div id="notfound-container">
                 <div>
-                    <h1>Page not found</h1>
                     <h1>We couldn't find this page</h1>
                     <h2>But that doesn't mean you can't find your companion!</h2>
                     <button onClick={() => window.location.href = '/home'}>Go Home</button>

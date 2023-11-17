@@ -1,11 +1,12 @@
 #notfound-container {
   display: flex;
   margin: 100px auto;
-  width: min-content;
+  align-items: center;
+  width: 60%;
 }
 
 #notfound-container img {
-  margin: 0 100px;
+  width: 45%;
 }
 
 #notfound-container h1 {
@@ -21,6 +22,11 @@
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
+}
+
+#notfound-container div {
+  height: min-content;
+  margin-right: 25px;
 }
 
 #notfound-container button:hover {
